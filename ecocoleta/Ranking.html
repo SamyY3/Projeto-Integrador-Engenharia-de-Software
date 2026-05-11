@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranking EcoColeta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ranking.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="notif-popup.css">
+
+</head>
+<body>
+
+
+    <header class="topo">
+  <div class="nav-left">
+    <a href="tela-inicia.html" class="logo-link">
+      <img src="Imagens/logo.2.png" alt="EcoColeta">
+    </a>
+    <nav>
+      <ul class="menu">
+        <li><a href="tela-inicia.html">Home</a></li>
+        <li><a href="pagina-relatorio.html">Gerar Relatório</a></li>
+        <li><a href="como-funciona.html">Como Funciona</a></li>
+        <li><a href="ecopontos.html">EcoPontos</a></li>
+        <li><a href="premios-disponiveis.html">Prêmios</a></li>
+        <li><a href="educacao-ambiental.html">Educação</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="Ranking.html">Ranking</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="icones">
+    <div class="notif-wrapper">
+      <button class="notif-btn" aria-label="Notificações">
+          <img src="Imagens/icon notificacao.png" alt="Notificações" class="icon">
+      </button>
+      <div class="notif-overlay hidden">
+        <div class="notif-box">
+          <div class="header">
+            <h2>Notificações</h2>
+            <span class="gear">⚙️</span>
+          </div>
+          <div class="section">
+            <p class="section-title">IMPORTANTE</p>
+            <div class="item">
+              <div class="icon green">♻️</div>
+              <div>
+                <p>EcoColeta Novo ponto de coleta disponível próxima a você!</p>
+                <span>há 30 minutos</span>
+              </div>
+            </div>
+          </div>
+          <div class="section">
+            <p class="section-title">MAIS NOTIFICAÇÕES</p>
+            <div class="item">
+              <div class="icon yellow">🏆</div>
+              <div class="content">
+                <p>Parabéns! Você ganhou <b>50 pontos</b> pela sua coleta de hoje</p>
+                <span>há 3 horas</span>
+              </div>
+              <div class="badge">+50 pts</div>
+            </div>
+            <div class="item">
+              <div class="icon purple">📅</div>
+              <div>
+                <p><b>Lembrete:</b> Dia de coleta no bairro amanhã</p>
+                <span>há 5 horas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="perfil.html">
+      <img src="Imagens/icons pessoa.png" alt="Perfil">
+    </a>
+  </div>
+</header>
+
+<script src="notif-popup.js"></script>
+
+    <section class="ranking-section">
+
+        <div class="topo-ranking">
+      <h2>Ranking</h2>
+
+      <div class="busca">
+        <input type="text" placeholder="Digite seu bairro">
+        <button> <img src="Imagens/lupa.png" alt=""></button>
+      </div>
+     </div>
+        <div class="container-ranking">
+         <div class="tabela">
+      <table>
+        <thead>
+          <tr>
+            <th>Posição</th>
+            <th>Rua</th>
+            <th>Pontos</th>
+            <th>Reciclagem</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="top1">
+            <td> <img src="Imagens/medalha-de-ouro.png" alt="">
+            </td><td>Rua São Pedro</td><td>3.500</td><td>180</td>
+          </tr>
+          <tr class="top2">
+            <td><img src="Imagens/medalha-de-prata.png" alt=""></td><td>Rua Padre Cícero</td><td>3.200</td><td>165</td>
+          </tr>
+          <tr class="top3">
+            <td><img src="Imagens/medalha de bronze.png" alt=""></td><td>Rua Santa Luzia</td><td>2.900</td><td>150</td>
+          </tr>
+          <tr><td>04</td><td>Rua do Seminário</td><td>2.600</td><td>140</td></tr>
+          <tr><td>05</td><td>Rua São José</td><td>2.300</td><td>120</td></tr>
+          <tr><td>06</td><td>Rua N. Sra das Dores</td><td>2.100</td><td>110</td></tr>
+          <tr><td>07</td><td>Rua Leão XIII</td><td>1.900</td><td>98</td></tr>
+          <tr><td>08</td><td>Rua Dep. Golveia</td><td>1.700</td><td>85</td></tr>
+          <tr><td>09</td><td>Rua José Marrocos</td><td>1.500</td><td>70</td></tr>
+          <tr><td>10</td><td>Rua Santa Isabel</td><td>1.300</td><td>60</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="cards">
+
+  <div class="card">
+    <h3>Total reciclado</h3>
+
+    <div class="linha">
+      <img src="Imagens/reciclados icon.png" class="icon-card">
+
+      <div>
+        <p class="numero">825Kg</p>
+        <p>Materiais reciclados</p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Ranking Semanal</h3>
+    <p class="numero">15º Lugar</p>
+    <p>Posição do bairro da semana</p>
+  </div>
+  <div class="card">
+    <h3>Seu progresso</h3>
+
+    <div class="progress-circle">
+      <span>75%</span>
+    </div>
+
+    <p class="meta">
+  <span class="titulo-meta">Meta Mensal</span><br>
+     900kg de 1200kg
+</p>
+  </div>
+
+</div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-info">
+      <h4>Institucional</h4>
+      <p><img src="Imagens/icons pessoa.png" class="icon"> Universidade Faculdade Paraíso</p>
+      <p><img src="Imagens/cnpj..png" class="icon"> CNPJ: 00.000.000/0000-00</p>
+    </div>
+
+    <div class="footer-logo">
+      <img src="Imagens/logo preta.png" alt="EcoColeta">
+    </div>
+
+    <div class="footer-contato">
+      <h4>Contato</h4>
+      <p><img src="Imagens/telefone-.png" class="icon"> (88) 90000-0000</p>
+      <p><img src="Imagens/o-email 1.png" class="icon"> ecocoleta@gmail.com</p>
+    </div>
+
+  </div>
+
+  <div class="social">
+    <img src="Imagens/icons facebook.png">
+    <img src="Imagens/email.2.png">
+    <img src="Imagens/icons apicativo X.png">
+    <img src="Imagens/icons-youtube.png">
+    <img src="Imagens/icons-instagram.png">
+  </div>
+
+  <div class="footer-copy">
+    <p>©️ 2026 Todos os direitos reservados</p>
+  </div>
+</footer>
+<script src="ranking.js"></script>
+</body>
+</html>
