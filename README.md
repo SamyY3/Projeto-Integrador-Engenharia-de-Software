@@ -38,7 +38,7 @@ Infra
 XAMPP/Apache, .htaccess, scripts de deploy e seed
 Dados
 20+ tabelas, migrações SQL, seed versionado no código
-A arquitetura segue separação clara de responsabilidades: pages/ e auth/ no cliente, api/ como camada de serviços, includes/ com regras de negócio reutilizáveis, admin/ com dois painéis distintos e database/ com schema versionado. O projeto conta com ~500 arquivos, 45+ endpoints e dados de demonstração que populam o banco automaticamente em qualquer ambiente — ideal para avaliação, banca ou clone local em minutos.
+A arquitetura segue separação clara de responsabilidades: pages/ e auth/ no cliente, api/ como camada de serviços, includes/ com regras de negócio reutilizáveis, admin/ com dois painéis distintos e database/ com schema versionado. O projeto conta com ~500 arquivos, 45+ endpoints e dados de demonstração que populam o banco automaticamente em qualquer ambiente - ideal para avaliação, banca ou clone local em minutos.
 
 Destaques técnicos:
 Sistema de pontuação com detecção de fraude (peso informado vs. validado)
@@ -48,4 +48,4 @@ Seed completo versionado — 50 moradores, ecopontos do Cariri, prêmios e colet
 EcoCheck como biblioteca React empacotada e consumida pelo front estático
 Documentação técnica em 4 volumes (arquitetura, backend, frontend, fluxos E2E)
 Frase de impacto (bio / headline)
-"Transformei a coleta seletiva em uma experiência digital gamificada — com mapas, pontos, prêmios e dois painéis administrativos, do cadastro do morador à validação no ecoponto."
+"Transformei a coleta seletiva em uma experiência digital gamificada - com mapas, pontos, prêmios e dois painéis administrativos, do cadastro do morador à validação no ecoponto."
