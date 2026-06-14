@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="auth-view">
+<head>
+  <base href="../" data-app-base>
+  <script>(function(){var p=location.pathname.replace(/\\/g,"/"),b=document.querySelector("base[data-app-base]"),m=p.match(/^(.*\/)(?:auth|admin|pages|mapa)\/[^/]+$/);if(b)b.href=m?m[1]:p.replace(/\/[^/]*$/,"/")||"/";})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redefinir Senha - EcoColeta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/auth-background.css?v=1">
+  <link rel="stylesheet" href="assets/css/auth-screens.css?v=1">
+</head>
+<body class="auth login">
+
+  <img class="auth-logo-img eco-brand-img logo" src="assets/images/logo.2.png?v=3" alt="EcoColeta" width="200" height="88" fetchpriority="high" decoding="async">
+
+  <div class="container">
+    <h2>Nova Senha</h2>
+
+    <div class="password-field">
+      <input type="password" id="senha" placeholder="Nova senha" autocomplete="new-password">
+      <button type="button" class="password-toggle" data-password-toggle-for="senha"></button>
+    </div>
+    <div class="password-field">
+      <input type="password" id="confirmar" placeholder="Confirme a senha" autocomplete="new-password">
+      <button type="button" class="password-toggle" data-password-toggle-for="confirmar"></button>
+    </div>
+
+    <button class="btn-verde" type="button" onclick="resetarSenha()">Redefinir Senha</button>
+  </div>
+
+  <script>
+    let token = "";
+
+    window.addEventListener("DOMContentLoaded", function () {
+      const params = new URLSearchParams(window.location.search);
+      token = params.get("token") || "";
+      if (!token) {
+        alert("Token inválido ou não informado!");
+        window.location.href = "login.html";
+      }
+    });
+
+    function resetarSenha() {
+      const senha = document.getElementById("senha").value;
+      const confirmar = document.getElementById("confirmar").value;
+
+      if (!senha || !confirmar) {
+        alert("Preencha todos os campos!");
+        return;
+      }
+
+      if (senha !== confirmar) {
+        alert("As senhas não coincidem!");
+        return;
+      }
+
+      const url = window.ecocoletaPhpUrl
+        ? window.ecocoletaPhpUrl("resetar_senha.php")
+        : new URL("api/resetar_senha.php", window.location.href).href;
+
+      fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: "token=" + encodeURIComponent(token) + "&senha=" + encodeURIComponent(senha),
+        credentials: "same-origin",
+      })
+        .then(function (res) {
+          return res.json();
+        })
+        .then(function (data) {
+          if (data.sucesso) {
+            window.location.href = "senha-criada.html";
+            return;
+          }
+          alert(data.erro || "Não foi possível redefinir a senha.");
+        })
+        .catch(function () {
+          alert("Erro ao conectar com o servidor");
+        });
+    }
+  </script>
+  <script src="assets/js/ecocoleta-paths.js?v=6"></script>
+  <script defer src="assets/js/password-toggle.js?v=1"></script>
+</body>
+</html>

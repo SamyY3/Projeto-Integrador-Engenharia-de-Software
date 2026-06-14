@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <base href="../" data-app-base>
+  <script>(function(){var p=location.pathname.replace(/\\/g,"/"),b=document.querySelector("base[data-app-base]"),m=p.match(/^(.*\/)(?:auth|admin|pages|mapa)\/[^/]+$/);if(b)b.href=m?m[1]:p.replace(/\/[^/]*$/,"/")||"/";})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="admin/adm-ecoponto-theme-boot.js?v=1"></script>
+  <title>Painel ADM EcoPonto | EcoColeta</title>
+  <style>
+    html.admin-auth-checking .adm-app {
+      opacity: 0;
+      pointer-events: none;
+      animation: ecoAuthReveal 0s linear 2s forwards;
+    }
+    @keyframes ecoAuthReveal {
+      to {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  </style>
+  <script>
+    document.documentElement.classList.add("admin-auth-checking");
+    (function () {
+      function revelarPaginaAdmin() {
+        document.documentElement.classList.remove("admin-auth-checking");
+      }
+      document.addEventListener("DOMContentLoaded", revelarPaginaAdmin);
+      window.addEventListener("load", revelarPaginaAdmin);
+      window.setTimeout(revelarPaginaAdmin, 2500);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <script src="admin/adm-ecoponto-sidebar-boot.js?v=1"></script>
+  <link rel="stylesheet" href="admin/home-adm-ecoponto.css?v=30">
+  <link rel="stylesheet" href="admin/adm-ecoponto-pro.css?v=23">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="mapa/mapa.css?v=15">
+  <link rel="stylesheet" href="assets/css/notif-popup.css?v=10">
+  <link rel="stylesheet" href="admin/adm-notificacoes.css?v=3">
+  <link rel="stylesheet" href="admin/adm-ecoponto-materiais-panel.css?v=1">
+  <script src="assets/js/ecocoleta-paths.js?v=7"></script>
+</head>
+<body class="admin-dashboard-page">
+  <div class="adm-app">
+  <script src="admin/adm-ecoponto-sidebar-layout.js?v=2"></script>
+    <header class="adm-header">
+      <a href="pages/tela-inicia.html" class="adm-header-brand">
+        <img class="eco-brand-img" src="assets/images/logo.2.png?v=5" alt="EcoColeta" width="192" height="84" decoding="async">
+      </a>
+      <div class="adm-header-actions">
+        <button type="button" class="adm-profile-btn" id="profileToggle" aria-label="Menu do administrador" aria-expanded="false" aria-haspopup="true">
+          <span class="adm-avatar adm-avatar--sm" aria-hidden="true">
+            <span class="adm-avatar__circle">
+              <span class="adm-profile-initial" id="profileInitial">A</span>
+            </span>
+          </span>
+        </button>
+        <div class="adm-profile-menu hidden" id="profileMenu" role="menu">
+          <p class="adm-profile-name" id="profileName">Administrador</p>
+          <p class="adm-profile-email" id="profileEmail">—</p>
+          <p class="adm-profile-point" id="profilePoint">EcoPonto</p>
+          <button type="button" id="logoutAdmin" role="menuitem">Sair da conta</button>
+        </div>
+      </div>
+    </header>
+
+    <aside id="admSidebar"></aside>
+
+    <main class="adm-main">
+      <p class="dashboard-auth-error" id="dashboardAuthError" role="alert"></p>
+
+      <header class="adm-dashboard-intro">
+        <p class="adm-dashboard-intro__eyebrow">Painel administrativo</p>
+        <h1 class="adm-dashboard-intro__title">Visão geral do EcoPonto</h1>
+        <p class="adm-dashboard-intro__subtitle" id="dashboardPageSubtitle">Acompanhe coletas, capacidade e materiais do seu ponto.</p>
+      </header>
+
+      <section class="adm-kpi-row" aria-label="Resumo do dia">
+        <article class="adm-kpi-card">
+          <div class="adm-kpi-head">
+            <div class="adm-kpi-icon adm-kpi-icon--green" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M1.5 12.5h11.8l2.6-2.6h3.6V7.2L15.4 4.8H8.8V3H1.5v9.5zm2.2 6.2a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6zm10.8 0a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6z" fill="currentColor"/></svg>
+            </div>
+            <div class="adm-kpi-text">
+              <span class="adm-kpi-label">Coletas Hoje</span>
+              <strong class="adm-kpi-value" id="kpiColetasHoje">12</strong>
+            </div>
+          </div>
+          <div class="adm-kpi-progress" role="progressbar" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso de coletas hoje">
+            <span class="adm-kpi-progress-fill adm-kpi-progress-fill--muted" style="width: 18%"></span>
+          </div>
+        </article>
+
+        <article class="adm-kpi-card">
+          <div class="adm-kpi-head">
+            <div class="adm-kpi-icon adm-kpi-icon--green" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 4h10l1 3H6l1-3Zm-1 5h12l-1 11H7L6 9Zm4 2v7h2v-7h-2Zm4 0v7h2v-7h-2Z" fill="currentColor"/></svg>
+            </div>
+            <div class="adm-kpi-text">
+              <span class="adm-kpi-label">Capacidade Atual</span>
+              <strong class="adm-kpi-value" id="kpiCapacidade">72%</strong>
+            </div>
+          </div>
+          <div class="adm-kpi-progress" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" aria-label="Capacidade atual">
+            <span class="adm-kpi-progress-fill adm-kpi-progress-fill--green" style="width: 72%"></span>
+          </div>
+        </article>
+
+        <article class="adm-kpi-card">
+          <div class="adm-kpi-head">
+            <div class="adm-kpi-icon adm-kpi-icon--green" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 5.3-5.3 1.4 1.4-6.7 6.7Z" fill="currentColor"/></svg>
+            </div>
+            <div class="adm-kpi-text">
+              <span class="adm-kpi-label">Status Ecoponto</span>
+              <strong class="adm-kpi-value adm-kpi-value--ativo">Ativo</strong>
+            </div>
+          </div>
+          <div class="adm-kpi-progress adm-kpi-progress--empty" aria-hidden="true">
+            <span class="adm-kpi-progress-fill adm-kpi-progress-fill--muted" style="width: 0%"></span>
+          </div>
+        </article>
+
+        <article class="adm-kpi-card">
+          <div class="adm-kpi-head">
+            <div class="adm-kpi-icon adm-kpi-icon--green" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 4h10l1 3H6l1-3Zm-1 5h12l-1 11H7L6 9Zm2 3v5h2v-5H8Zm4 0v5h2v-5h-2Zm4 1-3 2 2-1.4 1.4-2-2-2 2-1.4-1.4 2-2-2-2 1.4-1.4 2 2 2-2 1.4 1.4-2 2 2 2Z" fill="currentColor"/></svg>
+            </div>
+            <div class="adm-kpi-text">
+              <span class="adm-kpi-label">Materiais Recebidos</span>
+              <strong class="adm-kpi-value" id="kpiMateriaisKg">89 Kg</strong>
+            </div>
+          </div>
+          <div class="adm-kpi-progress" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" aria-label="Volume de materiais">
+            <span class="adm-kpi-progress-fill adm-kpi-progress-fill--muted" style="width: 45%"></span>
+          </div>
+        </article>
+      </section>
+
+      <section class="adm-grid-row adm-grid-row--2" aria-label="Detalhes do ecoponto e localização">
+        <article class="adm-card adm-ecoponto-detail">
+          <header class="adm-ecoponto-detail__header">
+            <div>
+              <h1 class="adm-ecoponto-title" id="ecopontoDetailName">EcoPonto Verde</h1>
+              <p class="adm-ecoponto-location">
+                <svg class="adm-pin-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5a2.5 2.5 0 1 1 2.5-2.5A2.5 2.5 0 0 1 12 11.5Z" fill="currentColor"/></svg>
+                <span id="ecopontoDetailAddress">Centro, Juazeiro do Norte - CE</span>
+              </p>
+              <span class="adm-status-pill adm-status-pill--ativo">● Ativo</span>
+            </div>
+          </header>
+
+          <div class="adm-ecoponto-capacity">
+            <div class="adm-ecoponto-capacity__label">
+              <span>Capacidade:</span>
+              <strong id="ecopontoCapacityText">72%</strong>
+            </div>
+            <div class="adm-capacity-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+              <span class="adm-capacity-bar__fill" id="ecopontoCapacityBar" style="width: 72%"></span>
+            </div>
+          </div>
+
+          <div data-adm-ecoponto-materiais class="adm-eco-materiais-panel adm-eco-materiais-panel--loading" aria-label="Materiais aceitos no ecoponto"></div>
+
+          <div class="adm-ecoponto-media">
+            <img
+              src="assets/images/Ecoponto.png"
+              alt="Centro de reciclagem EcoPonto com contêineres para papel, plástico, vidro, metal, madeira e eletrônicos"
+              class="adm-ecoponto-photo"
+              id="ecopontoPhoto"
+              width="640"
+              height="400" loading="lazy" decoding="async">
+            <div class="adm-ecoponto-photo-placeholder" id="ecopontoPhotoPlaceholder" aria-hidden="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4V6Zm2 2v8h12V8H6Zm2 2 2.5 3L11 11l2 2.5L17 10v4H7l1-2Z" fill="currentColor"/></svg>
+              <span>Foto do EcoPonto</span>
+            </div>
+          </div>
+
+          <div class="adm-ecoponto-actions">
+            <button type="button" class="adm-action-btn adm-action-btn--green" data-action="atualizar" title="Em breve">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4V1L8 5l4 4V6a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8Z" fill="currentColor"/></svg>
+              Atualizar Status
+            </button>
+            <button type="button" class="adm-action-btn adm-action-btn--orange" data-action="cheio" title="Em breve">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10l1 3H6l1-3Zm-1 5h12l-1 11H7L6 9Z" fill="currentColor"/></svg>
+              Marcar como Cheio
+            </button>
+            <button type="button" class="adm-action-btn adm-action-btn--navy" data-action="coleta" title="Em breve">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12.5h11.8l2.6-2.6h3.6V7.2L15.4 4.8H8.8V3H1.5v9.5z" fill="currentColor"/><path d="M7 3v2h10V3H7Zm0 18h2v-2H7v2Zm4 0h2v-2h-2v2Zm4 0h2v-2h-2v2Z" fill="currentColor"/></svg>
+              Solicitar Coleta
+            </button>
+          </div>
+        </article>
+
+        <article class="adm-card adm-map-card" aria-label="Mapa do ecoponto">
+          <div class="adm-map-inner adm-map-embed">
+            <div class="adm-map-search-overlay" role="search" aria-label="Buscar destino no mapa">
+              <div class="adm-map-search-row">
+                <input
+                  type="search"
+                  id="adm-map-search-input"
+                  class="adm-map-search-input"
+                  placeholder="Buscar rua ou endereço"
+                  autocomplete="street-address"
+                  enterkeyhint="search"
+                  aria-describedby="adm-map-search-status"
+                >
+                <button type="button" id="adm-map-search-btn" class="adm-map-search-btn">Buscar</button>
+              </div>
+              <p id="adm-map-search-status" class="adm-map-search-status" role="status" aria-live="polite"></p>
+            </div>
+            <div id="adm-map" class="adm-map-leaflet mapa-leaflet" role="application" aria-label="Mapa do ecoponto"></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="adm-grid-row adm-grid-row--2" aria-label="Materiais e coletas agendadas">
+        <article class="adm-card adm-chart-card">
+          <h2 class="adm-card-title">Materiais Recebidos</h2>
+          <div class="adm-chart-wrap">
+            <canvas id="chartMateriaisRecebidos" aria-label="Gráfico de materiais recebidos"></canvas>
+          </div>
+        </article>
+
+        <article class="adm-card adm-table-card adm-home-coletas-card">
+          <header class="adm-section-head adm-table-card-head">
+            <div class="adm-section-head__copy">
+              <h2 class="adm-section-head__title adm-card-title">Coletas Agendadas</h2>
+              <p class="adm-section-head__sub" id="homeColetasSub">Próximas coletas do EcoPonto</p>
+            </div>
+          </header>
+          <div class="adm-table-wrap adm-home-coletas-wrap">
+            <table class="adm-table adm-home-coletas-table">
+              <colgroup>
+                <col class="adm-home-col-user">
+                <col class="adm-home-col-slot">
+                <col class="adm-home-col-tipo">
+                <col class="adm-home-col-status">
+                <col class="adm-home-col-resp">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">Usuário</th>
+                  <th scope="col">Horário</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Responsável</th>
+                </tr>
+              </thead>
+              <tbody id="coletasAgendadasBody"></tbody>
+            </table>
+          </div>
+          <p class="adm-home-coletas-empty hidden" id="homeColetasEmpty" role="status">Nenhuma coleta agendada para os próximos dias.</p>
+          <nav class="adm-home-coletas-pager hidden" id="homeColetasPager" aria-label="Paginação de coletas agendadas">
+            <button type="button" class="adm-home-coletas-pager__btn" id="homeColetasPagerPrev" disabled>Anterior</button>
+            <span class="adm-home-coletas-pager__info" id="homeColetasPagerInfo">Página 1 de 1</span>
+            <button type="button" class="adm-home-coletas-pager__btn" id="homeColetasPagerNext" disabled>Próxima</button>
+          </nav>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="mapa/mapa.js?v=20"></script>
+  <script src="admin/adm-ecoponto-sidebar-nav.js?v=19"></script>
+  <script src="admin/adm-ecoponto-common.js?v=8"></script>
+  <script src="admin/adm-ecoponto-materiais-panel.js?v=2"></script>
+  <script src="admin/adm-notificacoes.js?v=3" defer></script>
+  <script src="admin/home-adm-ecoponto.js?v=6" defer></script>
+</body>
+</html>

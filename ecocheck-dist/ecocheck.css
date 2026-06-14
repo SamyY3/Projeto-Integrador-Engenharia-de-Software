@@ -1,0 +1,320 @@
+#ecocheck-root * {
+  box-sizing: border-box;
+}
+
+#ecocheck-root {
+  font-family: "Sora", system-ui, -apple-system, sans-serif;
+}
+
+@keyframes ec-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes ec-slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ec-spin {
+  to { transform: rotate(360deg); }
+}
+
+.ec-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(10, 61, 46, 0.45);
+  backdrop-filter: blur(4px);
+  animation: ec-fadeIn 0.2s ease;
+}
+
+.ec-modal {
+  width: 100%;
+  max-width: 28rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 24px 60px rgba(15, 107, 74, 0.18);
+  border: 1px solid rgba(143, 255, 199, 0.6);
+  overflow: hidden;
+  animation: ec-slideUp 0.25s ease;
+}
+
+.ec-modal__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(143, 255, 199, 0.5);
+  background: linear-gradient(to right, #f6fffa, #fff);
+}
+
+.ec-modal__head > div:first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.ec-modal__brand {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #12a06a;
+}
+
+.ec-modal__title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0a3d2e;
+}
+
+.ec-modal__close {
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: #64748b;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.ec-modal__close:hover {
+  background: #f1f5f9;
+}
+
+.ec-modal__body {
+  padding: 1rem 1.25rem 0.5rem;
+}
+
+.ec-modal__hint {
+  margin: 0 0 0.875rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #475569;
+}
+
+.ec-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2.5rem 0;
+}
+
+.ec-loading__spinner {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  border: 3px solid rgba(143, 255, 199, 0.8);
+  border-top-color: #12a06a;
+  animation: ec-spin 0.8s linear infinite;
+}
+
+.ec-loading__text {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0f6b4a;
+}
+
+.ec-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem 0;
+  color: #12a06a;
+}
+
+.ec-success__icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 999px;
+  background: rgba(143, 255, 199, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.ec-success__text {
+  margin: 0;
+  font-weight: 600;
+}
+
+.ec-error {
+  border-radius: 0.75rem;
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: #b91c1c;
+}
+
+.ec-puzzle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+  width: 100%;
+}
+
+.ec-puzzle__stage {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 2px;
+}
+
+.ec-puzzle__canvas {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(143, 255, 199, 0.8);
+  background: #f6fffa;
+  box-shadow: inset 0 2px 8px rgba(10, 61, 46, 0.06);
+  flex-shrink: 0;
+}
+
+.ec-puzzle__canvas > img.ec-puzzle__bg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+.ec-puzzle__piece {
+  position: absolute;
+  user-select: none;
+  touch-action: none;
+  pointer-events: auto;
+  cursor: grab;
+  filter: drop-shadow(0 8px 16px rgba(10, 61, 46, 0.25));
+}
+
+.ec-puzzle__piece:active {
+  cursor: grabbing;
+}
+
+.ec-puzzle__track-hint {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #0f6b4a;
+}
+
+.ec-puzzle__track {
+  position: relative;
+  height: 2.75rem;
+  border-radius: 999px;
+  background: linear-gradient(to right, #f1f5f9, #f6fffa);
+  border: 1px solid rgba(143, 255, 199, 0.7);
+  flex-shrink: 0;
+}
+
+.ec-puzzle__track.ec-puzzle__track--busy {
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.ec-puzzle__track-label {
+  display: none;
+}
+
+.ec-puzzle__handle {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  background: linear-gradient(145deg, #0f6b4a, #12a06a);
+  box-shadow: 0 4px 12px rgba(15, 107, 74, 0.25);
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.65rem;
+  letter-spacing: -1px;
+  cursor: grab;
+  touch-action: none;
+}
+
+.ec-puzzle__handle:active {
+  cursor: grabbing;
+}
+
+.ec-modal__foot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem 1rem;
+}
+
+#ecocheck-root button.ec-modal__close,
+#ecocheck-root button.ec-btn {
+  width: auto;
+  max-width: none;
+  margin-top: 0;
+  font-weight: 600;
+  letter-spacing: normal;
+}
+
+.ec-btn {
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.ec-btn--ghost {
+  background: transparent;
+  color: #475569;
+}
+
+.ec-btn--ghost:hover {
+  background: #f1f5f9;
+}
+
+.ec-btn--primary {
+  color: #fff;
+  background: linear-gradient(to right, #0f6b4a, #12a06a);
+  box-shadow: 0 4px 12px rgba(15, 107, 74, 0.2);
+}
+
+.ec-hp {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}

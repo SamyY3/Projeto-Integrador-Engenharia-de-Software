@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <base href="../">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="admin/plat-adm-theme-boot.js?v=2"></script>
+  <title>Dashboard ADM | EcoColeta</title>
+  <style>
+    html.plat-auth-checking body {
+      visibility: hidden;
+     animation: ecoAuthReveal 0s linear 3s forwards; }
+    @keyframes ecoAuthReveal { to { visibility: visible; } }
+  </style>
+  <script>
+    document.documentElement.classList.add("plat-auth-checking");
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin/home-adm.css?v=14">
+  <link rel="stylesheet" href="admin/plat-sidebar-pro.css?v=3">
+  <link rel="stylesheet" href="admin/plat-adm-premium.css?v=2">
+  <link rel="stylesheet" href="assets/css/logo.css?v=11">
+  <script src="assets/js/ecocoleta-paths.js?v=3"></script>
+</head>
+<body class="plat-dashboard">
+  <script src="admin/adm-sidebar-icons.js"></script>
+  <script src="admin/adm-plataforma-icons.js"></script>
+
+  <div class="plat-app">
+    <header class="plat-header">
+      <a href="pages/tela-inicia.html" class="plat-header-brand">
+        <img class="eco-brand-img" src="assets/images/logo.2.png?v=5" alt="EcoColeta" width="192" height="84" decoding="async">
+      </a>
+      <div class="plat-header-actions">
+        <button type="button" class="plat-profile-btn" id="profileToggle" aria-label="Menu do administrador" aria-expanded="false" aria-haspopup="true">
+          <span class="plat-avatar" aria-hidden="true">
+            <span class="plat-avatar__inner">
+              <span class="plat-avatar__initial" id="profileInitial">A</span>
+            </span>
+          </span>
+        </button>
+        <div class="plat-profile-menu hidden" id="profileMenu" role="menu">
+          <p class="plat-profile-name" id="profileName">Administrador</p>
+          <p class="plat-profile-email" id="profileEmail">—</p>
+          <p class="plat-profile-role" id="profileRole">Plataforma EcoColeta</p>
+          <button type="button" id="logoutAdmin" role="menuitem">Sair da conta</button>
+        </div>
+      </div>
+    </header>
+
+    <aside id="platSidebar"></aside>
+
+    <main class="plat-main">
+      <section class="plat-kpi-grid" aria-label="Indicadores da plataforma">
+        <article class="plat-kpi-card">
+          <div class="plat-kpi-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><use href="#plat-icon-truck"/></svg>
+          </div>
+          <div class="plat-kpi-body">
+            <span class="plat-kpi-label">Total de Coletas</span>
+            <strong class="plat-kpi-value" id="kpiColetas">—</strong>
+          </div>
+        </article>
+        <article class="plat-kpi-card">
+          <div class="plat-kpi-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><use href="#plat-icon-user"/></svg>
+          </div>
+          <div class="plat-kpi-body">
+            <span class="plat-kpi-label">Usuários Ativos</span>
+            <strong class="plat-kpi-value" id="kpiUsuarios">—</strong>
+          </div>
+        </article>
+        <article class="plat-kpi-card">
+          <div class="plat-kpi-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><use href="#plat-icon-recycle"/></svg>
+          </div>
+          <div class="plat-kpi-body">
+            <span class="plat-kpi-label">Recicláveis Coletados (Kg)</span>
+            <strong class="plat-kpi-value" id="kpiKg">—</strong>
+          </div>
+        </article>
+        <article class="plat-kpi-card">
+          <div class="plat-kpi-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><use href="#plat-icon-percent"/></svg>
+          </div>
+          <div class="plat-kpi-body">
+            <span class="plat-kpi-label">Taxa de Reciclagem</span>
+            <strong class="plat-kpi-value" id="kpiTaxa">—</strong>
+          </div>
+        </article>
+      </section>
+
+      <div class="plat-toolbar">
+        <div class="plat-toolbar-text">
+          <h1 class="plat-page-title">Visão geral</h1>
+          <p class="plat-page-sub">Rede EcoColeta · dados consolidados da plataforma</p>
+        </div>
+        <div class="plat-toolbar-actions">
+          <button type="button" class="plat-btn plat-btn--primary" id="btnAdicionarEcoponto">
+            <span aria-hidden="true">+</span> Adicionar EcoPonto
+          </button>
+          <button type="button" class="plat-btn plat-btn--ghost" id="btnGerenciarColetas">Gerenciar Coletas</button>
+        </div>
+      </div>
+
+      <section class="plat-charts-grid" id="plat-charts-section" aria-label="Gráficos">
+        <article class="plat-panel plat-panel--chart">
+          <header class="plat-panel-head">
+            <h2>Materiais Coletados</h2>
+          </header>
+          <div class="plat-chart-wrap">
+            <canvas id="chartMateriais" aria-label="Gráfico de materiais coletados"></canvas>
+          </div>
+        </article>
+
+        <article class="plat-panel plat-panel--chart">
+          <header class="plat-panel-head">
+            <h2>Ranking de Ruas</h2>
+          </header>
+          <div class="plat-donut-layout">
+            <div class="plat-chart-wrap plat-chart-wrap--donut">
+              <canvas id="chartRuas" aria-label="Distribuição por rua"></canvas>
+            </div>
+            <ul class="plat-legend" id="legendRuas" aria-label="Legenda das ruas"></ul>
+          </div>
+        </article>
+      </section>
+
+      <section class="plat-panel plat-panel--table" aria-label="Agendamentos recentes">
+        <header class="plat-panel-head plat-panel-head--table plat-panel-head--actions">
+          <h2>Agendamentos Recentes</h2>
+          <button type="button" class="plat-btn plat-btn--ghost plat-btn--sm" id="btnVerTodosAgendamentos">Ver todos</button>
+        </header>
+        <div class="plat-table-wrap">
+          <table class="plat-table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Usuário</th>
+                <th scope="col">Data</th>
+                <th scope="col">EcoPonto</th>
+                <th scope="col">Status</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="agendamentosBody">
+              <tr><td colspan="6" class="plat-ag-empty">Carregando agendamentos…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="admin/plat-sidebar-nav.js?v=3"></script>
+  <script src="admin/plat-adm-shell.js?v=1"></script>
+  <div class="plat-home-modal hidden" id="homeEcopontoModal" role="dialog" aria-modal="true" aria-labelledby="homeEcopontoModalTitle">
+    <div class="plat-home-modal__backdrop" data-close="homeEcopontoModal"></div>
+    <div class="plat-home-modal__panel">
+      <header class="plat-home-modal__head">
+        <h2 id="homeEcopontoModalTitle">Novo ecoponto</h2>
+        <button type="button" class="plat-home-modal__close" data-close="homeEcopontoModal" aria-label="Fechar">&times;</button>
+      </header>
+      <form id="homeEcopontoForm" class="plat-home-modal__form" novalidate>
+        <input type="hidden" id="homeEcopontoIdPev" value="0">
+        <input type="hidden" id="homeEcopontoCatalogId" value="">
+        <label>
+          <span>Nome</span>
+          <input type="text" id="homeEcopontoName" required maxlength="100">
+        </label>
+        <label>
+          <span>Bairro</span>
+          <input type="text" id="homeEcopontoBairro" maxlength="100">
+        </label>
+        <label>
+          <span>Cidade</span>
+          <input type="text" id="homeEcopontoCity" value="Juazeiro do Norte" maxlength="120">
+        </label>
+        <label>
+          <span>Endereço completo</span>
+          <input type="text" id="homeEcopontoAddress" maxlength="255">
+        </label>
+        <div class="plat-home-modal__row">
+          <label>
+            <span>Latitude</span>
+            <input type="text" id="homeEcopontoLat" inputmode="decimal" placeholder="-7.2127">
+          </label>
+          <label>
+            <span>Longitude</span>
+            <input type="text" id="homeEcopontoLng" inputmode="decimal" placeholder="-39.3155">
+          </label>
+        </div>
+        <div class="plat-home-modal__row">
+          <label>
+            <span>Status</span>
+            <select id="homeEcopontoStatus">
+              <option value="ativo">Ativo</option>
+              <option value="manutencao">Em manutenção</option>
+            </select>
+          </label>
+          <label>
+            <span>Capacidade (%)</span>
+            <input type="number" id="homeEcopontoCapacidade" min="0" max="100" value="70">
+          </label>
+        </div>
+        <label>
+          <span>Responsável</span>
+          <input type="text" id="homeEcopontoResponsavel" maxlength="120">
+        </label>
+        <p class="plat-home-modal__hint">Com latitude e longitude o ponto aparece no mapa da gestão de ecopontos.</p>
+        <p class="plat-home-modal__error hidden" id="homeEcopontoError" role="alert"></p>
+        <footer class="plat-home-modal__foot">
+          <button type="button" class="plat-btn plat-btn--ghost" data-close="homeEcopontoModal">Cancelar</button>
+          <button type="submit" class="plat-btn plat-btn--primary" id="homeEcopontoSave">Salvar</button>
+        </footer>
+      </form>
+    </div>
+  </div>
+
+  <div class="plat-home-modal hidden" id="homeColetasModal" role="dialog" aria-modal="true" aria-labelledby="homeColetasModalTitle">
+    <div class="plat-home-modal__backdrop" data-close="homeColetasModal"></div>
+    <div class="plat-home-modal__panel plat-home-modal__panel--sm">
+      <header class="plat-home-modal__head">
+        <h2 id="homeColetasModalTitle">Gerenciar coletas</h2>
+        <button type="button" class="plat-home-modal__close" data-close="homeColetasModal" aria-label="Fechar">&times;</button>
+      </header>
+      <div class="plat-home-modal__body">
+        <p class="plat-home-modal__lead">Visualize, edite e cadastre agendamentos de coleta em toda a rede EcoColeta.</p>
+        <p class="plat-home-modal__hint">Na lista abaixo você pode editar ou excluir os agendamentos recentes. Para a gestão completa, abra o painel dedicado.</p>
+      </div>
+      <footer class="plat-home-modal__foot plat-home-modal__foot--stack">
+        <a href="admin/agendamento-adm.html" class="plat-btn plat-btn--primary">Abrir gestão de agendamentos</a>
+        <button type="button" class="plat-btn plat-btn--ghost" data-close="homeColetasModal">Fechar</button>
+      </footer>
+    </div>
+  </div>
+
+  <div class="plat-home-modal hidden" id="homeAgModalEdit" role="dialog" aria-modal="true" aria-labelledby="homeAgModalEditTitle">
+    <div class="plat-home-modal__backdrop" data-close="homeAgModalEdit"></div>
+    <div class="plat-home-modal__panel">
+      <header class="plat-home-modal__head">
+        <h2 id="homeAgModalEditTitle">Editar agendamento</h2>
+        <button type="button" class="plat-home-modal__close" data-close="homeAgModalEdit" aria-label="Fechar">&times;</button>
+      </header>
+      <form id="homeAgFormEdit" class="plat-home-modal__form" novalidate>
+        <input type="hidden" id="homeAgEditId" value="">
+        <label>
+          <span>Ecoponto / origem</span>
+          <input type="text" id="homeAgEditOrigem" readonly tabindex="-1">
+        </label>
+        <label>
+          <span>Bairro</span>
+          <input type="text" id="homeAgEditBairro" readonly tabindex="-1">
+        </label>
+        <div class="plat-home-modal__row">
+          <label>
+            <span>Data da coleta</span>
+            <input type="date" id="homeAgEditData" required>
+          </label>
+          <label>
+            <span>Faixa de horário</span>
+            <select id="homeAgEditSlot" required>
+              <option value="0">07:00 às 10:00</option>
+              <option value="1">10:00 às 13:00</option>
+              <option value="2">13:00 às 16:00</option>
+              <option value="3">16:00 às 19:00</option>
+              <option value="4">19:00 às 22:00</option>
+            </select>
+          </label>
+        </div>
+        <div class="plat-home-modal__row">
+          <label>
+            <span>Tipo</span>
+            <select id="homeAgEditTipo" required>
+              <option value="caminhao">Ecoponto / caminhão</option>
+              <option value="prefeitura">Prefeitura</option>
+            </select>
+          </label>
+          <label>
+            <span>Status</span>
+            <select id="homeAgEditStatus" required>
+              <option value="confirmado">Confirmado</option>
+              <option value="andamento">Em andamento</option>
+              <option value="concluida">Concluído</option>
+              <option value="cancelado">Cancelado</option>
+            </select>
+          </label>
+        </div>
+        <label>
+          <span>Responsável</span>
+          <input type="text" id="homeAgEditResponsavel" readonly tabindex="-1" aria-readonly="true">
+        </label>
+        <p class="plat-home-modal__error hidden" id="homeAgEditError" role="alert"></p>
+        <footer class="plat-home-modal__foot">
+          <button type="button" class="plat-btn plat-btn--ghost" data-close="homeAgModalEdit">Cancelar</button>
+          <button type="submit" class="plat-btn plat-btn--primary" id="homeAgEditSave">Salvar</button>
+        </footer>
+      </form>
+    </div>
+  </div>
+
+  <div class="plat-home-modal hidden" id="homeAgModalDelete" role="dialog" aria-modal="true" aria-labelledby="homeAgModalDeleteTitle">
+    <div class="plat-home-modal__backdrop" data-close="homeAgModalDelete"></div>
+    <div class="plat-home-modal__panel plat-home-modal__panel--sm">
+      <header class="plat-home-modal__head">
+        <h2 id="homeAgModalDeleteTitle">Excluir agendamento</h2>
+        <button type="button" class="plat-home-modal__close" data-close="homeAgModalDelete" aria-label="Fechar">&times;</button>
+      </header>
+      <div class="plat-home-modal__body">
+        <p class="plat-home-modal__lead" id="homeAgDeleteMessage">Deseja excluir este agendamento?</p>
+        <p class="plat-home-modal__hint">Esta ação não pode ser desfeita.</p>
+        <p class="plat-home-modal__error hidden" id="homeAgDeleteError" role="alert"></p>
+      </div>
+      <footer class="plat-home-modal__foot">
+        <button type="button" class="plat-btn plat-btn--ghost" data-close="homeAgModalDelete">Cancelar</button>
+        <button type="button" class="plat-btn plat-btn--danger" id="homeAgDeleteConfirm">Excluir</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="admin/home-adm.js?v=9" defer></script>
+</body>
+</html>

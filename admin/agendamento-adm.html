@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <base href="../">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="admin/plat-adm-theme-boot.js?v=2"></script>
+  <title>Gestão de Agendamentos | EcoColeta</title>
+  <style>
+    html.plat-auth-checking body { visibility: hidden;  animation: ecoAuthReveal 0s linear 3s forwards; }
+    @keyframes ecoAuthReveal { to { visibility: visible; } }
+  </style>
+  <script>document.documentElement.classList.add("plat-auth-checking");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin/home-adm.css?v=14">
+  <link rel="stylesheet" href="admin/plat-sidebar-pro.css?v=3">
+  <link rel="stylesheet" href="admin/plat-adm-premium.css?v=2">
+  <link rel="stylesheet" href="admin/agendamento-adm.css?v=3">
+  <link rel="stylesheet" href="assets/css/logo.css?v=11">
+  <script src="assets/js/ecocoleta-paths.js?v=3"></script>
+  <script src="assets/js/ecocoleta-export.js?v=1"></script>
+</head>
+<body class="plat-dashboard plat-agendamento-adm">
+  <script src="admin/adm-sidebar-icons.js"></script>
+  <script src="admin/adm-plataforma-icons.js"></script>
+
+  <div class="plat-app">
+    <header class="plat-header">
+      <a href="pages/tela-inicia.html" class="plat-header-brand">
+        <img class="eco-brand-img" src="assets/images/logo.2.png?v=5" alt="EcoColeta" width="192" height="84" decoding="async">
+      </a>
+      <div class="plat-header-actions">
+        <button type="button" class="plat-profile-btn" id="profileToggle" aria-label="Menu do administrador" aria-expanded="false" aria-haspopup="true">
+          <span class="plat-avatar" aria-hidden="true">
+            <span class="plat-avatar__inner">
+              <span class="plat-avatar__initial" id="profileInitial">A</span>
+            </span>
+          </span>
+        </button>
+        <div class="plat-profile-menu hidden" id="profileMenu" role="menu">
+          <p class="plat-profile-name" id="profileName">Administrador</p>
+          <p class="plat-profile-email" id="profileEmail">—</p>
+          <p class="plat-profile-role" id="profileRole">Plataforma EcoColeta</p>
+          <button type="button" id="logoutAdmin" role="menuitem">Sair da conta</button>
+        </div>
+      </div>
+    </header>
+
+    <aside id="platSidebar"></aside>
+
+    <main class="plat-main">
+      <section class="plat-kpi-grid plat-ag-kpi-grid" aria-label="Resumo dos agendamentos">
+        <article class="plat-kpi-card">
+          <div class="plat-kpi-icon plat-ag-kpi-icon--total" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          </div>
+          <div class="plat-kpi-body">
+            <span class="plat-kpi-label">Total de agendamentos</span>
+            <strong class="plat-kpi-value" id="kpiTotal">—</strong>
+          </div>
+        </article>
+        <article class="plat-kpi-card">
+          <div class="plat-kpi-icon plat-ag-kpi-icon--progress" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+          </div>
+          <div class="plat-kpi-body">
+            <span class="plat-kpi-label">Em andamento</span>
+            <strong class="plat-kpi-value" id="kpiEmAndamento">—</strong>
+          </div>
+        </article>
+        <article class="plat-kpi-card">
+          <div class="plat-kpi-icon plat-ag-kpi-icon--done" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 2 2 4-4"/></svg>
+          </div>
+          <div class="plat-kpi-body">
+            <span class="plat-kpi-label">Concluídos</span>
+            <strong class="plat-kpi-value" id="kpiConcluidos">—</strong>
+          </div>
+        </article>
+        <article class="plat-kpi-card">
+          <div class="plat-kpi-icon plat-ag-kpi-icon--cancel" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+          </div>
+          <div class="plat-kpi-body">
+            <span class="plat-kpi-label">Cancelados</span>
+            <strong class="plat-kpi-value" id="kpiCancelados">—</strong>
+          </div>
+        </article>
+      </section>
+
+      <div class="plat-toolbar">
+        <div class="plat-toolbar-text">
+          <h1 class="plat-page-title">Gestão de Agendamentos</h1>
+          <p class="plat-page-sub">Gerencie os agendamentos de coleta da plataforma</p>
+        </div>
+        <div class="plat-toolbar-actions">
+          <button type="button" class="plat-btn plat-btn--ghost" id="btnExportar">Exportar lista</button>
+          <button type="button" class="plat-btn plat-btn--primary" id="btnNovoAgendamento">+ Novo agendamento</button>
+        </div>
+      </div>
+
+      <section class="plat-panel plat-ag-panel" aria-label="Lista de agendamentos">
+        <header class="plat-panel-head plat-panel-head--table plat-ag-panel-head">
+          <h2>Solicitações de coleta</h2>
+        </header>
+
+        <div class="plat-ag-filters" role="search">
+          <label class="plat-ag-search">
+            <span class="visually-hidden">Buscar por nome ou bairro</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="search" id="agSearch" placeholder="Buscar por ecoponto, prefeitura ou bairro…" autocomplete="off">
+          </label>
+          <label class="plat-ag-select-wrap">
+            <span class="plat-ag-select-label">Status</span>
+            <select id="agFilterStatus" aria-label="Filtrar por status">
+              <option value="">Todos os status</option>
+              <option value="andamento">Em andamento</option>
+              <option value="concluida">Concluído</option>
+              <option value="cancelado">Cancelado</option>
+            </select>
+          </label>
+          <label class="plat-ag-select-wrap">
+            <span class="plat-ag-select-label">Bairro</span>
+            <select id="agFilterBairro" aria-label="Filtrar por bairro">
+              <option value="">Todos os bairros</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="plat-ag-table-wrap">
+          <table class="plat-ag-table">
+            <thead>
+              <tr>
+                <th scope="col">Ecoponto / Origem</th>
+                <th scope="col">Bairro</th>
+                <th scope="col">Horário de solicitação</th>
+                <th scope="col">Responsável</th>
+                <th scope="col">Status</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="agendamentosBody">
+              <tr><td colspan="6" class="plat-ag-empty">Carregando agendamentos…</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <footer class="plat-ag-footer">
+          <p id="agPaginationInfo">Mostrando — de —</p>
+          <nav class="plat-ag-pagination" id="agPagination" aria-label="Paginação da tabela"></nav>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <div class="plat-ag-modal hidden" id="agModalEdit" role="dialog" aria-modal="true" aria-labelledby="agModalEditTitle">
+    <div class="plat-ag-modal__backdrop" id="agModalEditBackdrop"></div>
+    <div class="plat-ag-modal__panel">
+      <header class="plat-ag-modal__head">
+        <h2 id="agModalEditTitle">Editar agendamento</h2>
+        <button type="button" class="plat-ag-modal__close" id="agModalEditClose" aria-label="Fechar">&times;</button>
+      </header>
+      <form id="agFormEdit" class="plat-ag-modal__form" novalidate>
+        <input type="hidden" id="agEditId" name="id_agendamento" value="">
+        <label>
+          <span>Ecoponto / origem</span>
+          <input type="text" id="agEditOrigem" readonly tabindex="-1">
+        </label>
+        <label>
+          <span>Bairro</span>
+          <input type="text" id="agEditBairro" readonly tabindex="-1">
+        </label>
+        <div class="plat-ag-modal__row">
+          <label>
+            <span>Data da coleta</span>
+            <input type="date" id="agEditData" name="data_coleta" required>
+          </label>
+          <label>
+            <span>Faixa de horário</span>
+            <select id="agEditSlot" name="slot_ordem" required>
+              <option value="0">07:00 às 10:00</option>
+              <option value="1">10:00 às 13:00</option>
+              <option value="2">13:00 às 16:00</option>
+              <option value="3">16:00 às 19:00</option>
+              <option value="4">19:00 às 22:00</option>
+            </select>
+          </label>
+        </div>
+        <div class="plat-ag-modal__row">
+          <label>
+            <span>Tipo</span>
+            <select id="agEditTipo" name="tipo" required>
+              <option value="caminhao">Ecoponto / caminhão</option>
+              <option value="prefeitura">Prefeitura</option>
+            </select>
+          </label>
+          <label>
+            <span>Status</span>
+            <select id="agEditStatus" name="status" required>
+              <option value="confirmado">Confirmado</option>
+              <option value="andamento">Em andamento</option>
+              <option value="concluida">Concluído</option>
+              <option value="cancelado">Cancelado</option>
+            </select>
+          </label>
+        </div>
+        <label>
+          <span>Responsável</span>
+          <input type="text" id="agEditResponsavel" name="responsavel" readonly tabindex="-1" aria-readonly="true">
+        </label>
+        <p class="plat-ag-modal__hint" id="agEditHint">Alterações são salvas no banco de dados da plataforma.</p>
+        <p class="plat-ag-modal__error hidden" id="agEditError" role="alert"></p>
+        <footer class="plat-ag-modal__foot">
+          <button type="button" class="plat-btn plat-btn--ghost" id="agModalEditCancel">Cancelar</button>
+          <button type="submit" class="plat-btn plat-btn--primary" id="agModalEditSave">Salvar</button>
+        </footer>
+      </form>
+    </div>
+  </div>
+
+  <div class="plat-ag-modal hidden" id="agModalDelete" role="dialog" aria-modal="true" aria-labelledby="agModalDeleteTitle">
+    <div class="plat-ag-modal__backdrop" id="agModalDeleteBackdrop"></div>
+    <div class="plat-ag-modal__panel plat-ag-modal__panel--sm">
+      <header class="plat-ag-modal__head">
+        <h2 id="agModalDeleteTitle">Excluir agendamento</h2>
+        <button type="button" class="plat-ag-modal__close" id="agModalDeleteClose" aria-label="Fechar">&times;</button>
+      </header>
+      <div class="plat-ag-modal__body">
+        <p class="plat-ag-modal__lead" id="agDeleteMessage">Deseja excluir este agendamento?</p>
+        <p class="plat-ag-modal__hint">Esta ação não pode ser desfeita.</p>
+        <p class="plat-ag-modal__error hidden" id="agDeleteError" role="alert"></p>
+      </div>
+      <footer class="plat-ag-modal__foot">
+        <button type="button" class="plat-btn plat-btn--ghost" id="agModalDeleteCancel">Cancelar</button>
+        <button type="button" class="plat-btn plat-btn--danger" id="agModalDeleteConfirm">Excluir</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="admin/plat-sidebar-nav.js?v=3"></script>
+  <script src="admin/plat-adm-shell.js?v=1"></script>
+  <script src="admin/agendamento-adm.js?v=8" defer></script>
+</body>
+</html>

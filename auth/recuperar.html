@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="auth-view">
+<head>
+  <base href="../" data-app-base>
+  <script>(function(){var p=location.pathname.replace(/\\/g,"/"),b=document.querySelector("base[data-app-base]"),m=p.match(/^(.*\/)(?:auth|admin|pages|mapa)\/[^/]+$/);if(b)b.href=m?m[1]:p.replace(/\/[^/]*$/,"/")||"/";})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar Senha - EcoColeta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/auth-background.css?v=3">
+  <link rel="stylesheet" href="assets/css/logo.css?v=19">
+  <link rel="stylesheet" href="assets/css/auth-screens.css?v=4">
+  <script src="assets/js/ecocoleta-paths.js?v=6"></script>
+  <link rel="stylesheet" href="assets/css/notif-popup.css">
+  <style>
+    .auth .container {
+      background: rgba(255, 255, 255, 0.98);
+      padding: 40px 32px;
+      border-radius: 24px;
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      margin: 0 auto;
+      display: block;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    .auth .container h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1E3A8A;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .auth .container .subtitle,
+    .auth .container .descricao {
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 32px;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+    }
+
+    .auth input {
+      width: 100%;
+      padding: 14px 16px;
+      margin: 0;
+      border-radius: 12px;
+      border: 1.5px solid #e2e8f0;
+      outline: none;
+      font-size: 15px;
+      font-family: 'Sora', sans-serif;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .auth input::placeholder {
+      color: #94a3b8;
+      font-weight: 400;
+    }
+
+    .auth input:focus {
+      border-color: #2E7D32;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+    }
+
+    .auth input:hover:not(:focus) {
+      border-color: #cbd5e1;
+    }
+
+    .auth input.input-error {
+      border-color: #ef4444;
+      background: rgba(239, 68, 68, 0.02);
+    }
+
+    .auth input.input-error:focus {
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+
+    .field-error {
+      color: #ef4444;
+      font-size: 12px;
+      margin-top: 6px;
+      text-align: left;
+      display: block;
+      min-height: 18px;
+      font-weight: 500;
+    }
+
+    button:not(.password-toggle) {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      margin-top: 12px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 15px;
+      letter-spacing: 0.3px;
+    }
+
+    button:not(.password-toggle):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(46, 125, 50, 0.2);
+    }
+
+    button:not(.password-toggle):active {
+      transform: translateY(0);
+    }
+
+    .btn-verde {
+      background: linear-gradient(135deg, #8FFFC7 0%, #7fd9b5 100%);
+      color: #0f2c21;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(143, 255, 199, 0.3);
+    }
+
+    .btn-verde:hover {
+      box-shadow: 0 8px 25px rgba(143, 255, 199, 0.4);
+    }
+
+    .btn-borda {
+      background: linear-gradient(135deg, #8FFFC7 0%, #7fd9b5 100%);
+      border: none;
+      color: #0f2c21;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.9);
+      color: #1E3A8A;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-borda:hover {
+      background: rgba(255, 255, 255, 1);
+      border-color: #2E7D32;
+      color: #2E7D32;
+      box-shadow: 0 4px 15px rgba(46, 125, 50, 0.1);
+    }
+
+    @media (max-width: 480px) {
+      .auth .container {
+        padding: 32px 24px;
+        max-width: 100%;
+      }
+
+      .auth .container h2 {
+        font-size: 24px;
+      }
+
+      button:not(.password-toggle) {
+        padding: 13px 16px;
+        font-size: 14px;
+      }
+
+      .auth input {
+        padding: 13px 16px;
+        font-size: 14px;
+      }
+    }
+
+    html.auth-view,
+    html:has(body.auth) {
+      height: auto;
+      max-height: none;
+      overflow: auto;
+    }
+
+    body.auth.recuperar > .container {
+      max-height: none;
+      overflow: visible;
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      padding: 32px 32px 28px;
+    }
+
+    body.auth.recuperar .container h2 {
+      font-size: 26px;
+      margin-bottom: 6px;
+    }
+
+    body.auth.recuperar .container .subtitle,
+    body.auth.recuperar .container .descricao {
+      margin-bottom: 22px;
+    }
+
+    body.auth.recuperar .field-error {
+      text-align: center;
+    }
+
+    body.auth.recuperar .field-error:empty {
+      min-height: 0;
+      margin-top: 0;
+    }
+
+    body.auth.recuperar .container > button:not(.password-toggle) {
+      margin-top: 16px;
+    }
+
+    @media (max-width: 480px) {
+      body.auth.recuperar > .container {
+        padding: 26px 22px 24px;
+      }
+
+    }
+  </style>
+</head>
+
+<body class="auth recuperar">
+
+  <div class="eco-login-bg" aria-hidden="true">
+    <span class="eco-bin eco-bin--1"></span>
+    <span class="eco-bin eco-bin--2"></span>
+    <span class="eco-bin eco-bin--3"></span>
+    <span class="eco-bin eco-bin--4"></span>
+    <span class="eco-bin eco-bin--5"></span>
+    <span class="eco-bin eco-bin--6"></span>
+    <span class="eco-bin eco-bin--7"></span>
+    <span class="eco-bin eco-bin--8"></span>
+  </div>
+
+  <a href="pages/tela-inicia.html" class="auth-brand" aria-label="EcoColeta — início">
+    <img class="auth-logo-img" src="assets/images/logo.2.png?v=5" alt="EcoColeta" width="196" height="82" decoding="async">
+  </a>
+
+  <div class="container">
+    <h2>Redefinir Senha</h2>
+
+    <p class="descricao">
+      Digite seu e-mail para receber o código de redefinição
+    </p>
+
+    <input id="resetEmail" type="email" placeholder="Digite seu e-mail">
+    <span class="field-error" id="resetEmailError"></span>
+
+    <button class="btn-verde" type="button" onclick="sendResetCode()">Continuar</button>
+  </div>
+
+  <script>
+    function obterUrlServidor(arquivoPhp) {
+      return window.ecocoletaPhpUrl ? window.ecocoletaPhpUrl(arquivoPhp) : null;
+    }
+
+    function parseJsonServidor(text) {
+      const raw = String(text || '').replace(/^\uFEFF/, '').trim();
+      if (!raw) return {};
+      try {
+        return JSON.parse(raw);
+      } catch (e1) {
+        const marcas = ['{"sucesso"', '{"erro"', '{"detalhe"', '{"codigo_para_teste"', '{"mensagem"'];
+        let idx = -1;
+        for (const m of marcas) {
+          const i = raw.indexOf(m);
+          if (i >= 0 && (idx < 0 || i < idx)) idx = i;
+        }
+        if (idx < 0) throw e1;
+        let depth = 0;
+        for (let i = idx; i < raw.length; i++) {
+          const c = raw[i];
+          if (c === '{') depth++;
+          else if (c === '}') {
+            depth--;
+            if (depth === 0) return JSON.parse(raw.slice(idx, i + 1));
+          }
+        }
+        throw e1;
+      }
+    }
+
+    async function postFormJson(arquivoPhp, campos) {
+      const url = obterUrlServidor(arquivoPhp);
+      if (!url) throw new Error('FILE_PROTOCOL');
+      const body = new URLSearchParams(campos);
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body: body.toString(),
+        credentials: 'same-origin',
+        cache: 'no-store',
+      });
+      const text = await res.text();
+      let data;
+      try {
+        data = parseJsonServidor(text);
+      } catch (e) {
+        const limpo = text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 400);
+        throw new Error('BAD_RESPONSE:' + (limpo || ('HTTP ' + res.status)));
+      }
+      return { res, data };
+    }
+
+    function showError(inputId, errorId, message) {
+      const input = document.getElementById(inputId);
+      const error = document.getElementById(errorId);
+      if (input) input.classList.add('input-error');
+      if (error) error.textContent = message;
+    }
+
+    function clearError(id) {
+      const input = document.getElementById(id);
+      if (input) input.classList.remove('input-error');
+    }
+
+    async function sendResetCode() {
+      clearError('resetEmail');
+      const email = document.getElementById('resetEmail').value.trim();
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!email) {
+        showError('resetEmail', 'resetEmailError', 'Digite seu e-mail.');
+        return;
+      }
+
+      if (!emailPattern.test(email)) {
+        showError('resetEmail', 'resetEmailError', 'Digite um e-mail válido.');
+        return;
+      }
+
+      sessionStorage.setItem('resetEmail', email);
+      sessionStorage.setItem('resetVerified', 'false');
+      sessionStorage.removeItem('resetToken');
+
+      try {
+        const { res, data } = await postFormJson('recuperar.php', { email: email });
+        if (data.sucesso === true) {
+          if (data.codigo_para_teste) {
+            alert(
+              'Modo teste (sem envio de e-mail no servidor):\n\n' +
+              'Seu código de 6 dígitos é: ' + data.codigo_para_teste +
+              '\n\nUse esse código na próxima tela. Em produção, desative modo_local_sem_email em smtp_config.php.'
+            );
+          }
+          window.location.href = 'verificacao.html';
+          return;
+        }
+        showError('resetEmail', 'resetEmailError', data.erro || ('Erro ao enviar (' + res.status + ').'));
+      } catch (e) {
+        if (e.message === 'FILE_PROTOCOL') {
+          showError('resetEmail', 'resetEmailError', 'Use http://localhost/Ecocoleta/auth/recuperar.html (não abra o arquivo pelo Explorer).');
+          return;
+        }
+        if (String(e.message).startsWith('BAD_RESPONSE:')) {
+          showError('resetEmail', 'resetEmailError', 'Servidor não devolveu JSON. ' + e.message.replace('BAD_RESPONSE:', ''));
+          return;
+        }
+        showError('resetEmail', 'resetEmailError', 'Sem conexão. Ligue o Apache no XAMPP.');
+      }
+    }
+  </script>
+</body>
+</html>

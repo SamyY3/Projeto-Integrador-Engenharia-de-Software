@@ -1,0 +1,1056 @@
+:root {
+  --apo-brand: #0f2c21;
+  --apo-soft: #8fffc7;
+  --apo-surface: #f4fbf7;
+  --apo-muted: #4f6360;
+  --apo-border: rgba(15, 44, 33, 0.08);
+  --apo-shadow: 0 22px 70px rgba(15, 44, 33, 0.1);
+  --apo-glow: 0 0 0 1px rgba(143, 255, 199, 0.35);
+}
+
+body.app.apoiador-page {
+  background: linear-gradient(180deg, #f8fcf9 0%, #e8f5ed 48%, #f4fbf7 100%);
+}
+
+.apo-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(48px, 8vw, 88px) 0 clamp(56px, 9vw, 96px);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(143, 255, 199, 0.28) 0%, transparent 42%),
+    radial-gradient(circle at 88% 72%, rgba(143, 255, 199, 0.14) 0%, transparent 36%),
+    linear-gradient(145deg, #071f18 0%, #0f2c21 42%, #164a36 100%);
+  color: #fff;
+}
+
+.apo-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 85%);
+  pointer-events: none;
+}
+
+.apo-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.apo-hero__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(32px, 5vw, 56px);
+  align-items: center;
+}
+
+.apo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(143, 255, 199, 0.25);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--apo-soft);
+  margin-bottom: 22px;
+}
+
+.apo-hero h1 {
+  margin: 0 0 18px;
+  font-family: "Space Grotesk", "Sora", sans-serif;
+  font-size: clamp(2.2rem, 4.8vw, 3.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.apo-hero__lead {
+  margin: 0 0 28px;
+  max-width: 560px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.apo-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.apo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 50px;
+  padding: 0 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.apo-btn--primary {
+  background: linear-gradient(135deg, var(--apo-soft) 0%, #7fd9b5 100%);
+  color: var(--apo-brand);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+}
+
+.apo-btn--ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.apo-btn:hover {
+  transform: translateY(-2px);
+}
+
+.apo-hero__panel {
+  padding: 28px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(143, 255, 199, 0.18);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--apo-shadow);
+}
+
+.apo-hero__panel h2 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  color: var(--apo-soft);
+}
+
+.apo-hero__panel p {
+  margin: 0 0 22px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.apo-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.apo-stat {
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(7, 31, 24, 0.45);
+  border: 1px solid rgba(143, 255, 199, 0.12);
+}
+
+.apo-stat strong {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.55rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.apo-stat span {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.apo-section {
+  padding: clamp(48px, 7vw, 80px) 0;
+}
+
+.apo-section--light {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.apo-section__head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+
+.apo-section__head h2 {
+  margin: 0 0 12px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--apo-brand);
+}
+
+.apo-section__head p {
+  margin: 0;
+  color: var(--apo-muted);
+  line-height: 1.7;
+}
+
+.apoiadores-section--page {
+  padding: 0;
+  margin-bottom: 12px;
+  background: transparent;
+}
+
+.apo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.apo-partner-card {
+  padding: 26px;
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid var(--apo-border);
+  box-shadow: 0 14px 40px rgba(15, 44, 33, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.apo-partner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--apo-shadow);
+}
+
+.apo-partner-card__top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.apo-partner-card__logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: #fff;
+  background: var(--partner-accent, var(--apo-brand));
+}
+
+.apo-partner-card h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--apo-brand);
+}
+
+.apo-partner-card__meta {
+  margin: 2px 0 0;
+  font-size: 0.86rem;
+  color: var(--apo-muted);
+}
+
+.apo-tier-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.apo-tier-pill--bronze {
+  background: #f6e8d8;
+  color: #8a5a24;
+}
+
+.apo-tier-pill--prata {
+  background: #e8edf2;
+  color: #4a5d73;
+}
+
+.apo-tier-pill--ouro {
+  background: #fff4d6;
+  color: #8a6b12;
+}
+
+.apo-partner-card p {
+  margin: 0;
+  color: var(--apo-muted);
+  line-height: 1.65;
+  font-size: 0.94rem;
+}
+
+.apo-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.apo-benefit {
+  padding: 24px;
+  border-radius: 22px;
+  background: #fff;
+  border: 1px solid var(--apo-border);
+}
+
+.apo-benefit__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+  background: linear-gradient(180deg, rgba(143, 255, 199, 0.35), rgba(143, 255, 199, 0.12));
+  color: var(--apo-brand);
+}
+
+.apo-benefit h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  color: var(--apo-brand);
+}
+
+.apo-benefit p {
+  margin: 0;
+  color: var(--apo-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.apo-plans {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.apo-plan {
+  position: relative;
+  padding: 28px 24px;
+  border-radius: 26px;
+  background: #fff;
+  border: 1px solid var(--apo-border);
+  box-shadow: 0 12px 36px rgba(15, 44, 33, 0.06);
+}
+
+.apo-plan--featured {
+  border-color: rgba(143, 255, 199, 0.65);
+  box-shadow: var(--apo-glow), var(--apo-shadow);
+  transform: translateY(-6px);
+}
+
+.apo-plan__tag {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--apo-brand);
+  color: var(--apo-soft);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.apo-plan h3 {
+  margin: 0 0 6px;
+  font-size: 1.35rem;
+  color: var(--apo-brand);
+}
+
+.apo-plan__price {
+  margin: 0 0 18px;
+  color: var(--apo-muted);
+  font-weight: 600;
+}
+
+.apo-plan ul {
+  margin: 0 0 22px;
+  padding: 0;
+  list-style: none;
+}
+
+.apo-plan li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  color: var(--apo-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.apo-plan li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #1a7a4c;
+  font-weight: 800;
+}
+
+.apo-section__head--form {
+  margin-bottom: 28px;
+}
+
+.apo-form-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.85fr) minmax(0, 1.35fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.apo-form-card--wide {
+  padding: clamp(24px, 4vw, 36px);
+}
+
+.apo-form-aside__box {
+  margin-top: 22px;
+  padding: 18px;
+  border-radius: 18px;
+  background: var(--apo-surface);
+  border: 1px solid var(--apo-border);
+}
+
+.apo-form-aside__box strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--apo-brand);
+}
+
+.apo-form-aside__box p {
+  margin: 0 0 4px;
+  font-size: 0.92rem;
+}
+
+.apo-form-section {
+  margin: 0 0 28px;
+  padding: 0 0 24px;
+  border: none;
+  border-bottom: 1px solid var(--apo-border);
+}
+
+.apo-form-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 8px;
+}
+
+.apo-form-section.is-hidden {
+  display: none;
+}
+
+.apo-form-section__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin: 0 0 18px;
+  padding: 0;
+  border: none;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.15rem;
+  color: var(--apo-brand);
+}
+
+.apo-form-section__num {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(143, 255, 199, 0.45), rgba(143, 255, 199, 0.15));
+  color: var(--apo-brand);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.apo-form-section__lead,
+.apo-form-section__note {
+  margin: -6px 0 16px;
+  color: var(--apo-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.apo-req {
+  color: #c0392b;
+  font-weight: 800;
+}
+
+.apo-field--highlight input {
+  border-color: rgba(26, 122, 76, 0.35);
+  background: #f3fcf7;
+}
+
+.apo-field__hint {
+  color: var(--apo-muted);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.apo-field__label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--apo-brand);
+}
+
+.apo-check-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.apo-materiais-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 8px 0 12px;
+  flex-wrap: wrap;
+}
+
+.apo-materiais-hint {
+  margin: 0;
+  flex: 1;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--apo-muted);
+}
+
+.apo-materiais-count {
+  flex-shrink: 0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0f6b38, #2a9a4a);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 8px 20px rgba(15, 107, 56, 0.22);
+}
+
+.apo-modal .balanca-materials-grid,
+.apo-modal .apo-materiais-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.apo-modal .balanca-material-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 118px;
+  padding: 16px 12px 14px;
+  border: 1.5px solid rgba(15, 44, 33, 0.08);
+  border-radius: 20px;
+  background: linear-gradient(165deg, #ffffff 0%, #f8fffb 100%);
+  color: #264538;
+  font-family: "Sora", sans-serif;
+  cursor: pointer;
+  box-shadow:
+    0 4px 18px rgba(15, 44, 33, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s ease,
+    border-color 0.28s ease,
+    background 0.28s ease;
+  overflow: hidden;
+}
+
+.apo-modal .balanca-material-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.5), transparent 48%);
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.apo-modal .balanca-material-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(79, 188, 89, 0.35);
+  box-shadow:
+    0 14px 32px rgba(15, 44, 33, 0.1),
+    0 0 0 1px rgba(143, 255, 199, 0.35);
+}
+
+.apo-modal .balanca-material-card:focus-visible {
+  outline: 3px solid rgba(79, 188, 89, 0.45);
+  outline-offset: 2px;
+}
+
+.apo-modal .balanca-material-card__check {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #2ecc71, #0f6b38);
+  box-shadow: 0 4px 12px rgba(15, 107, 56, 0.35);
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 2;
+}
+
+.apo-modal .balanca-material-card__icon {
+  position: relative;
+  z-index: 1;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-size: 1.55rem;
+  line-height: 1;
+  background: var(--mat-bg, linear-gradient(135deg, #eefcf4, #d7ffea));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 8px 18px rgba(15, 44, 33, 0.08);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.apo-modal .balanca-material-card__label {
+  position: relative;
+  z-index: 1;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #173d2d;
+}
+
+.apo-modal .balanca-material-card.is-active {
+  border-color: rgba(15, 107, 56, 0.45);
+  background: linear-gradient(155deg, #e8fff2 0%, #c8f9dc 42%, #a8f0c8 100%);
+  box-shadow:
+    0 16px 36px rgba(79, 188, 89, 0.22),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55),
+    inset 0 -2px 0 rgba(15, 107, 56, 0.08);
+  transform: translateY(-2px);
+}
+
+.apo-modal .balanca-material-card.is-active .balanca-material-card__check {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.apo-modal .balanca-material-card.is-active .balanca-material-card__icon {
+  transform: scale(1.06);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 10px 22px rgba(15, 107, 56, 0.18);
+}
+
+.apo-modal .balanca-material-card:not(.is-active) {
+  opacity: 0.88;
+}
+
+.apo-modal .balanca-material-card--plastico { --mat-bg: linear-gradient(135deg, #fff0f6, #ffd6e8); }
+.apo-modal .balanca-material-card--papel { --mat-bg: linear-gradient(135deg, #fff8e8, #ffe4b8); }
+.apo-modal .balanca-material-card--vidro { --mat-bg: linear-gradient(135deg, #e8fff4, #b8f0d0); }
+.apo-modal .balanca-material-card--metal { --mat-bg: linear-gradient(135deg, #e8f0ff, #c8d8f8); }
+.apo-modal .balanca-material-card--organico { --mat-bg: linear-gradient(135deg, #edfff0, #c8f5d0); }
+.apo-modal .balanca-material-card--eletronico { --mat-bg: linear-gradient(135deg, #f0ecff, #d8cff8); }
+.apo-modal .balanca-material-card--misto { --mat-bg: linear-gradient(135deg, #e8fff8, #b8f5dc); }
+.apo-modal .balanca-material-card--madeira { --mat-bg: linear-gradient(135deg, #fff4e8, #f0d8b8); }
+
+.apo-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 44, 33, 0.1);
+  background: #fbfdfc;
+  font-size: 0.9rem;
+  color: var(--apo-brand);
+  cursor: pointer;
+}
+
+.apo-check input {
+  width: 16px;
+  height: 16px;
+  accent-color: #1a7a4c;
+}
+
+.apo-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 4px;
+  font-size: 0.88rem;
+  color: var(--apo-muted);
+  line-height: 1.55;
+  cursor: pointer;
+}
+
+.apo-consent input {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  accent-color: #1a7a4c;
+  flex-shrink: 0;
+}
+
+.apo-btn--submit {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.apo-field input.is-invalid,
+.apo-field select.is-invalid,
+.apo-field textarea.is-invalid,
+.apo-consent.is-invalid {
+  border-color: rgba(192, 57, 43, 0.55);
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+}
+
+.apo-form-wrap {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.apo-form-card,
+.apo-form-aside {
+  padding: 30px;
+  border-radius: 28px;
+  background: #fff;
+  border: 1px solid var(--apo-border);
+  box-shadow: var(--apo-shadow);
+}
+
+.apo-form-aside h3 {
+  margin: 0 0 12px;
+  color: var(--apo-brand);
+  font-size: 1.35rem;
+}
+
+.apo-form-aside p,
+.apo-form-aside li {
+  color: var(--apo-muted);
+  line-height: 1.65;
+}
+
+.apo-form-aside ul {
+  margin: 18px 0 0;
+  padding-left: 18px;
+}
+
+.apo-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.apo-field label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--apo-brand);
+}
+
+.apo-field input,
+.apo-field select,
+.apo-field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 44, 33, 0.12);
+  background: #fbfdfc;
+  font: inherit;
+  color: var(--apo-brand);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.apo-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.apo-field input:focus,
+.apo-field select:focus,
+.apo-field textarea:focus {
+  outline: none;
+  border-color: rgba(143, 255, 199, 0.9);
+  box-shadow: 0 0 0 4px rgba(143, 255, 199, 0.22);
+}
+
+.apo-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.apo-form-msg {
+  display: none;
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.apo-form-msg.is-success {
+  display: block;
+  background: #e8f9ef;
+  color: #145c38;
+  border: 1px solid rgba(20, 92, 56, 0.15);
+}
+
+.apo-form-msg.is-error {
+  display: block;
+  background: #fff1f1;
+  color: #8b2e2e;
+  border: 1px solid rgba(139, 46, 46, 0.12);
+}
+
+.apo-faq {
+  max-width: 820px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+
+.apo-faq details {
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid var(--apo-border);
+}
+
+.apo-faq summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--apo-brand);
+  list-style: none;
+}
+
+.apo-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.apo-faq p {
+  margin: 12px 0 0;
+  color: var(--apo-muted);
+  line-height: 1.65;
+}
+
+.hidden {
+  display: none !important;
+}
+
+body.apo-modal-open {
+  overflow: hidden !important;
+}
+
+.apo-modal-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 30050 !important;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 3vw, 28px);
+  box-sizing: border-box;
+}
+
+.apo-modal-overlay.is-open {
+  display: flex !important;
+}
+
+.apo-modal-overlay.hidden {
+  display: none !important;
+}
+
+.apo-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 31, 24, 0.72);
+  backdrop-filter: blur(6px);
+}
+
+.apo-modal {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, 100%);
+  max-height: min(92vh, 980px);
+  display: flex;
+  flex-direction: column;
+  border-radius: 28px;
+  background: #fff;
+  border: 1px solid var(--apo-border);
+  box-shadow: 0 28px 90px rgba(7, 31, 24, 0.35);
+  overflow: hidden;
+  animation: apoModalIn 0.28s ease;
+}
+
+@keyframes apoModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.apo-modal__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: clamp(20px, 3vw, 28px) clamp(20px, 3vw, 32px) 16px;
+  border-bottom: 1px solid var(--apo-border);
+  background: linear-gradient(180deg, #f8fcf9 0%, #fff 100%);
+}
+
+.apo-modal__badge {
+  display: inline-flex;
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(143, 255, 199, 0.22);
+  color: var(--apo-brand);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.apo-modal__head h2 {
+  margin: 0 0 6px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+  color: var(--apo-brand);
+}
+
+.apo-modal__head p {
+  margin: 0;
+  color: var(--apo-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  max-width: 640px;
+}
+
+.apo-modal__close {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(15, 44, 33, 0.06);
+  color: var(--apo-brand);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.apo-modal__close:hover {
+  background: rgba(15, 44, 33, 0.12);
+}
+
+.apo-modal__body {
+  overflow: auto;
+  padding: clamp(18px, 3vw, 28px);
+}
+
+.apo-modal__body .apo-form-layout {
+  align-items: stretch;
+}
+
+.apo-modal__body .apo-form-card,
+.apo-modal__body .apo-form-aside {
+  box-shadow: none;
+}
+
+.apo-cta-band__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: clamp(28px, 4vw, 40px);
+  border-radius: 28px;
+  background: linear-gradient(135deg, #0f2c21 0%, #164a36 100%);
+  color: #fff;
+}
+
+.apo-cta-band__inner h2 {
+  margin: 0 0 8px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+}
+
+.apo-cta-band__inner p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
+}
+
+@media (max-width: 960px) {
+  .apo-hero__grid,
+  .apo-form-wrap,
+  .apo-form-layout,
+  .apo-plans {
+    grid-template-columns: 1fr;
+  }
+
+  .apo-plan--featured {
+    transform: none;
+  }
+
+  .apo-cta-band__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .apo-modal {
+    max-height: 96vh;
+    border-radius: 22px;
+  }
+}
+
+@media (max-width: 900px) {
+  .apo-modal .balanca-materials-grid,
+  .apo-modal .apo-materiais-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .apo-form-row,
+  .apo-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .apo-modal .balanca-materials-grid,
+  .apo-modal .apo-materiais-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .apo-materiais-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

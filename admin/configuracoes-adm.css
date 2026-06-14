@@ -1,0 +1,1964 @@
+
+
+.plat-config-main {
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.plat-config-main:has(.plat-config-savebar:not([hidden])) {
+  padding-bottom: 96px;
+}
+
+.plat-config-page-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.plat-config-kicker {
+  margin: 0 0 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--plat-emerald);
+}
+
+.plat-config-page-head h1 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.6rem, 2.8vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  color: var(--plat-deep);
+}
+
+.plat-config-lead {
+  margin: 10px 0 0;
+  max-width: 54ch;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--plat-muted);
+}
+
+.plat-config-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--plat-forest);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--plat-border);
+  box-shadow: var(--plat-shadow);
+}
+
+.plat-config-status__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--plat-emerald);
+  box-shadow: 0 0 0 3px rgba(18, 160, 106, 0.2);
+}
+
+.plat-config-status.is-pending {
+  color: #9a6700;
+  background: #fffbeb;
+  border-color: rgba(202, 138, 4, 0.25);
+}
+
+.plat-config-status.is-pending .plat-config-status__dot {
+  background: #eab308;
+  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.25);
+  animation: plat-config-pulse 1.4s ease infinite;
+}
+
+.plat-config-status.is-saving .plat-config-status__dot {
+  animation: plat-config-pulse 0.8s ease infinite;
+}
+
+@keyframes plat-config-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.85);
+  }
+}
+
+.plat-config-alert {
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #fef2f2;
+  border: 1px solid rgba(185, 28, 28, 0.15);
+  color: #b91c1c;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.plat-config-alert.hidden {
+  display: none;
+}
+
+.plat-config-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 280px;
+  color: var(--plat-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.plat-config-loading.hidden {
+  display: none;
+}
+
+.plat-config-loading__spinner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid rgba(18, 160, 106, 0.15);
+  border-top-color: var(--plat-emerald);
+  animation: plat-config-spin 0.75s linear infinite;
+}
+
+@keyframes plat-config-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.plat-config-workspace {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.plat-config-workspace[hidden] {
+  display: none;
+}
+
+.plat-config-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.plat-config-section-label {
+  margin: 0 0 2px;
+  padding: 0 4px;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--plat-muted);
+}
+
+.plat-config-section-label:first-child {
+  margin-top: 0;
+}
+
+.plat-config-card {
+  background: var(--plat-card-solid);
+  border: 1px solid var(--plat-border);
+  border-radius: var(--plat-radius-lg);
+  box-shadow: var(--plat-shadow);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.plat-config-card:hover {
+  box-shadow: var(--plat-shadow-lg);
+}
+
+.plat-config-card--wide {
+  grid-column: 1 / -1;
+}
+
+.plat-config-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 20px 22px 0;
+}
+
+.plat-config-card__head-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.plat-config-card__action {
+  flex-shrink: 0;
+  align-self: center;
+  margin-left: auto;
+}
+
+.plat-config-card__body {
+  padding: 16px 22px 20px;
+}
+
+.plat-config-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: var(--plat-emerald);
+  background: linear-gradient(145deg, #e8f7ef 0%, #f4fffa 100%);
+  border: 1px solid rgba(18, 160, 106, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.plat-config-card__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.plat-config-card__title {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--plat-deep);
+}
+
+.plat-config-card__desc {
+  margin: 5px 0 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--plat-muted);
+}
+
+.plat-config-subsection-title {
+  margin: 0 0 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--plat-muted);
+}
+
+.plat-config-field {
+  margin-bottom: 18px;
+}
+
+.plat-config-field:last-child {
+  margin-bottom: 0;
+}
+
+.plat-config-field label,
+.plat-config-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--plat-deep);
+  margin-bottom: 6px;
+}
+
+.plat-config-hint {
+  margin: -2px 0 8px;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--plat-muted);
+}
+
+.plat-config-field input {
+  width: 100%;
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--plat-border);
+  color: var(--plat-deep);
+  background: #fafcfb;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+.plat-config-field input::placeholder {
+  color: #9bb5a8;
+}
+
+.plat-config-field input:hover {
+  background: #fff;
+}
+
+.plat-config-field input:focus {
+  outline: none;
+  border-color: var(--plat-emerald);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(18, 160, 106, 0.14);
+}
+
+.plat-config-input--mono {
+  font-family: ui-monospace, "Cascadia Code", "Consolas", monospace;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.02em;
+}
+
+.plat-config-field input[readonly] {
+  background: #f3f8f5;
+  color: var(--plat-muted);
+  cursor: default;
+}
+
+.plat-config-input-copy {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.plat-config-input-copy input {
+  flex: 1;
+  min-width: 0;
+}
+
+.plat-config-copy {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid var(--plat-border);
+  background: #fff;
+  color: var(--plat-emerald);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.12s ease;
+}
+
+.plat-config-copy--icon {
+  min-width: 44px;
+  padding: 0;
+  color: var(--plat-muted);
+}
+
+.plat-config-copy--icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.plat-config-copy:hover {
+  background: var(--plat-mint-soft);
+  border-color: rgba(18, 160, 106, 0.35);
+  transform: translateY(-1px);
+}
+
+.plat-config-copy:active {
+  transform: translateY(0);
+}
+
+.plat-config-theme {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.plat-config-theme__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 12px;
+  border-radius: 14px;
+  border: 2px solid var(--plat-border);
+  background: #fafcfb;
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.plat-config-theme__btn:hover {
+  border-color: rgba(18, 160, 106, 0.35);
+  background: #fff;
+}
+
+.plat-config-theme__btn.is-active {
+  border-color: var(--plat-emerald);
+  background: linear-gradient(180deg, #f6fffb 0%, #e8f7ef 100%);
+  box-shadow: 0 4px 16px rgba(18, 160, 106, 0.12);
+}
+
+.plat-config-theme__preview {
+  width: 100%;
+  max-width: 120px;
+  height: 52px;
+  border-radius: 10px;
+  border: 1px solid var(--plat-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.plat-config-theme__preview--light {
+  background: linear-gradient(180deg, #fff 0%, #eefaf4 100%);
+}
+
+.plat-config-theme__preview--dark {
+  background: linear-gradient(180deg, #1a2420 0%, #0f1814 100%);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.plat-config-theme__label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--plat-deep);
+}
+
+.plat-config-roles-panel {
+  border-radius: 14px;
+  background: linear-gradient(180deg, #f8fcfa 0%, #f2f9f5 100%);
+  border: 1px solid var(--plat-border);
+  overflow: hidden;
+}
+
+.plat-config-roles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.plat-config-roles li + li {
+  border-top: 1px solid rgba(15, 107, 74, 0.08);
+}
+
+.plat-config-roles__empty {
+  margin: 0;
+  padding: 20px 16px;
+  font-size: 0.82rem;
+  color: var(--plat-muted);
+  text-align: center;
+}
+
+.plat-config-role {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.plat-config-role:hover {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.plat-config-role:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px rgba(18, 160, 106, 0.45);
+}
+
+.plat-config-role__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--plat-forest);
+  background: #fff;
+  border: 1px solid var(--plat-border);
+}
+
+.plat-config-role__avatar--admin {
+  color: #0f6b38;
+  background: #e8f7ef;
+}
+
+.plat-config-role__avatar--gerente {
+  color: #1a5c8a;
+  background: #e8f2fa;
+}
+
+.plat-config-role__avatar--visualizador {
+  color: #5c6b2a;
+  background: #f4f7e8;
+}
+
+.plat-config-role__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.plat-config-role__body strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--plat-deep);
+}
+
+.plat-config-role__body span {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.75rem;
+  color: var(--plat-muted);
+}
+
+.plat-config-role__chevron {
+  flex-shrink: 0;
+  color: var(--plat-muted);
+  opacity: 0.5;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.plat-config-role:hover .plat-config-role__chevron {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+.plat-config-role__chevron svg {
+  width: 18px;
+  height: 18px;
+}
+
+.plat-config-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--plat-muted);
+  background: #eef2f0;
+}
+
+.plat-config-badge--on {
+  color: #0f6b38;
+  background: #d4f5e4;
+}
+
+.plat-config-role .plat-config-badge {
+  margin-top: 0;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.72rem;
+}
+
+.plat-config-toggle-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.plat-config-toggle-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(15, 107, 74, 0.08);
+}
+
+.plat-config-toggle-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.plat-config-toggle-list li:first-child {
+  padding-top: 0;
+}
+
+.plat-config-toggle-list--compact li {
+  padding: 10px 0;
+}
+
+.plat-config-toggle-list__text strong {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--plat-deep);
+}
+
+.plat-config-toggle-list__text span {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--plat-muted);
+}
+
+.plat-config-toggle {
+  position: relative;
+  width: 48px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.plat-config-toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.plat-config-toggle__track {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: #cdd8d2;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.plat-config-toggle__track::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(9, 40, 28, 0.18);
+  transition: transform 0.22s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+.plat-config-toggle input:checked + .plat-config-toggle__track {
+  background: linear-gradient(90deg, var(--plat-emerald), var(--plat-forest));
+}
+
+.plat-config-toggle input:checked + .plat-config-toggle__track::after {
+  transform: translateX(20px);
+}
+
+.plat-config-toggle input:focus-visible + .plat-config-toggle__track {
+  box-shadow: 0 0 0 3px rgba(18, 160, 106, 0.25);
+}
+
+.plat-config-divider {
+  margin-top: 8px;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(15, 107, 74, 0.18);
+}
+
+.plat-config-divider__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.plat-config-divider__title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--plat-deep);
+}
+
+.plat-config-card__footer {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(15, 107, 74, 0.08);
+}
+
+.plat-config-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--plat-emerald);
+  text-decoration: none;
+  cursor: pointer;
+  transition: gap 0.15s ease, color 0.15s ease;
+}
+
+.plat-config-link:hover {
+  gap: 10px;
+  color: var(--plat-forest);
+}
+
+.plat-config-link--warn {
+  color: #b45309;
+}
+
+.plat-config-link--warn:hover {
+  color: #92400e;
+}
+
+.plat-config-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.plat-config-card--profile {
+  overflow: visible;
+}
+
+.plat-config-card__header--profile {
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--plat-border);
+}
+
+.plat-config-card__header--profile .plat-config-card__head-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.plat-config-card--profile .plat-config-profile {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 24px 22px;
+}
+
+.plat-config-profile-avatar.plat-avatar--lg {
+  width: 88px;
+  height: 88px;
+  padding: 4px;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.plat-config-profile-avatar.plat-avatar--lg .plat-avatar__inner {
+  width: 100%;
+  height: 100%;
+}
+
+.plat-config-profile-avatar.plat-avatar--lg .plat-avatar__initial {
+  font-size: 1.85rem;
+}
+
+.plat-config-profile-avatar.has-foto .plat-avatar__initial {
+  display: none !important;
+}
+
+.plat-config-profile-avatar:not(.has-foto) .plat-avatar__photo:not([src]),
+.plat-config-profile-avatar:not(.has-foto) .plat-avatar__photo.is-hidden {
+  display: none !important;
+}
+
+.plat-config-profile-info {
+  flex: 1;
+  min-width: 0;
+  padding-top: 4px;
+}
+
+.plat-config-profile-info h3 {
+  margin: 0 0 4px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--plat-deep);
+}
+
+.plat-config-profile-info p {
+  margin: 0 0 10px;
+  font-size: 0.8125rem;
+  color: var(--plat-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.plat-config-badge--profile {
+  margin-top: 0;
+  color: var(--plat-emerald);
+  background: rgba(152, 255, 209, 0.45);
+  border: 1px solid rgba(18, 160, 106, 0.12);
+  font-size: 0.625rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.plat-config-security-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.plat-config-security-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px 14px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #fafcfb 0%, #f4faf7 100%);
+  border: 1px solid var(--plat-border);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.plat-config-security-item:hover {
+  border-color: rgba(18, 160, 106, 0.25);
+  box-shadow: 0 6px 20px rgba(9, 40, 28, 0.06);
+}
+
+.plat-config-security-item__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: var(--plat-emerald);
+  background: #fff;
+  border: 1px solid var(--plat-border);
+}
+
+.plat-config-security-item__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.plat-config-security-item__text strong {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--plat-deep);
+}
+
+.plat-config-security-item__text span:not(.plat-config-badge) {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--plat-muted);
+}
+
+.plat-config-security-item .plat-config-btn-outline {
+  width: auto;
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+.plat-config-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: auto;
+  padding: 11px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(18, 160, 106, 0.32);
+  background: #fff;
+  color: var(--plat-emerald);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.12s ease,
+    box-shadow 0.15s ease;
+}
+
+.plat-config-btn-outline:hover {
+  background: var(--plat-mint-soft);
+  border-color: var(--plat-emerald);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(18, 160, 106, 0.12);
+}
+
+.plat-config-savebar {
+  position: fixed;
+  left: var(--plat-sidebar-w);
+  right: 0;
+  bottom: 0;
+  z-index: 35;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 14px clamp(20px, 3vw, 32px);
+  background: rgba(255, 255, 255, 0.94);
+  border-top: 1px solid var(--plat-border);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 -8px 32px rgba(9, 40, 28, 0.08);
+  transition:
+    left var(--plat-ease),
+    transform 0.28s cubic-bezier(0.34, 1.2, 0.64, 1),
+    opacity 0.28s ease;
+}
+
+.plat-config-savebar[hidden] {
+  display: none;
+}
+
+.plat-config-savebar:not([hidden]) {
+  animation: plat-config-savebar-in 0.32s ease;
+}
+
+@keyframes plat-config-savebar-in {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.plat-config-savebar__info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.plat-config-savebar__info strong {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--plat-deep);
+}
+
+.plat-config-savebar__info > div > span {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.78rem;
+  color: var(--plat-muted);
+}
+
+.plat-config-savebar__pulse {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: #eab308;
+  box-shadow: 0 0 0 4px rgba(234, 179, 8, 0.25);
+  animation: plat-config-pulse 1.2s ease infinite;
+}
+
+.plat-config-savebar__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.plat-config-toast {
+  position: fixed;
+  bottom: 28px;
+  right: clamp(20px, 3vw, 32px);
+  z-index: 50;
+  max-width: min(360px, calc(100vw - 40px));
+  padding: 14px 18px;
+  border-radius: 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #fff;
+  background: var(--plat-deep);
+  box-shadow: var(--plat-shadow-lg);
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  pointer-events: none;
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+.plat-config-adm:has(.plat-config-savebar:not([hidden])) .plat-config-toast {
+  bottom: 96px;
+}
+
+.plat-config-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.plat-config-toast--error {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+.plat-config-toast--success {
+  background: linear-gradient(135deg, var(--plat-emerald), var(--plat-forest));
+}
+
+html[data-plat-tema="dark"] .plat-config-adm,
+html[data-plat-tema="dark"] .plat-config-main {
+  background: transparent;
+  color: var(--plat-text);
+}
+
+html[data-plat-tema="dark"] .plat-config-section-label {
+  color: var(--plat-muted);
+}
+
+html[data-plat-tema="dark"] .plat-config-card {
+  background: var(--plat-card-solid);
+  border-color: var(--plat-border);
+  color: var(--plat-text);
+}
+
+html[data-plat-tema="dark"] .plat-config-card__icon {
+  color: var(--plat-mint);
+  background: rgba(18, 160, 106, 0.14);
+  border-color: rgba(79, 188, 89, 0.2);
+  box-shadow: none;
+}
+
+html[data-plat-tema="dark"] .plat-config-card__title,
+html[data-plat-tema="dark"] .plat-config-field label,
+html[data-plat-tema="dark"] .plat-config-label,
+html[data-plat-tema="dark"] .plat-config-role__body strong,
+html[data-plat-tema="dark"] .plat-config-toggle-list__text strong,
+html[data-plat-tema="dark"] .plat-config-theme__label {
+  color: var(--plat-text);
+}
+
+html[data-plat-tema="dark"] .plat-config-field input,
+html[data-plat-tema="dark"] .plat-config-field select,
+html[data-plat-tema="dark"] .plat-config-admin-form input,
+html[data-plat-tema="dark"] .plat-config-theme__btn,
+html[data-plat-tema="dark"] .plat-config-btn-outline,
+html[data-plat-tema="dark"] .plat-config-security-item,
+html[data-plat-tema="dark"] .plat-config-roles-panel,
+html[data-plat-tema="dark"] .plat-config-copy {
+  background: #152019;
+  border-color: var(--plat-border);
+  color: var(--plat-text);
+}
+
+html[data-plat-tema="dark"] .plat-config-field input:hover,
+html[data-plat-tema="dark"] .plat-config-field input:focus {
+  background: #1a2420;
+}
+
+html[data-plat-tema="dark"] .plat-config-field input[readonly] {
+  background: #121a16;
+  color: var(--plat-muted);
+}
+
+html[data-plat-tema="dark"] .plat-config-theme__btn.is-active {
+  background: linear-gradient(180deg, #1c2622 0%, #152019 100%);
+  border-color: var(--plat-emerald);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+}
+
+html[data-plat-tema="dark"] .plat-config-roles-panel {
+  background: linear-gradient(180deg, #1a2420 0%, #152019 100%);
+}
+
+html[data-plat-tema="dark"] .plat-config-roles li + li {
+  border-top-color: var(--plat-border);
+}
+
+html[data-plat-tema="dark"] .plat-config-role:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+html[data-plat-tema="dark"] .plat-config-role__avatar {
+  background: #1c2622;
+  border-color: var(--plat-border);
+  color: var(--plat-mint);
+}
+
+html[data-plat-tema="dark"] .plat-config-role__avatar--admin {
+  background: rgba(18, 160, 106, 0.16);
+  color: #8fffc7;
+}
+
+html[data-plat-tema="dark"] .plat-config-role__avatar--gerente {
+  background: rgba(59, 130, 246, 0.14);
+  color: #93c5fd;
+}
+
+html[data-plat-tema="dark"] .plat-config-role__avatar--visualizador {
+  background: rgba(234, 179, 8, 0.12);
+  color: #fcd34d;
+}
+
+html[data-plat-tema="dark"] .plat-config-badge {
+  background: #1c2622;
+  color: var(--plat-muted);
+}
+
+html[data-plat-tema="dark"] .plat-config-badge--on {
+  background: rgba(18, 160, 106, 0.2);
+  color: #8fffc7;
+}
+
+html[data-plat-tema="dark"] .plat-config-toggle-list li {
+  border-bottom-color: var(--plat-border);
+}
+
+html[data-plat-tema="dark"] .plat-config-toggle input + .plat-config-toggle__track {
+  background: #2a3530;
+}
+
+html[data-plat-tema="dark"] .plat-config-toggle input:checked + .plat-config-toggle__track {
+  background: linear-gradient(90deg, var(--plat-emerald), var(--plat-forest));
+}
+
+html[data-plat-tema="dark"] .plat-config-admin-item {
+  background: #152019;
+  border-color: var(--plat-border);
+}
+
+html[data-plat-tema="dark"] .plat-config-admin-avatar {
+  background: linear-gradient(145deg, #1c2622, #152019);
+  color: var(--plat-mint);
+}
+
+html[data-plat-tema="dark"] .plat-config-savebar,
+html[data-plat-tema="dark"] .plat-config-status {
+  background: rgba(21, 32, 25, 0.96);
+  border-color: var(--plat-border);
+  color: var(--plat-text);
+}
+
+html[data-plat-tema="dark"] .plat-config-status.is-pending {
+  background: rgba(234, 179, 8, 0.12);
+  color: #fcd34d;
+  border-color: rgba(234, 179, 8, 0.22);
+}
+
+html[data-plat-tema="dark"] .plat-config-alert {
+  background: rgba(185, 28, 28, 0.12);
+  border-color: rgba(248, 113, 113, 0.22);
+  color: #fca5a5;
+}
+
+html[data-plat-tema="dark"] .plat-config-modal__panel,
+html[data-plat-tema="dark"] .plat-config-adm .adm-config-modal-panel {
+  background: #152019;
+  border-color: var(--plat-border);
+  color: var(--plat-text);
+}
+
+html[data-plat-tema="dark"] .plat-config-adm .adm-config-modal-head {
+  background: linear-gradient(180deg, #1c2622 0%, #152019 100%);
+  border-bottom-color: var(--plat-border);
+}
+
+html[data-plat-tema="dark"] .plat-config-security-item {
+  background: linear-gradient(180deg, #1a2420 0%, #152019 100%);
+}
+
+html[data-plat-tema="dark"] .plat-config-security-item__icon {
+  background: #1c2622;
+  border-color: var(--plat-border);
+  color: var(--plat-mint);
+}
+
+html[data-plat-tema="dark"] .plat-config-security-item__text strong {
+  color: var(--plat-text);
+}
+
+html[data-plat-tema="dark"] .plat-config-badge--profile {
+  background: rgba(18, 160, 106, 0.18);
+  color: var(--plat-mint);
+  border-color: rgba(79, 188, 89, 0.22);
+}
+
+html[data-plat-tema="dark"] .plat-config-adm .adm-config-nome-input,
+html[data-plat-tema="dark"] .plat-config-adm .adm-edicao-modal-form .perfil-campo input,
+html[data-plat-tema="dark"] .plat-config-adm .adm-config-btn--ghost {
+  background: #152019;
+  border-color: var(--plat-border);
+  color: var(--plat-text);
+}
+
+@media (max-width: 1100px) {
+  .plat-config-security-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1100px) {
+  .plat-config-workspace {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .plat-config-col {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 960px) {
+
+  .plat-config-savebar {
+    left: var(--plat-sidebar-icon-col);
+  }
+}
+
+@media (max-width: 640px) {
+  .plat-config-security-item {
+    grid-template-columns: auto 1fr;
+  }
+
+  .plat-config-security-item .plat-config-btn-outline {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .plat-config-page-head {
+    margin-bottom: 20px;
+  }
+
+  .plat-config-status {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .plat-config-theme {
+    grid-template-columns: 1fr;
+  }
+
+  .plat-config-savebar {
+    flex-direction: column;
+    align-items: stretch;
+    left: var(--plat-sidebar-icon-col);
+  }
+
+  .plat-config-savebar__actions {
+    width: 100%;
+  }
+
+  .plat-config-savebar__actions .plat-btn {
+    flex: 1;
+  }
+
+  .plat-config-card__header,
+  .plat-config-card__body {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plat-config-card,
+  .plat-config-savebar,
+  .plat-config-toast,
+  .plat-config-copy,
+  .plat-config-btn-outline {
+    transition: none;
+    animation: none;
+  }
+}
+
+body.plat-config-modal-open {
+  overflow: hidden;
+}
+
+.plat-config-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.plat-config-modal.hidden {
+  display: none;
+}
+
+.plat-config-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 40, 28, 0.52);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+
+.plat-config-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(420px, 100%);
+  max-height: min(90vh, 680px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.98);
+  box-shadow: 0 24px 64px rgba(9, 40, 28, 0.2);
+}
+
+.plat-config-modal__panel--sessions {
+  width: min(400px, 100%);
+}
+
+.plat-config-modal__panel--perms {
+  width: min(440px, 100%);
+}
+
+.plat-config-modal__panel--form {
+  width: min(420px, 100%);
+}
+
+.plat-config-adm .adm-config-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.plat-config-adm .adm-config-modal.hidden {
+  display: none;
+}
+
+.plat-config-adm .adm-config-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 40, 28, 0.48);
+  backdrop-filter: blur(4px);
+}
+
+.plat-config-adm .adm-config-modal-panel {
+  position: relative;
+  width: min(100%, 820px);
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 20px 50px rgba(9, 40, 28, 0.18);
+  border: 1px solid var(--plat-border);
+}
+
+.plat-config-adm .adm-config-modal-head {
+  padding: 22px 24px 16px;
+  position: relative;
+  background: linear-gradient(180deg, #f4fbf7 0%, #ffffff 100%);
+  border-bottom: 1px solid var(--plat-border);
+  border-radius: 20px 20px 0 0;
+}
+
+.plat-config-adm .adm-config-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: #e8f7ef;
+  color: var(--plat-emerald);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.plat-config-adm .adm-config-modal-kicker {
+  margin: 0 0 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--plat-emerald);
+}
+
+.plat-config-adm .adm-config-modal-head h2 {
+  margin: 0 0 6px;
+  padding-right: 48px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--plat-deep);
+}
+
+.plat-config-adm .adm-config-modal-desc {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--plat-muted);
+  line-height: 1.5;
+}
+
+.plat-config-adm .adm-edicao-modal-card.perfil-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 20px 24px 8px;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.plat-config-adm .adm-config-nome-input {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--plat-emerald);
+  padding: 10px 12px;
+  border: 1px solid var(--plat-border);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.plat-config-adm .adm-edicao-modal-form .perfil-campo input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--plat-border);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  background: #f4fbf7;
+  color: var(--plat-deep);
+}
+
+.plat-config-adm .adm-edicao-modal-form .perfil-campo input.input-error {
+  border-color: #b91c1c;
+}
+
+.plat-config-adm .adm-edicao-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 18px;
+}
+
+.plat-config-adm .adm-edicao-modal-grid .adm-email-verify-wrap {
+  grid-column: 1 / -1;
+}
+
+.plat-config-adm .adm-config-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.plat-config-adm .adm-config-btn--ghost {
+  background: #fff;
+  border-color: var(--plat-border);
+  color: var(--plat-deep);
+}
+
+.plat-config-adm .adm-config-btn--primary {
+  background: var(--plat-emerald);
+  color: #fff;
+}
+
+.plat-config-adm .adm-config-modal-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 0 8px;
+  margin-top: 8px;
+  border-top: 1px solid var(--plat-border);
+}
+
+.plat-config-adm .adm-save-confirm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.plat-config-adm .adm-save-confirm-overlay.hidden {
+  display: none;
+}
+
+.plat-config-adm .adm-save-confirm-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 40, 28, 0.52);
+  backdrop-filter: blur(5px);
+}
+
+.plat-config-adm .adm-save-confirm-dialog {
+  position: relative;
+  width: min(100%, 400px);
+  padding: 28px 26px 24px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fcfa 100%);
+  border: 1px solid rgba(18, 160, 106, 0.14);
+  box-shadow: 0 24px 48px rgba(9, 40, 28, 0.18);
+  text-align: center;
+}
+
+.plat-config-adm .adm-save-confirm-title {
+  margin: 0 0 8px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--plat-deep);
+}
+
+.plat-config-adm .adm-save-confirm-desc {
+  margin: 0 0 22px;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--plat-muted);
+}
+
+.plat-config-adm .adm-save-confirm-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.plat-config-adm .adm-save-confirm-actions .adm-config-btn {
+  flex: 1;
+}
+
+body.plat-modal-open {
+  overflow: hidden;
+}
+
+.plat-config-adm .hidden,
+.plat-config-adm .adm-email-verify-wrap.hidden,
+.plat-config-adm .adm-email-verify-codigo.hidden,
+.plat-config-adm .adm-email-verify-reenviar.hidden,
+.plat-config-adm .adm-email-verify-ok.hidden {
+  display: none !important;
+}
+
+@media (max-width: 720px) {
+  .plat-config-adm .adm-edicao-modal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plat-config-card--profile .plat-config-profile {
+    flex-direction: row;
+    align-items: center;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .plat-config-card__header--profile {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+.plat-config-modal__hero--compact {
+  padding-bottom: 12px;
+}
+
+.plat-config-modal__form {
+  padding: 4px 24px 8px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.plat-config-modal__form .plat-config-field {
+  margin-bottom: 14px;
+}
+
+.plat-config-modal__form .plat-config-hint {
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+.plat-config-field-error {
+  margin: 6px 0 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #b91c1c;
+}
+
+.plat-config-field-error.hidden {
+  display: none;
+}
+
+.plat-config-modal__error {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid rgba(185, 28, 28, 0.15);
+}
+
+.plat-config-modal__error.hidden {
+  display: none;
+}
+
+.plat-config-modal__form .plat-config-modal__foot {
+  margin: 8px -24px 0;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.plat-config-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--plat-muted);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.plat-config-modal__close:hover {
+  background: var(--plat-mint-soft);
+  color: var(--plat-deep);
+}
+
+.plat-config-modal__hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 28px 20px;
+  border-bottom: 1px solid rgba(15, 107, 74, 0.08);
+}
+
+.plat-config-modal__hero-icon {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--plat-emerald);
+  background: linear-gradient(145deg, #e8f7ef, #f4fffa);
+  border: 1px solid rgba(18, 160, 106, 0.14);
+  box-shadow: 0 8px 24px rgba(18, 160, 106, 0.12);
+}
+
+.plat-config-modal__hero-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.plat-config-modal__hero h2 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--plat-deep);
+}
+
+.plat-config-modal__hero p {
+  margin: 8px 0 0;
+  max-width: 28ch;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--plat-muted);
+}
+
+.plat-config-sessions {
+  list-style: none;
+  margin: 0;
+  padding: 16px 20px 24px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.plat-config-session {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.plat-config-session:last-child {
+  margin-bottom: 0;
+}
+
+.plat-config-session__main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--plat-border);
+  border-radius: 14px;
+  background: #fafcfb;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.plat-config-session__main:hover {
+  border-color: rgba(18, 160, 106, 0.35);
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(9, 40, 28, 0.06);
+}
+
+.plat-config-session__main.is-current {
+  border-color: rgba(18, 160, 106, 0.45);
+  background: linear-gradient(180deg, #f6fffb, #eefaf4);
+}
+
+.plat-config-session__icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: var(--plat-emerald);
+  background: #e8f7ef;
+}
+
+.plat-config-session__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.plat-config-session__text strong {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--plat-deep);
+}
+
+.plat-config-session__text span {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.75rem;
+  color: var(--plat-muted);
+}
+
+.plat-config-session__badge {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--plat-forest);
+  background: #d4f5e4;
+}
+
+.plat-config-session__disconnect {
+  flex-shrink: 0;
+  align-self: center;
+  padding: 8px 12px;
+  border: 1px solid rgba(185, 28, 28, 0.2);
+  border-radius: 10px;
+  background: #fff5f5;
+  color: #b91c1c;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.plat-config-session__disconnect:hover {
+  background: #fee2e2;
+}
+
+.plat-config-sessions__empty {
+  margin: 0;
+  padding: 24px 12px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--plat-muted);
+}
+
+.plat-config-perms {
+  list-style: none;
+  margin: 0;
+  padding: 8px 24px 16px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.plat-config-perms li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(15, 107, 74, 0.08);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--plat-deep);
+}
+
+.plat-config-perms li:last-child {
+  border-bottom: none;
+}
+
+.plat-config-modal__foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 20px 20px;
+  border-top: 1px solid rgba(15, 107, 74, 0.08);
+  background: #fafcfb;
+}
+
+@media (max-width: 480px) {
+  .plat-config-session {
+    flex-direction: column;
+  }
+
+  .plat-config-session__disconnect {
+    align-self: stretch;
+    width: 100%;
+  }
+
+  .plat-config-modal__foot {
+    flex-direction: column;
+  }
+
+  .plat-config-modal__foot .plat-btn {
+    width: 100%;
+  }
+}
+
+.plat-config-card__header .plat-config-btn--primary {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.plat-config-admins-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plat-config-admins-empty {
+  padding: 16px;
+  text-align: center;
+  color: var(--plat-muted);
+  font-size: 0.875rem;
+}
+
+.plat-config-admin-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--plat-border);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.plat-config-admin-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  background: linear-gradient(145deg, #e8f7ef, #fff);
+  color: var(--plat-forest);
+  flex-shrink: 0;
+}
+
+.plat-config-admin-meta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.plat-config-admin-meta strong {
+  font-size: 0.9375rem;
+}
+
+.plat-config-admin-meta span {
+  font-size: 0.8125rem;
+  color: var(--plat-muted);
+}
+
+.plat-config-admin-role {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--plat-emerald);
+}
+
+.plat-config-admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.plat-config-modal__panel--narrow {
+  max-width: 440px;
+}
+
+.plat-config-admin-form .plat-config-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.plat-config-admin-form .plat-config-field span {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--plat-muted);
+}
+
+.plat-config-admin-form input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--plat-border);
+  font: inherit;
+}

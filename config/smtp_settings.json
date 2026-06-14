@@ -1,0 +1,12 @@
+{
+  "modo_local_sem_email": false,
+  "smtp_host": "smtp.gmail.com",
+  "smtp_port": 587,
+  "smtp_usuario": "phcarvalho371@gmail.com",
+  "smtp_senha": "vxxrrpcljcyzckjt",
+  "smtp_de_email": "phcarvalho371@gmail.com",
+  "smtp_de_nome": "EcoColeta",
+  "smtp_criptografia": "tls",
+  "smtp_relaxar_ssl": true,
+  "mostrar_erro_smtp": true
+}

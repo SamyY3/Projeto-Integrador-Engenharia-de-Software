@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <base href="../" data-app-base>
+  <script>(function(){var p=location.pathname.replace(/\\/g,"/"),b=document.querySelector("base[data-app-base]"),m=p.match(/^(.*\/)(?:auth|admin|pages|mapa)\/[^/]+$/);if(b)b.href=m?m[1]:p.replace(/\/[^/]*$/,"/")||"/";})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificações</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/notif-popup.css?v=10">
+</head>
+<body>
+    <div class="notif-wrapper">
+        <button type="button" class="notif-btn" aria-label="Notificações">
+            <img src="assets/images/icon notificacao.png" alt="Notificações" loading="lazy" decoding="async">
+        </button>
+        <div class="notif-overlay hidden">
+            <div class="notif-box">
+                <div class="header">
+                    <h2>Notificações</h2>
+                    <span class="close-notif" title="Fechar">&times;</span>
+                </div>
+                <div class="section">
+                    <p class="section-title">IMPORTANTE</p>
+                    <div class="item">
+                        <div class="icon green">♻️</div>
+                        <div>
+                            <p>EcoColeta Novo ponto de coleta disponível próxima a você!</p>
+                            <span>há 30 minutos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <p class="section-title">MAIS NOTIFICAÇÕES</p>
+                    <div class="item">
+                        <div class="icon yellow">🏆</div>
+                        <div class="content">
+                            <p>Parabéns! Você ganhou <b>50 pontos</b> pela sua coleta de hoje</p>
+                            <span>há 3 horas</span>
+                        </div>
+                        <div class="badge">+50 pts</div>
+                    </div>
+                    <div class="item">
+                        <div class="icon purple">📅</div>
+                        <div>
+                            <p><b>Lembrete:</b> Dia de coleta no bairro amanhã</p>
+                            <span>há 5 horas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/notif-popup.js?v=10"></script>
+</body>
+</html>

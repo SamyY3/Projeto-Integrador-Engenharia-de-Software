@@ -1,0 +1,64 @@
+.adm-edicao-perfil-page {
+  background: var(--adm-surface);
+  min-height: 100vh;
+}
+
+.adm-edicao-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--adm-space-3) var(--adm-space-2) 48px;
+}
+
+.adm-edicao-top h1 {
+  margin: 12px 0 6px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--adm-dark);
+}
+
+.adm-edicao-top p {
+  margin: 0 0 var(--adm-space-2);
+  font-size: 0.875rem;
+  color: var(--adm-text-muted);
+}
+
+.adm-edicao-back {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--adm-green-deep);
+  text-decoration: none;
+}
+
+.adm-edicao-back:hover {
+  text-decoration: underline;
+}
+
+.adm-edicao-card.perfil-container {
+  border-radius: var(--adm-radius-xl);
+  border: 1px solid var(--adm-border);
+  box-shadow: var(--adm-card-shadow);
+  background: #fff;
+}
+
+.adm-edicao-erro {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 12px 18px;
+  border-radius: var(--adm-radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  background: #c94a4a;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 300;
+}
+
+.adm-edicao-erro.visible {
+  opacity: 1;
+}

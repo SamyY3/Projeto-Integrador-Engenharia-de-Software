@@ -1,0 +1,88 @@
+<?php
+
+return [
+    [
+        "id_usuario" => 8001,
+        "nome" => "Aurélio de Carvalho",
+        "email" => "aurelio.carvalho@email.com",
+        "tipo" => "usuario",
+        "status" => "ativo",
+    ],
+    [
+        "id_usuario" => 8002,
+        "nome" => "Mariana Silva",
+        "email" => "mariana.silva@email.com",
+        "tipo" => "usuario",
+        "status" => "ativo",
+    ],
+    [
+        "id_usuario" => 8003,
+        "nome" => "Carlos Mendes",
+        "email" => "carlos.mendes@email.com",
+        "tipo" => "admin",
+        "status" => "ativo",
+    ],
+    [
+        "id_usuario" => 8004,
+        "nome" => "Ana Paula Rocha",
+        "email" => "ana.rocha@email.com",
+        "tipo" => "usuario",
+        "status" => "inativo",
+    ],
+    [
+        "id_usuario" => 8005,
+        "nome" => "João Pedro Lima",
+        "email" => "joao.lima@email.com",
+        "tipo" => "usuario",
+        "status" => "ativo",
+    ],
+    [
+        "id_usuario" => 8006,
+        "nome" => "Fernanda Costa",
+        "email" => "fernanda.costa@email.com",
+        "tipo" => "usuario",
+        "status" => "ativo",
+    ],
+    [
+        "id_usuario" => 8007,
+        "nome" => "Ricardo Alves",
+        "email" => "ricardo.alves@email.com",
+        "tipo" => "admin",
+        "status" => "ativo",
+    ],
+    [
+        "id_usuario" => 8008,
+        "nome" => "Patrícia Nunes",
+        "email" => "patricia.nunes@email.com",
+        "tipo" => "usuario",
+        "status" => "inativo",
+    ],
+    [
+        "id_usuario" => 8009,
+        "nome" => "Lucas Ferreira",
+        "email" => "lucas.ferreira@email.com",
+        "tipo" => "usuario",
+        "status" => "ativo",
+    ],
+    [
+        "id_usuario" => 8010,
+        "nome" => "Beatriz Santos",
+        "email" => "beatriz.santos@email.com",
+        "tipo" => "usuario",
+        "status" => "ativo",
+    ],
+    [
+        "id_usuario" => 8011,
+        "nome" => "Helena Duarte",
+        "email" => "helena.duarte@email.com",
+        "tipo" => "admin",
+        "status" => "ativo",
+    ],
+    [
+        "id_usuario" => 8012,
+        "nome" => "Pedro Henrique",
+        "email" => "pedro.henrique@email.com",
+        "tipo" => "usuario",
+        "status" => "ativo",
+    ],
+];

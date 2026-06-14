@@ -1,0 +1,103 @@
+============================================================
+ COMO RODAR O PROJETO EcoColeta NO SEU PC (XAMPP / Windows)
+============================================================
+
+Pre-requisitos:
+  - XAMPP instalado (com Apache + MySQL + PHP 8.x)
+  - Esta pasta deve estar dentro de:  <XAMPP>\htdocs\Ecocoleta
+    (Voce ja tem em  d:\XAMPP\htdocs\Ecocoleta  - OK)
+
+----------------------------------------------------------
+PASSO 1 - Iniciar o servidor
+----------------------------------------------------------
+De um duplo clique em:
+    INICIAR-PROJETO.bat
+
+Ele faz tudo:
+  - Liga o Apache do XAMPP
+  - Liga o MySQL do XAMPP
+  - Para o IIS se estiver tomando a porta 80
+  - Abre o navegador em  http://localhost/Ecocoleta/
+
+Se o Windows perguntar permissao (Firewall ou UAC), aceite.
+
+----------------------------------------------------------
+PASSO 2 - Criar o banco (so na PRIMEIRA vez)
+----------------------------------------------------------
+Com o MySQL ja ligado pelo PASSO 1, de um duplo clique em:
+    INSTALAR-BANCO.bat
+
+Ele cria o banco "ecocoleta", roda os SQLs e popula os dados
+de demonstracao (moradores, ecopontos, coletas, premios, admins).
+
+Credenciais de teste: database\DADOS-DEMO.md
+
+Ordem automatica:
+  1) SQL_BDD_EcoColeta.sql
+  2) usuario_edicao_opcional.sql
+  3) corrigir_tipo_expiracao_codigo.sql
+  4) premios_beneficios_resgate.sql
+  5) agendamento_coleta_tab.sql
+  6) cadastro_pendente_tab.sql
+  7) notificacao_tab.sql + integracao admin
+  8) seed_tudo.php (50 moradores + coletas + relatorios)
+
+Se mostrar avisos como "Duplicate column" ou "Duplicate key",
+PODE IGNORAR - significa que ja estava criado.
+
+Para recriar todos os dados demo:
+    config\SEED-TUDO.bat --fresh
+
+----------------------------------------------------------
+PASSO 3 - Usar o site
+----------------------------------------------------------
+O projeto abre em:
+    http://localhost/Ecocoleta/
+
+Login morador (demo):
+  E-mail: ana.paula.ferreira@seed.ecocoleta.local
+  Senha:  Morador@123
+
+Admin EcoPonto:
+  http://localhost/Ecocoleta/admin/Login-ADM-Ecoponto.html
+  admin.ecoponto@ecocoleta.local / EcoPonto@123
+
+----------------------------------------------------------
+E-mail (recuperacao de senha) - opcional
+----------------------------------------------------------
+O arquivo  smtp_settings.json  ja tem credenciais Gmail.
+Se nao quiser enviar e-mail, edite e troque:
+    "modo_local_sem_email": false
+para:
+    "modo_local_sem_email": true
+
+Assim o sistema continua funcionando sem mandar e-mail real.
+
+============================================================
+ PROBLEMAS COMUNS
+============================================================
+
+[1] "Porta 80 em uso" ao subir o Apache
+    -> Algum programa (IIS, Skype antigo, etc.) esta usando a 80.
+       Rode diagnostico-porta80.bat (clique direito -> Executar como
+       administrador).
+       Ou rode desligar-iis-admin.bat (como administrador) para parar o IIS.
+
+[2] "Nao consegui conectar ao banco" no PHP
+    -> Abra o XAMPP Control Panel e confirme que MySQL esta "Running".
+    -> Rode INSTALAR-BANCO.bat de novo.
+
+[3] Apache nao carrega PHP (ve codigo PHP cru no navegador)
+    -> Clique direito em  instalar-php-apache-ecocoleta.ps1
+       e escolha "Executar com PowerShell" COMO ADMINISTRADOR.
+       Depois reinicie o Apache.
+
+[4] Erro 500 com "Invalid command '\xff\xfe...'"
+    -> Algum arquivo .php ou .htaccess foi salvo em UTF-16.
+       Reabra no Bloco de Notas, "Salvar como..." e escolha
+       Codificacao = UTF-8 (sem BOM).
+
+[5] "ecocoleta_stmt_* nao definida"
+    -> Significa que stmt_helpers.php nao foi incluido.
+       Confira que voce esta abrindo via http://localhost/Ecocoleta/
+       (e nao abrindo o .php direto pelo Explorer).

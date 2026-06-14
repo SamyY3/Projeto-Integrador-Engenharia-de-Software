@@ -1,0 +1,145 @@
+Options -Indexes
+
+DirectoryIndex pages/tela-inicia.html index.html
+
+<FilesMatch "^(conexao\.config\.php|.*\.sql|composer\.(json|lock)|DEPLOY\.md)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType text/javascript "access plus 7 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/x-icon "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 30 days"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|png|jpe?g|webp|svg|ico|woff2)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteRule ^Imagens/(.*)$ assets/images/$1 [L,NC]
+
+RewriteRule ^login\.html$ auth/login.html [L,NC]
+RewriteRule ^login\.php$ auth/login.php [L,NC]
+RewriteRule ^cadastro\.html$ auth/cadastro.html [L,NC]
+RewriteRule ^cadastro\.php$ auth/cadastro.php [L,NC]
+RewriteRule ^recuperar\.html$ auth/recuperar.html [L,NC]
+RewriteRule ^nova-senha\.html$ auth/nova-senha.html [L,NC]
+RewriteRule ^verificacao\.html$ auth/verificacao.html [L,NC]
+RewriteRule ^verificar-cadastro\.html$ auth/verificar-cadastro.html [L,NC]
+RewriteRule ^verificar_cadastro\.php$ auth/verificar_cadastro.php [L,NC]
+RewriteRule ^resetar_senha\.php$ auth/resetar_senha.php [L,NC]
+RewriteRule ^resetar\.html$ auth/resetar.html [L,NC]
+RewriteRule ^senha-criada\.html$ auth/senha-criada.html [L,NC]
+RewriteRule ^login-temp\.html$ auth/login-temp.html [L,NC]
+
+RewriteRule ^Login-ADM\.html$ admin/Login-ADM.html [L,NC]
+RewriteRule ^Login-ADM\.php$ admin/Login-ADM.php [L,NC]
+RewriteRule ^Login-ADM-Ecoponto\.html$ admin/Login-ADM-Ecoponto.html [L,NC]
+RewriteRule ^Login-ADM-Ecoponto\.php$ admin/Login-ADM-Ecoponto.php [L,NC]
+RewriteRule ^Home-ADM\.html$ admin/Home-ADM.html [L,NC]
+RewriteRule ^Home-ADM-Ecoponto\.html$ admin/Home-ADM-Ecoponto.html [L,NC]
+RewriteRule ^Coletas-ADM-Ecoponto\.html$ admin/Coletas-ADM-Ecoponto.html [L,NC]
+RewriteRule ^materias-ADM-Ecoponto\.html$ admin/materias-ADM-Ecoponto.html [L,NC]
+RewriteRule ^relatorio-ADM-Ecoponto\.html$ admin/relatorio-ADM-Ecoponto.html [L,NC]
+RewriteRule ^configuracoes-ADM-Ecoponto\.html$ admin/configuracoes-ADM-Ecoponto.html [L,NC]
+RewriteRule ^configuracoes-adm\.html$ admin/configuracoes-adm.html [L,NC]
+RewriteRule ^edicao-perfil-admin\.html$ admin/edicao-perfil-admin.html [L,NC]
+RewriteRule ^ecoponto-adm\.html$ admin/ecoponto-adm.html [L,NC]
+RewriteRule ^agendamento-adm\.html$ admin/agendamento-adm.html [L,NC]
+RewriteRule ^usuarios-adm\.html$ admin/usuarios-adm.html [L,NC]
+RewriteRule ^relatorio-adm\.html$ admin/relatorio-adm.html [L,NC]
+RewriteRule ^mapa-publico-adm\.html$ admin/mapa-publico-adm.html [L,NC]
+RewriteRule ^admin-plataforma-session\.php$ admin/admin-plataforma-session.php [L,NC]
+RewriteRule ^admin-ecoponto-session\.php$ admin/admin-ecoponto-session.php [L,NC]
+RewriteRule ^login-adm-pontos\.php$ admin/login-adm-pontos.php [L,NC]
+
+RewriteRule ^tela-inicia\.html$ pages/tela-inicia.html [L,NC]
+RewriteRule ^ecopontos\.html$ pages/ecopontos.html [L,NC]
+RewriteRule ^perfil\.html$ pages/perfil.html [L,NC]
+RewriteRule ^agendar-coleta\.html$ pages/agendar-coleta.html [L,NC]
+RewriteRule ^Ranking\.html$ pages/Ranking.html [L,NC]
+RewriteRule ^quem-somos\.html$ pages/quem-somos.html [L,NC]
+RewriteRule ^como-funciona\.html$ pages/como-funciona.html [L,NC]
+RewriteRule ^premios-disponiveis\.html$ pages/premios-disponiveis.html [L,NC]
+RewriteRule ^edicaoperfil\.html$ pages/edicaoperfil.html [L,NC]
+RewriteRule ^educacao-ambiental\.html$ pages/educacao-ambiental.html [L,NC]
+RewriteRule ^pagina-relatorio\.html$ pages/pagina-relatorio.html [L,NC]
+RewriteRule ^relatorio\.html$ pages/pagina-relatorio.html [L,NC]
+RewriteRule ^pages/relatorio\.html$ pages/pagina-relatorio.html [L,NC]
+RewriteRule ^relatorio-mensal\.html$ pages/relatorio-mensal.html [L,NC]
+RewriteRule ^formulario-coleta\.html$ pages/formulario-coleta.html [L,NC]
+RewriteRule ^balanca-ecoponto\.html$ pages/balanca-ecoponto.html [L,NC]
+RewriteRule ^mapa\.html$ pages/mapa.html [L,NC]
+RewriteRule ^notif-popup\.html$ pages/notif-popup.html [L,NC]
+RewriteRule ^apoiador\.html$ pages/apoiador.html [L,NC]
+
+RewriteRule ^ranking\.php$ api/ranking.php [L,NC]
+RewriteRule ^ranking-ruas\.php$ api/ranking-ruas.php [L,NC]
+RewriteRule ^ecocheck-api\.php$ api/ecocheck-api.php [L,NC]
+RewriteRule ^logout\.php$ api/logout.php [L,NC]
+RewriteRule ^agendamento_coleta\.php$ api/agendamento_coleta.php [L,NC]
+RewriteRule ^pontuacao-coleta\.php$ api/pontuacao-coleta.php [L,NC]
+RewriteRule ^notificacoes\.php$ api/notificacoes.php [L,NC]
+RewriteRule ^meu_perfil\.php$ api/meu_perfil.php [L,NC]
+RewriteRule ^geocode-nominatim\.php$ api/geocode-nominatim.php [L,NC]
+RewriteRule ^resgate_premio\.php$ api/resgate_premio.php [L,NC]
+RewriteRule ^registrar_entrega\.php$ api/registrar_entrega.php [L,NC]
+RewriteRule ^excluir_conta\.php$ api/excluir_conta.php [L,NC]
+RewriteRule ^atualizar-nome\.php$ api/atualizar-nome.php [L,NC]
+RewriteRule ^atualizar_nome\.php$ api/atualizar_nome.php [L,NC]
+RewriteRule ^atualizar-perfil\.php$ api/atualizar-perfil.php [L,NC]
+RewriteRule ^atualizarperfil\.php$ api/atualizarperfil.php [L,NC]
+RewriteRule ^atualizar-perfil-admin\.php$ api/atualizar-perfil-admin.php [L,NC]
+RewriteRule ^edicaoperfil\.php$ api/edicaoperfil.php [L,NC]
+RewriteRule ^configuracoes-adm-ecoponto\.php$ api/configuracoes-adm-ecoponto.php [L,NC]
+RewriteRule ^meu-perfil-admin\.php$ api/meu-perfil-admin.php [L,NC]
+
+RewriteRule ^home\.css$ assets/css/home.css [L,NC]
+RewriteRule ^style\.css$ assets/css/style.css [L,NC]
+RewriteRule ^header\.css$ assets/css/header.css [L,NC]
+RewriteRule ^footer\.css$ assets/css/footer.css [L,NC]
+RewriteRule ^premios\.css$ assets/css/premios.css [L,NC]
+RewriteRule ^ranking\.css$ assets/css/ranking.css [L,NC]
+RewriteRule ^perfil\.css$ assets/css/perfil.css [L,NC]
+RewriteRule ^mapa\.js$ mapa/mapa.js [L,NC]
+RewriteRule ^mapa\.css$ mapa/mapa.css [L,NC]
+RewriteRule ^home\.js$ assets/js/home.js [L,NC]
+RewriteRule ^header-nav\.js$ assets/js/header-nav.js [L,NC]
+RewriteRule ^footer\.js$ assets/js/footer.js [L,NC]
+RewriteRule ^premios\.js$ assets/js/premios.js [L,NC]
+RewriteRule ^perfil\.js$ assets/js/perfil.js [L,NC]
+RewriteRule ^ranking\.js$ assets/js/ranking.js [L,NC]
+RewriteRule ^notif-popup\.js$ assets/js/notif-popup.js [L,NC]
+RewriteRule ^agendar-coleta\.js$ assets/js/agendar-coleta.js [L,NC]
+RewriteRule ^balanca-ecoponto\.js$ assets/js/balanca-ecoponto.js [L,NC]
+RewriteRule ^pontuacao-coleta\.js$ assets/js/pontuacao-coleta.js [L,NC]
+RewriteRule ^balanca-ecoponto\.css$ assets/css/balanca-ecoponto.css [L,NC]
+RewriteRule ^edicaoperfil\.js$ assets/js/edicaoperfil.js [L,NC]
+RewriteRule ^ecopontos\.js$ assets/js/ecopontos.js [L,NC]
+RewriteRule ^ecocheck-bridge\.js$ assets/js/ecocheck-bridge.js [L,NC]
+RewriteRule ^ecocheck-widget\.css$ assets/css/ecocheck-widget.css [L,NC]
+RewriteRule ^ecocheck\.css$ ecocheck-dist/ecocheck.css [L,NC]
+RewriteRule ^ecocheck\.iife\.js$ ecocheck-dist/ecocheck.iife.js [L,NC]
+RewriteRule ^images/(.*)$ assets/images/$1 [L,NC]
+</IfModule>

@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="auth-view">
+<head>
+  <base href="../" data-app-base>
+  <script>(function(){var p=location.pathname.replace(/\\/g,"/"),b=document.querySelector("base[data-app-base]"),m=p.match(/^(.*\/)(?:auth|admin|pages|mapa)\/[^/]+$/);if(b)b.href=m?m[1]:p.replace(/\/[^/]*$/,"/")||"/";})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+  <title>Cadastro - EcoColeta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/auth-background.css?v=3">
+  <link rel="stylesheet" href="assets/css/logo.css?v=19">
+  <link rel="stylesheet" href="assets/css/auth-screens.css?v=4">
+  <link rel="stylesheet" href="assets/css/ecocheck-widget.css?v=12">
+  <style>
+    .auth .container {
+      background: rgba(255, 255, 255, 0.98);
+      padding: 40px 32px;
+      border-radius: 24px;
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      margin: 0 auto;
+      display: block;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    .auth .container h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1E3A8A;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .auth .container .subtitle {
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 32px;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1E3A8A;
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    .auth input {
+      width: 100%;
+      padding: 14px 16px;
+      margin: 0;
+      border-radius: 12px;
+      border: 1.5px solid #e2e8f0;
+      outline: none;
+      font-size: 15px;
+      font-family: 'Sora', sans-serif;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .auth input::placeholder {
+      color: #94a3b8;
+      font-weight: 400;
+    }
+
+    .auth input:focus {
+      border-color: #2E7D32;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+    }
+
+    .auth input:hover:not(:focus) {
+      border-color: #cbd5e1;
+    }
+
+    .auth input.input-error {
+      border-color: #ef4444;
+      background: rgba(239, 68, 68, 0.02);
+    }
+
+    .auth input.input-error:focus {
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+
+    .confirm-match {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      font-size: 13px;
+      color: #ef4444;
+      transition: color 0.3s ease;
+    }
+
+    .confirm-match.valid {
+      color: #22c55e;
+    }
+
+    .confirm-match .match-icon {
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .password-rules {
+      margin-top: 12px;
+    }
+
+    .password-rules .rule {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      font-size: 13px;
+      color: #ef4444;
+      transition: color 0.3s ease;
+    }
+
+    .password-rules .rule.valid {
+      color: #22c55e;
+    }
+
+    .password-rules .rule-icon {
+      font-size: 14px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .password-rules .rule.valid .rule-icon::before {
+      content: "✓";
+      color: #22c55e;
+    }
+
+    .password-rules .rule:not(.valid) .rule-icon::before {
+      content: "✗";
+      color: #ef4444;
+    }
+
+    .field-error {
+      color: #ef4444;
+      font-size: 12px;
+      margin-top: 6px;
+      text-align: left;
+      display: block;
+      min-height: 18px;
+      font-weight: 500;
+    }
+
+    .form-actions {
+      margin-top: 24px;
+      margin-bottom: 20px;
+    }
+
+    .link {
+      color: #2E7D32;
+      font-size: 13px;
+      text-align: center;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      display: inline-block;
+      margin-top: 16px;
+    }
+
+    .link:hover {
+      color: #1B5E20;
+      text-decoration: underline;
+    }
+
+    button:not(.password-toggle):not(.close-login-modal):not(.ecocheck-trigger) {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      margin-top: 12px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 15px;
+      letter-spacing: 0.3px;
+    }
+
+    button:not(.password-toggle):not(.close-login-modal):not(.ecocheck-trigger):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(46, 125, 50, 0.2);
+    }
+
+    button:not(.password-toggle):not(.close-login-modal):not(.ecocheck-trigger):active {
+      transform: translateY(0);
+    }
+
+    .password-field {
+      position: relative;
+      width: 100%;
+    }
+
+    button.password-toggle {
+      width: 44px !important;
+      min-width: 44px !important;
+      max-width: 44px !important;
+      height: 44px !important;
+      margin: 0 !important;
+      margin-top: 0 !important;
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      padding: 0 !important;
+      background: transparent !important;
+      border: none !important;
+      color: #1E3A8A !important;
+      border-radius: 10px !important;
+      cursor: pointer;
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      box-shadow: none !important;
+      flex-shrink: 0;
+    }
+
+    button.password-toggle:hover {
+      transform: translateY(-50%) !important;
+      background: transparent !important;
+      border-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    button.password-toggle:active {
+      transform: translateY(-50%) !important;
+    }
+
+    button.password-toggle .pwt-svg-open,
+    button.password-toggle .pwt-svg-shut {
+      display: block;
+      width: 22px;
+      height: 22px;
+    }
+
+    button.password-toggle .pwt-svg-shut {
+      display: none;
+    }
+
+    button.password-toggle.is-visible .pwt-svg-open {
+      display: none;
+    }
+
+    button.password-toggle.is-visible .pwt-svg-shut {
+      display: block;
+    }
+
+    button.password-toggle .pwt-fallback {
+      display: none;
+      font-size: 18px;
+    }
+
+    .auth .password-field input {
+      padding-right: 48px !important;
+    }
+
+    .btn-verde {
+      background: linear-gradient(135deg, #8FFFC7 0%, #7fd9b5 100%);
+      color: #0f2c21;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(143, 255, 199, 0.3);
+    }
+
+    .btn-verde:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .btn-verde:disabled:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .login-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .login-modal-overlay.active {
+      display: flex;
+    }
+
+    .login-modal {
+      width: 100%;
+      max-width: 400px;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      text-align: left;
+      animation: slideUp 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .login-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 16px;
+    }
+
+    .login-modal-header h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 700;
+      color: #1E3A8A;
+      letter-spacing: -0.3px;
+    }
+
+    .login-modal-header .close-login-modal {
+      background: transparent;
+      border: none;
+      font-size: 18px;
+      line-height: 1;
+      cursor: pointer;
+      color: #94a3b8;
+      transition: color 0.2s ease, background 0.2s ease;
+      padding: 0;
+      margin: 0;
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      max-width: 28px;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      box-shadow: none;
+      transform: none;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .login-modal-header .close-login-modal:hover {
+      color: #1E3A8A;
+      background: rgba(30, 58, 138, 0.08);
+      transform: none;
+      box-shadow: none;
+    }
+
+    .login-modal p {
+      color: #475569;
+      margin: 0 0 24px 0;
+      line-height: 1.6;
+      font-size: 15px;
+      white-space: pre-line;
+    }
+
+    #continueRegister {
+      margin-top: 0;
+    }
+
+    @media (max-width: 480px) {
+      .auth .container {
+        padding: 32px 24px;
+        max-width: 100%;
+      }
+
+      .auth .container h2 {
+        font-size: 24px;
+      }
+
+      button:not(.password-toggle):not(.close-login-modal):not(.ecocheck-trigger) {
+        padding: 13px 16px;
+        font-size: 14px;
+      }
+
+      button.password-toggle {
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        padding: 0 !important;
+      }
+
+      .auth input {
+        padding: 13px 16px;
+        font-size: 14px;
+      }
+
+      .login-modal {
+        padding: 24px;
+      }
+
+      .login-modal-header h3 {
+        font-size: 18px;
+      }
+    }
+
+    html.auth-view,
+    html:has(body.auth) {
+      height: auto;
+      max-height: none;
+      overflow: auto;
+    }
+
+    body.auth.cadastro > .container {
+      max-height: none;
+      overflow: visible;
+      display: block;
+      width: 100%;
+      max-width: 440px;
+      padding: 28px 32px 26px;
+    }
+
+    body.auth.cadastro .container h2 {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    body.auth.cadastro .container .subtitle {
+      margin-bottom: 18px;
+      font-size: 13px;
+    }
+
+    body.auth.cadastro .form-group {
+      margin-bottom: 10px;
+    }
+
+    body.auth.cadastro .form-group label {
+      margin-bottom: 6px;
+    }
+
+    body.auth.cadastro .field-error:empty {
+      min-height: 0;
+      margin-top: 0;
+    }
+
+    body.auth.cadastro .password-rules {
+      margin-top: 8px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px 14px;
+    }
+
+    body.auth.cadastro .password-rules .rule {
+      margin-bottom: 0;
+      font-size: 12px;
+      gap: 6px;
+    }
+
+    body.auth.cadastro .password-rules .rule-icon {
+      font-size: 12px;
+    }
+
+    body.auth.cadastro .password-rules .rule-text {
+      line-height: 1.25;
+    }
+
+    body.auth.cadastro .confirm-match {
+      margin-top: 6px;
+      font-size: 12px;
+    }
+
+    body.auth.cadastro .container > button:not(.password-toggle):not(.ecocheck-trigger) {
+      margin-top: 14px;
+    }
+
+    body.auth.cadastro .ecocheck-widget {
+      margin: 14px 0 16px;
+    }
+
+    body.auth.cadastro .container > .link {
+      display: block;
+      text-align: center;
+      margin: 14px auto 0;
+    }
+
+    @media (max-width: 480px) {
+      body.auth.cadastro > .container {
+        padding: 24px 22px 22px;
+      }
+
+      body.auth.cadastro .password-rules {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body class="auth cadastro">
+
+  <div class="eco-login-bg" aria-hidden="true">
+    <span class="eco-bin eco-bin--1"></span>
+    <span class="eco-bin eco-bin--2"></span>
+    <span class="eco-bin eco-bin--3"></span>
+    <span class="eco-bin eco-bin--4"></span>
+    <span class="eco-bin eco-bin--5"></span>
+    <span class="eco-bin eco-bin--6"></span>
+    <span class="eco-bin eco-bin--7"></span>
+    <span class="eco-bin eco-bin--8"></span>
+  </div>
+
+  <a href="pages/tela-inicia.html" class="auth-brand" aria-label="EcoColeta — início">
+    <img class="auth-logo-img" src="assets/images/logo.2.png?v=5" alt="EcoColeta" width="196" height="82" decoding="async">
+  </a>
+
+  <div class="container">
+    <h2>Criar Conta</h2>
+    <p class="subtitle">Junte-se a nós e comece a reciclar</p>
+
+    <div class="form-group">
+      <label for="registerName">Nome completo</label>
+      <input id="registerName" type="text" placeholder="Seu nome">
+      <span class="field-error" id="nameError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="registerEmail">E-mail</label>
+      <input id="registerEmail" type="email" placeholder="seu@email.com">
+      <span class="field-error" id="emailError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="registerPassword">Senha</label>
+      <div class="password-field">
+        <input id="registerPassword" type="password" placeholder="••••••••" autocomplete="new-password">
+        <button type="button" class="password-toggle" onclick="ecocoletaToggleSenha(this,'registerPassword')" aria-label="Mostrar senha" title="Mostrar senha">
+          <svg class="pwt-svg-open" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3" stroke="#64748b" stroke-width="2"/></svg>
+          <svg class="pwt-svg-shut" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23" stroke="#64748b" stroke-width="2"/></svg>
+          <span class="pwt-fallback" aria-hidden="true">👁</span>
+        </button>
+      </div>
+      <div class="password-rules" id="passwordRules">
+        <div class="rule" data-rule="lowercase">
+          <span class="rule-icon"></span>
+          <span class="rule-text">Pelo menos 1 letra minúscula</span>
+        </div>
+        <div class="rule" data-rule="uppercase">
+          <span class="rule-icon"></span>
+          <span class="rule-text">Pelo menos 1 letra maiúscula</span>
+        </div>
+        <div class="rule" data-rule="number">
+          <span class="rule-icon"></span>
+          <span class="rule-text">Pelo menos 1 número</span>
+        </div>
+        <div class="rule" data-rule="length">
+          <span class="rule-icon"></span>
+          <span class="rule-text">Mínimo de 8 caracteres</span>
+        </div>
+        <div class="rule" data-rule="maxlength">
+          <span class="rule-icon"></span>
+          <span class="rule-text">Máximo de 16 caracteres</span>
+        </div>
+        <div class="rule" data-rule="nosequential">
+          <span class="rule-icon"></span>
+          <span class="rule-text">Não pode usar números sequenciais (ex.: 1234)</span>
+        </div>
+      </div>
+      <span class="field-error" id="passwordError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="registerConfirm">Confirme sua senha</label>
+      <div class="password-field">
+        <input id="registerConfirm" type="password" placeholder="••••••••" autocomplete="new-password">
+        <button type="button" class="password-toggle" onclick="ecocoletaToggleSenha(this,'registerConfirm')" aria-label="Mostrar senha" title="Mostrar senha">
+          <svg class="pwt-svg-open" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3" stroke="#64748b" stroke-width="2"/></svg>
+          <svg class="pwt-svg-shut" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23" stroke="#64748b" stroke-width="2"/></svg>
+          <span class="pwt-fallback" aria-hidden="true">👁</span>
+        </button>
+      </div>
+      <div class="confirm-match" id="confirmMatch">
+        <span class="match-icon"></span>
+        <span class="match-text">As senhas devem coincidir</span>
+      </div>
+      <span class="field-error" id="confirmError"></span>
+    </div>
+
+    <div class="ecocheck-widget">
+      <button type="button" class="ecocheck-trigger is-idle" data-ecocheck-open aria-label="Abrir verificação EcoCheck">
+        <span class="ecocheck-trigger__main">
+          <span class="ecocheck-trigger__icon" data-ecocheck-icon aria-hidden="true">
+            <svg class="ecocheck-icon ecocheck-icon--loading" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="8.5" stroke="#c5d9cc" stroke-width="2.5"/>
+              <path d="M12 3.5a8.5 8.5 0 0 1 8.5 8.5" stroke="#12895d" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <svg class="ecocheck-icon ecocheck-icon--verified" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path class="ecocheck-check-path" d="M7.2 12.3l2.8 2.7 6.8-7" stroke="#0f6b38" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="ecocheck-trigger__label">Não sou um robô</span>
+        </span>
+        <span class="ecocheck-trigger__brand" aria-hidden="true">
+          <span class="ecocheck-trigger__brand-name">EcoCheck</span>
+          <span class="ecocheck-trigger__brand-tag">ANTI-BOT</span>
+        </span>
+      </button>
+    </div>
+
+    <button class="btn-verde" id="registerButton" type="button" onclick="register()" disabled>Criar Conta</button>
+
+    <p class="link" onclick="window.location.href='login.html' + (window.location.search || '')">
+      Já possui uma conta? Faça login
+    </p>
+  </div>
+
+  <div class="login-modal-overlay" id="registerModal">
+    <div class="login-modal">
+      <div class="login-modal-header">
+        <h3>Sucesso</h3>
+        <button class="close-login-modal" type="button" aria-label="Fechar">&times;</button>
+      </div>
+      <p id="registerModalMessage">Conta criada com sucesso!</p>
+      <button class="btn-verde" id="continueRegister" type="button" onclick="finishRegisterAfterSuccess()">Continuar</button>
+    </div>
+  </div>
+
+  <script src="assets/js/ecocoleta-paths.js?v=6"></script>
+  <script src="assets/js/ecocoleta-lazy-scripts.js?v=1"></script>
+  <script src="assets/js/ecocheck-lazy-loader.js?v=1"></script>
+  <script>
+    function ecocoletaToggleSenha(btn, inputId) {
+      var inp = document.getElementById(inputId);
+      if (!inp || !btn) return;
+      var visible = inp.type !== 'password';
+      if (visible) {
+        inp.type = 'password';
+        btn.classList.remove('is-visible');
+        btn.setAttribute('aria-label', 'Mostrar senha');
+        btn.setAttribute('title', 'Mostrar senha');
+      } else {
+        inp.type = 'text';
+        btn.classList.add('is-visible');
+        btn.setAttribute('aria-label', 'Ocultar senha');
+        btn.setAttribute('title', 'Ocultar senha');
+      }
+    }
+
+    let cadastroPendenteEnviado = false;
+
+    function obterUrlServidor(arquivoPhp) {
+      return window.ecocoletaPhpUrl ? window.ecocoletaPhpUrl(arquivoPhp) : null;
+    }
+
+    function parseJsonServidor(text) {
+      const raw = String(text || '').replace(/^\uFEFF/, '').trim();
+      if (!raw) return {};
+      try {
+        return JSON.parse(raw);
+      } catch (e1) {
+        const start = raw.indexOf('{');
+        if (start === -1) throw e1;
+        let depth = 0;
+        for (let i = start; i < raw.length; i++) {
+          const c = raw[i];
+          if (c === '{') depth++;
+          else if (c === '}') {
+            depth--;
+            if (depth === 0) return JSON.parse(raw.slice(start, i + 1));
+          }
+        }
+        throw e1;
+      }
+    }
+
+    async function postFormJson(arquivoPhp, campos) {
+      const url = obterUrlServidor(arquivoPhp);
+      if (!url) {
+        throw new Error('FILE_PROTOCOL');
+      }
+      const body = new URLSearchParams(campos);
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body: body.toString(),
+        credentials: 'same-origin',
+      });
+      const text = await res.text();
+      let data;
+      try {
+        data = parseJsonServidor(text);
+      } catch (e) {
+        const limpo = text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 350);
+        throw new Error('BAD_RESPONSE:' + (limpo || ('HTTP ' + res.status)));
+      }
+      return { res, data };
+    }
+
+    function limparSessaoLocalAntiga() {
+      localStorage.removeItem('loggedIn');
+      localStorage.removeItem('userId');
+      localStorage.removeItem('userName');
+      localStorage.removeItem('userEmail');
+    }
+
+    function finishRegisterAfterSuccess() {
+      if (!cadastroPendenteEnviado) {
+        closeRegisterModal();
+        return;
+      }
+      const email = document.getElementById('registerEmail').value.trim();
+      limparSessaoLocalAntiga();
+      sessionStorage.setItem('signupEmail', email);
+      window.location.replace('verificar-cadastro.html' + (window.location.search || ''));
+    }
+
+    function showError(inputId, errorId, message) {
+      const input = document.getElementById(inputId);
+      const error = document.getElementById(errorId);
+      if (input) input.classList.add('input-error');
+      if (error) error.textContent = message;
+    }
+
+    function clearErrors() {
+      ['registerName', 'registerEmail', 'registerPassword', 'registerConfirm'].forEach((id) => {
+        const input = document.getElementById(id);
+        if (input) input.classList.remove('input-error');
+      });
+      ['nameError', 'emailError', 'passwordError', 'confirmError'].forEach((id) => {
+        const error = document.getElementById(id);
+        if (error) error.textContent = '';
+      });
+    }
+
+    function showRegisterModal(message, title) {
+      const modal = document.getElementById('registerModal');
+      const modalMessage = document.getElementById('registerModalMessage');
+      const modalTitle = document.querySelector('#registerModal .login-modal-header h3');
+      if (modalTitle && title) modalTitle.textContent = title;
+      if (modalTitle && !title) modalTitle.textContent = 'Sucesso';
+      if (modalMessage) modalMessage.textContent = message;
+      if (modal) modal.classList.add('active');
+    }
+
+    function closeRegisterModal() {
+      const modal = document.getElementById('registerModal');
+      const modalTitle = document.querySelector('#registerModal .login-modal-header h3');
+      if (modalTitle) modalTitle.textContent = 'Sucesso';
+      if (modal) modal.classList.remove('active');
+    }
+
+    async function register() {
+      cadastroPendenteEnviado = false;
+      clearErrors();
+      const name = document.getElementById('registerName').value.trim();
+      const email = document.getElementById('registerEmail').value.trim();
+      const password = document.getElementById('registerPassword').value.trim();
+      const confirm = document.getElementById('registerConfirm').value.trim();
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      let valid = true;
+
+      if (!name) {
+        showError('registerName', 'nameError', 'Digite seu nome.');
+        valid = false;
+      }
+      if (!email) {
+        showError('registerEmail', 'emailError', 'Digite um e-mail.');
+        valid = false;
+      } else if (!emailPattern.test(email)) {
+        showError('registerEmail', 'emailError', 'Digite um e-mail válido.');
+        valid = false;
+      }
+      if (!password) {
+        showError('registerPassword', 'passwordError', 'Digite sua senha.');
+        valid = false;
+      }
+      if (!confirm) {
+        showError('registerConfirm', 'confirmError', 'Confirme sua senha.');
+        valid = false;
+      } else if (password && password !== confirm) {
+        showError('registerConfirm', 'confirmError', 'As senhas não coincidem.');
+        valid = false;
+      }
+
+      if (!valid) {
+        return;
+      }
+
+      if (typeof window.ecocoletaLoadEcoCheck === 'function') {
+        try {
+          await window.ecocoletaLoadEcoCheck();
+        } catch (loadErr) {
+          showRegisterModal('EcoCheck não carregou. Recarregue a página e tente novamente.', 'Atenção');
+          return;
+        }
+      }
+
+      let ecocheckToken = '';
+      if (window.EcoCheck && typeof window.EcoCheck.ensureVerified === 'function') {
+        const verified = await window.EcoCheck.ensureVerified();
+        if (!verified.ok) {
+          showRegisterModal(verified.erro || 'Conclua a verificação EcoCheck.', 'Atenção');
+          if (window.EcoCheckBridge) window.EcoCheckBridge.updateStatus();
+          return;
+        }
+        ecocheckToken = verified.token || window.EcoCheck.getToken() || '';
+      } else {
+        showRegisterModal('EcoCheck não carregou. Execute ecocheck/build.bat.', 'Atenção');
+        return;
+      }
+
+      try {
+        const { res, data } = await postFormJson('cadastro.php', {
+          nome: name,
+          email: email,
+          senha: password,
+          ecocheck_token: ecocheckToken,
+        });
+
+        if (data && data.sucesso) {
+          cadastroPendenteEnviado = true;
+          limparSessaoLocalAntiga();
+          sessionStorage.setItem('signupEmail', email);
+          if (data.codigo_para_teste) {
+            sessionStorage.setItem('signupCodigoTeste', String(data.codigo_para_teste));
+            showRegisterModal(
+              (data.mensagem || 'E-mail nao foi enviado no modo local.') +
+                '\n\nSeu codigo de 6 digitos: ' + data.codigo_para_teste +
+                '\n\nClique em Continuar para digitar o codigo na proxima tela.',
+              'Codigo de verificacao'
+            );
+            return;
+          }
+          sessionStorage.removeItem('signupCodigoTeste');
+          showRegisterModal(
+            data.mensagem || 'Enviamos um codigo para seu e-mail. Verifique a caixa de entrada e o spam.',
+            'E-mail enviado'
+          );
+          return;
+        }
+
+        if (data && data.erro) {
+          if (data.erro.toLowerCase().includes('email') || data.erro.toLowerCase().includes('e-mail')) {
+            showError('registerEmail', 'emailError', data.erro);
+          } else {
+            showRegisterModal(data.erro, 'Atenção');
+          }
+        } else {
+          showRegisterModal('Não foi possível concluir o cadastro. (' + res.status + ')', 'Atenção');
+        }
+      } catch (e) {
+        if (e && e.message === 'FILE_PROTOCOL') {
+          showRegisterModal('Abra pelo servidor: INICIAR-PROJETO.bat ou http://localhost/Ecocoleta/auth/cadastro.html (nao use file://).', 'Como corrigir');
+          return;
+        }
+        if (e && String(e.message).startsWith('BAD_RESPONSE:')) {
+          showRegisterModal(
+            'O servidor não devolveu JSON. Geralmente é Apache/MySQL desligado ou erro no PHP. Detalhe: ' + e.message.replace('BAD_RESPONSE:', ''),
+            'Atenção'
+          );
+          return;
+        }
+        showRegisterModal('Sem conexão com o servidor. Confira se o Apache está Start no XAMPP e se o endereço é http://localhost/Ecocoleta/', 'Atenção');
+      }
+    }
+
+    const registerModal = document.getElementById('registerModal');
+    if (registerModal) {
+      const closeButtons = registerModal.querySelectorAll('.close-login-modal');
+      closeButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          closeRegisterModal();
+        });
+      });
+
+      registerModal.addEventListener('click', (event) => {
+        if (event.target === registerModal) {
+          closeRegisterModal();
+        }
+      });
+    }
+
+    const passwordInput = document.getElementById('registerPassword');
+    const confirmInput = document.getElementById('registerConfirm');
+    const registerButton = document.getElementById('registerButton');
+
+    function hasSequentialDigits(password, minRun = 4) {
+      const runs = password.match(/\d+/g);
+      if (!runs) return false;
+
+      for (const run of runs) {
+        if (run.length < minRun) continue;
+        for (let i = 0; i <= run.length - minRun; i++) {
+          let ascending = true;
+          let descending = true;
+          for (let j = 0; j < minRun - 1; j++) {
+            const a = run.charCodeAt(i + j) - 48;
+            const b = run.charCodeAt(i + j + 1) - 48;
+            if (b !== a + 1) ascending = false;
+            if (b !== a - 1) descending = false;
+          }
+          if (ascending || descending) return true;
+        }
+      }
+      return false;
+    }
+
+    function validatePassword(password) {
+      const empty = password === '';
+      const rules = {
+        lowercase: /[a-z]/.test(password),
+        uppercase: /[A-Z]/.test(password),
+        number: /\d/.test(password),
+        length: password.length >= 8,
+        maxlength: !empty && password.length <= 16,
+        nosequential: !empty && !hasSequentialDigits(password)
+      };
+
+      return rules;
+    }
+
+    function updatePasswordRules() {
+      const password = passwordInput.value;
+      const rules = validatePassword(password);
+      const ruleElements = document.querySelectorAll('#passwordRules .rule');
+
+      ruleElements.forEach(rule => {
+        const ruleName = rule.dataset.rule;
+        const isValid = rules[ruleName];
+        rule.classList.toggle('valid', isValid);
+      });
+
+      return Object.values(rules).every(valid => valid);
+    }
+
+    function updateConfirmMatch() {
+      const password = passwordInput.value;
+      const confirm = confirmInput.value;
+      const matchElement = document.getElementById('confirmMatch');
+      const isValid = password === confirm && password !== '' && confirm !== '';
+
+      matchElement.classList.toggle('valid', isValid);
+      matchElement.style.display = confirm === '' ? 'none' : 'flex';
+      return isValid;
+    }
+
+    function updateFormValidity() {
+      const passwordValid = updatePasswordRules();
+      const confirmValid = updateConfirmMatch();
+      const name = document.getElementById('registerName').value.trim();
+      const email = document.getElementById('registerEmail').value.trim();
+      const nameValid = name !== '';
+      const emailValid = email === '' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      const antiBotOk = !!(window.EcoCheck && window.EcoCheck.hasValidToken && window.EcoCheck.hasValidToken());
+
+      registerButton.disabled = !(passwordValid && confirmValid && nameValid && emailValid && email !== '' && antiBotOk);
+    }
+
+    passwordInput.addEventListener('input', updateFormValidity);
+    confirmInput.addEventListener('input', updateFormValidity);
+    document.getElementById('registerName').addEventListener('input', updateFormValidity);
+    document.getElementById('registerEmail').addEventListener('input', updateFormValidity);
+    document.addEventListener('ecocheck:verified', updateFormValidity);
+
+    function reiniciarEcoCheckNaTelaAuth() {
+      if (window.EcoCheckBridge && typeof window.EcoCheckBridge.reset === 'function') {
+        window.EcoCheckBridge.reset();
+      } else if (window.EcoCheck && typeof window.EcoCheck.clearToken === 'function') {
+        window.EcoCheck.clearToken();
+        document.dispatchEvent(new CustomEvent('ecocheck:reset'));
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var bootEco = typeof window.ecocoletaLoadEcoCheck === 'function'
+        ? window.ecocoletaLoadEcoCheck().then(function () {
+            reiniciarEcoCheckNaTelaAuth();
+            updateFormValidity();
+          }).catch(function () {
+            updateFormValidity();
+          })
+        : Promise.resolve((reiniciarEcoCheckNaTelaAuth(), updateFormValidity()));
+      void bootEco;
+    });
+  </script>
+</body>
+</html>

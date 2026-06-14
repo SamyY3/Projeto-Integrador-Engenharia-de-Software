@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <base href="../" data-app-base>
+  <script>(function(){var p=location.pathname.replace(/\\/g,"/"),b=document.querySelector("base[data-app-base]"),m=p.match(/^(.*\/)(?:auth|admin|pages|mapa)\/[^/]+$/);if(b)b.href=m?m[1]:p.replace(/\/[^/]*$/,"/")||"/";})();</script>
+  <script src="assets/js/ecocoleta-paths.js?v=6"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balança EcoPonto | EcoColeta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/header.css?v=11">
+  <link rel="stylesheet" href="assets/css/footer.css?v=9">
+  <link rel="stylesheet" href="assets/css/notif-popup.css?v=10">
+  <link rel="stylesheet" href="assets/css/user-popup.css">
+  <link rel="stylesheet" href="assets/css/agendar-coleta.css?v=4">
+  <link rel="stylesheet" href="assets/css/balanca-ecoponto.css?v=6">
+</head>
+<body class="app agendar-coleta-page balanca-page">
+
+    <header class="topo">
+  <div class="nav-left">
+    <a href="tela-inicia.html" class="logo-link">
+      <img class="eco-brand-img" src="assets/images/logo.2.bak.png?v=6" alt="EcoColeta" width="192" height="84" decoding="async">
+    </a>
+    <nav>
+      <ul class="menu">
+        <li><a href="tela-inicia.html">Home</a></li>
+        <li><a href="pagina-relatorio.html">Gerar Relatório</a></li>
+        <li><a href="como-funciona.html">Como Funciona</a></li>
+        <li><a href="ecopontos.html">EcoPontos</a></li>
+        <li><a href="premios-disponiveis.html">Prêmios</a></li>
+        <li><a href="educacao-ambiental.html">Educação</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="Ranking.html">Ranking</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="icones">
+    <div class="notif-wrapper">
+      <button type="button" class="notif-btn" aria-label="Notificações">
+          <img src="assets/images/icon notificacao.png" alt="Notificações" class="icon" loading="lazy" decoding="async">
+      </button>
+      <div class="notif-overlay hidden">
+        <div class="notif-box">
+          <div class="header">
+            <h2>Notificações</h2>
+            <span class="gear">⚙️</span>
+          </div>
+          <div class="section">
+            <p class="section-title">IMPORTANTE</p>
+            <div class="item">
+              <div class="icon green">♻️</div>
+              <div>
+                <p>EcoColeta Novo ponto de coleta disponível próxima a você!</p>
+                <span>há 30 minutos</span>
+              </div>
+            </div>
+          </div>
+          <div class="section">
+            <p class="section-title">MAIS NOTIFICAÇÕES</p>
+            <div class="item">
+              <div class="icon yellow">🏆</div>
+              <div class="content">
+                <p>Parabéns! Você ganhou <b>50 pontos</b> pela sua coleta de hoje</p>
+                <span>há 3 horas</span>
+              </div>
+              <div class="badge">+50 pts</div>
+            </div>
+            <div class="item">
+              <div class="icon purple">📅</div>
+              <div>
+                <p><b>Lembrete:</b> Dia de coleta no bairro amanhã</p>
+                <span>há 5 horas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="perfil.html">
+      <img src="assets/images/icons pessoa.png" alt="Perfil" loading="lazy" decoding="async">
+    </a>
+  </div>
+</header>
+
+  <main class="agenda-main balanca-main">
+    <header class="balanca-hero">
+      <div class="balanca-hero__copy">
+        <span class="balanca-kicker" id="balancaKicker">Simulação inteligente</span>
+        <h1 id="balancaTitle">Balança EcoPonto</h1>
+        <p class="balanca-subtitle" id="balancaSubtitle">Estime quantos EcoPontos você pode receber com o volume recomendado de recicláveis.</p>
+      </div>
+      <div class="balanca-hero__actions">
+        <span class="balanca-mode-pill" id="balancaModePill">Demonstrativo</span>
+        <a href="formulario-coleta.html" class="balanca-back-link" id="balancaBackLink">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          Voltar
+        </a>
+      </div>
+    </header>
+
+    <div class="balanca-dashboard">
+      <section class="balanca-panel balanca-panel--weight" aria-labelledby="balancaWeightTitle">
+        <div class="balanca-panel__head">
+          <h2 id="balancaWeightTitle">Peso do lixo</h2>
+          <span class="balanca-panel__tag">Tempo real</span>
+        </div>
+
+        <div class="balanca-dial-wrap" aria-live="polite">
+          <div class="balanca-dial-ring"></div>
+          <div class="balanca-dial">
+            <div class="balanca-dial__half balanca-dial__half--top">
+              <span class="balanca-dial__label">Peso</span>
+              <strong class="balanca-dial__value" id="balancaPesoDisplay">+0,00 Kg</strong>
+            </div>
+            <div class="balanca-dial__divider"></div>
+            <div class="balanca-dial__half balanca-dial__half--bottom">
+              <span class="balanca-dial__label">EcoPontos</span>
+              <strong class="balanca-dial__value balanca-dial__value--pts" id="balancaPontosDisplay">+0</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="balanca-slider-block">
+          <div class="balanca-slider-head">
+            <label for="balancaPesoInput">Peso total informado</label>
+            <div class="balanca-input-wrap">
+              <input type="number" id="balancaPesoInput" min="0.1" max="50" step="0.05" value="2.35" inputmode="decimal" aria-label="Peso em quilogramas">
+              <span class="balanca-input-unit">kg</span>
+            </div>
+          </div>
+          <div class="balanca-range-wrap">
+            <input type="range" id="balancaPesoRange" min="0.1" max="50" step="0.05" value="2.35" aria-label="Ajustar peso">
+          </div>
+          <p class="balanca-slider-hint" id="balancaPesoHint">Sugestão baseada nos materiais selecionados.</p>
+        </div>
+
+        <div class="balanca-saldo-block">
+          <span class="balanca-saldo-label">Sua pontuação atual</span>
+          <div class="balanca-saldo-pill">
+            <svg class="balanca-saldo-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 22c4-4 8-7.5 8-12a8 8 0 1 0-16 0c0 4.5 4 8 8 12z"/>
+              <path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            </svg>
+            <strong id="balancaSaldoAtual">— EcoPontos</strong>
+          </div>
+        </div>
+
+        <div class="balanca-breakdown hidden" id="balancaBreakdown" aria-live="polite">
+          <div class="balanca-breakdown__head">
+            <h3>Detalhamento da estimativa</h3>
+            <span class="balanca-breakdown__total" id="balancaBreakdownTotal">0 pts</span>
+          </div>
+          <ul class="balanca-breakdown__list" id="balancaBreakdownList"></ul>
+          <p class="balanca-breakdown__note" id="balancaBreakdownNote">Simulação apenas — nenhum ponto é salvo no sistema.</p>
+        </div>
+      </section>
+
+      <section class="balanca-panel balanca-panel--materials" aria-labelledby="balancaMaterialsTitle">
+        <div class="balanca-panel__head">
+          <h2 id="balancaMaterialsTitle">Tipo de material</h2>
+          <span class="balanca-panel__tag">Múltipla escolha</span>
+        </div>
+        <div class="balanca-materials-toolbar">
+          <p class="balanca-materials-hint" id="balancaMaterialsHint">Marque os materiais que você vai levar — igual ao formulário de agendamento.</p>
+          <span class="balanca-materials-count" id="balancaMaterialsCount" aria-live="polite">0 selecionados</span>
+        </div>
+        <div class="balanca-materials-grid" id="balancaMaterialsGrid" role="group" aria-label="Tipos de material"></div>
+
+        <div class="balanca-agenda-summary hidden" id="balancaAgendaSummary" aria-live="polite">
+          <h3>Resumo do agendamento</h3>
+          <ul>
+            <li><span>Data</span><strong id="balancaAgendaData">—</strong></li>
+            <li><span>Horário</span><strong id="balancaAgendaHorario">—</strong></li>
+            <li><span>EcoPonto</span><strong id="balancaAgendaPev">—</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="balanca-panel balanca-panel--chart" aria-labelledby="balancaChartTitle">
+        <div class="balanca-panel__head">
+          <h2 id="balancaChartTitle">Reciclagem semanal</h2>
+          <span class="balanca-demo-badge">Referência</span>
+        </div>
+
+        <div class="balanca-chart-layout">
+          <div class="balanca-chart-yaxis" aria-hidden="true">
+            <span>4</span>
+            <span>3</span>
+            <span>2</span>
+            <span>1</span>
+            <span>0</span>
+            <small>Kg</small>
+          </div>
+          <div class="balanca-chart-stage">
+            <div class="balanca-chart-gridlines" aria-hidden="true"></div>
+            <div class="balanca-chart" id="balancaChart" role="img" aria-label="Gráfico demonstrativo de quilos reciclados por dia da semana"></div>
+          </div>
+        </div>
+
+        <div class="balanca-chart-footer">
+          <div class="balanca-stat">
+            <small>Total reciclado</small>
+            <strong id="balancaChartTotalKg">25 Kg</strong>
+          </div>
+          <div class="balanca-stat">
+            <small>EcoPontos estimados</small>
+            <strong id="balancaChartTotalPts">0</strong>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="balanca-footer">
+      <p class="balanca-pending-note hidden" id="balancaPendingNote">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        Os EcoPontos deste agendamento só serão creditados após o administrador do EcoPonto confirmar o recebimento do peso informado.
+      </p>
+      <div class="balanca-footer__actions">
+        <button type="button" class="balanca-primary-btn" id="balancaPrimaryBtn">
+          <span>Calcular estimativa</span>
+        </button>
+        <a href="formulario-coleta.html" class="balanca-secondary-btn hidden" id="balancaAgendarLink">Voltar ao agendamento</a>
+      </div>
+    </footer>
+  </main>
+
+  <footer id="ecocoleta-site-footer"></footer>
+
+  <script src="assets/js/header-nav.js?v=16"></script>
+  <script src="assets/js/notif-popup.js?v=10"></script>
+  <script src="assets/js/user-popup.js"></script>
+  <script src="assets/js/footer.js?v=10"></script>
+  <script src="assets/js/pontuacao-coleta.js?v=1"></script>
+  <script src="assets/js/balanca-ecoponto.js?v=7"></script>
+</body>
+</html>

@@ -1,0 +1,3033 @@
+﻿[
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "index.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/home.css?v=12"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/mapa.css?v=50"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/header.css?v=7"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/footer.css?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icon notificacao.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocoleta-paths.js?v=2"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/header-nav.js?v=10"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/notif-popup.js?v=3"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/footer.js?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/geo-consent.js?v=1"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/home.js?v=10"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/geolocation-service.js?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/route-service.js?v=1"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/navigation-engine.js?v=1"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/navigation-component.js?v=3"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/transport-times-widget.js?v=5"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/mapa.js?v=51"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "pages/tela-inicia.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | EcoColeta - Home"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/ecopontos.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/mapa.css?v=51"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/header.css?v=7"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/footer.css?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icon notificacao.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocoleta-paths.js?v=1"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/header-nav.js?v=10"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/notif-popup.js?v=3"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/cnpj..png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo preta.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/telefone-.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/o-email 1.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons facebook.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/email.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons apicativo X.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons-youtube.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons-instagram.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/footer.js?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/geo-consent.js?v=1"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/geolocation-service.js?v=10"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/route-service.js?v=2"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/navigation-engine.js?v=1"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/navigation-component.js?v=4"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/transport-times-widget.js?v=5"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/mapa.js?v=51"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecopontos.js"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "pages/ecopontos.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Ecopontos"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/perfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/perfil.css?v=2"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/perfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/perfil-avatar.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/perfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/header.css?v=7"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/perfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/footer.css?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/perfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/perfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/user-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/perfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/perfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icon notificacao.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/perfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/perfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/lapis.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/perfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/lapis.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/perfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/footer.js?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/perfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/header-nav.js?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/perfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/notif-popup.js?v=3"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/perfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/user-popup.js"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/perfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/perfil-avatar.js"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/perfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/perfil.js?v=3"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "pages/perfil.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Perfil do Usuário"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/agendar-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/header.css?v=7"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/agendar-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/footer.css?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/agendar-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/agendar-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/user-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/agendar-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/agendar-coleta.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/agendar-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/agendar-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icon notificacao.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/agendar-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/agendar-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocoleta-paths.js?v=1"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/agendar-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/header-nav.js?v=10"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/agendar-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/notif-popup.js?v=4"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/agendar-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/user-popup.js"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/agendar-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/footer.js?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/agendar-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/agendar-coleta.js"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "pages/agendar-coleta.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Agendar Coleta | EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/Ranking.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/ranking.css?v=5"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/Ranking.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/header.css?v=7"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/Ranking.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/footer.css?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/Ranking.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/Ranking.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/Ranking.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icon notificacao.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/Ranking.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/Ranking.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocoleta-paths.js?v=1"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/Ranking.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/header-nav.js?v=10"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/Ranking.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/notif-popup.js?v=3"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/Ranking.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "auth/login.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/Ranking.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "auth/cadastro.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/Ranking.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/lupa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/Ranking.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/footer.js?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/Ranking.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ranking.js?v=4"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "pages/Ranking.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Ranking EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/home.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/quem-somos.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/header.css?v=7"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/footer.css?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icon notificacao.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/footer.js?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocoleta-paths.js?v=1"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/header-nav.js?v=10"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/notif-popup.js?v=3"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "pages/quem-somos.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | EcoColeta - Quem Somos"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/como-funciona.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/home.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/como-funciona.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/como-funciona.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/como-funciona.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/header.css?v=7"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/como-funciona.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/footer.css?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/como-funciona.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/como-funciona.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/como-funciona.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icon notificacao.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/como-funciona.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/como-funciona.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocoleta-paths.js?v=1"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/como-funciona.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/header-nav.js?v=10"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/como-funciona.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/notif-popup.js?v=3"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/como-funciona.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/footer.js?v=9"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "pages/como-funciona.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Como Funciona | EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/premios-disponiveis.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/premios.css?v=3"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/premios-disponiveis.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/header.css?v=7"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/premios-disponiveis.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/footer.css?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/premios-disponiveis.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/premios-disponiveis.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/user-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/premios-disponiveis.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/premios-disponiveis.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icon notificacao.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/premios-disponiveis.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/premios-disponiveis.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/footer.js?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/premios-disponiveis.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocoleta-paths.js?v=1"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/premios-disponiveis.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/header-nav.js?v=10"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/premios-disponiveis.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/notif-popup.js?v=3"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/premios-disponiveis.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/user-popup.js"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/premios-disponiveis.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/premios.js?v=3"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "pages/premios-disponiveis.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Prêmios Disponíveis | EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/edicaoperfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/edicaoperfil.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/edicaoperfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/header.css?v=7"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/edicaoperfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/edicaoperfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/edicaoperfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icon notificacao.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/edicaoperfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/edicaoperfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/mulher.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/edicaoperfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/image.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/edicaoperfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/lapis.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/edicaoperfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/edicaoperfil.js"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/edicaoperfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/header-nav.js?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/edicaoperfil.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/notif-popup.js?v=3"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "pages/edicaoperfil.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Editar Perfil"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/home.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/educacao-ambiental.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/header.css?v=7"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/footer.css?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icon notificacao.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocoleta-paths.js?v=1"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/header-nav.js?v=10"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/notif-popup.js?v=3"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/cnpj..png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo preta.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/telefone-.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/o-email 1.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons facebook.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/email.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons apicativo X.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons-youtube.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons-instagram.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/footer.js?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/home.js"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "pages/educacao-ambiental.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Educação Ambiental | EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/perfil.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/pagina-relatorio.css?v=3"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/header.css?v=7"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/footer.css?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icon notificacao.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocoleta-paths.js?v=1"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/header-nav.js?v=10"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/notif-popup.js?v=3"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/cnpj..png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo preta.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/telefone-.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/o-email 1.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons facebook.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/email.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons apicativo X.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons-youtube.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons-instagram.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/footer.js?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/home.js"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "pages/pagina-relatorio.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Gerar Relatório | EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/relatorio-mensal.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/relatorio-mensal.css"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "pages/relatorio-mensal.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Relatório Mensal | EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/formulario-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/header.css?v=7"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/formulario-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/footer.css?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/formulario-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/formulario-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/user-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/formulario-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/agendar-coleta.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/formulario-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/formulario-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icon notificacao.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/formulario-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icons pessoa.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/formulario-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocoleta-paths.js?v=1"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/formulario-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/header-nav.js?v=10"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/formulario-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/notif-popup.js?v=4"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/formulario-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/user-popup.js"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/formulario-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/footer.js?v=9"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/formulario-coleta.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/agendar-coleta.js"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "pages/formulario-coleta.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Formulário de Coleta | EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/mapa.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "pages/tela-inicia.html#eco-pontos-mapa"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "pages/mapa.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Redirecionando…"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/notif-popup.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/notif-popup.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/icon notificacao.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "pages/notif-popup.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/notif-popup.js"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "pages/notif-popup.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Notificações"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/login.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/premios.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/login.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/style.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/login.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/login.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "ecocheck-dist/ecocheck.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/login.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/ecocheck-widget.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/login.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "ecocheck-dist/ecocheck.iife.js"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/login.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocheck-bridge.js"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/login.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo telas.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/login.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "auth/recuperar.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/login.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "auth/cadastro.html"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "auth/login.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Login - EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/cadastro.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/style.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/cadastro.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/cadastro.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "ecocheck-dist/ecocheck.css?v=3"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/cadastro.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/ecocheck-widget.css?v=6"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/cadastro.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocoleta-paths.js?v=2"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/cadastro.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocheck-bridge.js?v=6"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/cadastro.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "ecocheck-dist/ecocheck.iife.js?v=3"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/cadastro.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo telas.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/cadastro.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "auth/login.html"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "auth/cadastro.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Cadastro - EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/recuperar.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/style.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/recuperar.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocoleta-paths.js?v=2"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/recuperar.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/recuperar.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo telas.png"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "auth/recuperar.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Recuperar Senha - EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/nova-senha.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/style.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/nova-senha.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocoleta-paths.js?v=2"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/nova-senha.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/nova-senha.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo telas.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/nova-senha.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/password-toggle.js"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "auth/nova-senha.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Nova Senha - EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/verificacao.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocoleta-paths.js?v=2"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/verificacao.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/style.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/verificacao.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/verificacao.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/notif-popup.js"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/verificacao.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo telas.png"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "auth/verificacao.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Verificação - EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/verificar-cadastro.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocoleta-paths.js?v=2"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/verificar-cadastro.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/style.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/verificar-cadastro.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/verificar-cadastro.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo telas.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/verificar-cadastro.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "auth/cadastro.html"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "auth/verificar-cadastro.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Confirmar Cadastro - EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/resetar.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/style.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/resetar.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/resetar.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/password-toggle.js"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "auth/resetar.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Redefinir Senha"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/senha-criada.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/style.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/senha-criada.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/notif-popup.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/senha-criada.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo telas.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/senha-criada.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "auth/login.html"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "auth/senha-criada.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Senha Criada - EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "auth/login-temp.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "auth/login.html"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "auth/login-temp.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Login Temporário Desativado"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Login-ADM.css?v=7"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "ecocheck-dist/ecocheck.css?v=3"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/ecocheck-widget.css?v=6"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocoleta-paths.js?v=2"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocheck-bridge.js?v=6"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "ecocheck-dist/ecocheck.iife.js?v=3"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "pages/tela-inicia.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "auth/login.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Login-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "pages/tela-inicia.html"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "admin/Login-ADM.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Login ADM Plataforma | EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Login-ADM-Ecoponto.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "ecocheck-dist/ecocheck.css?v=3"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/ecocheck-widget.css?v=6"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocoleta-paths.js?v=2"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/js/ecocheck-bridge.js?v=6"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "ecocheck-dist/ecocheck.iife.js?v=3"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "pages/tela-inicia.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Login-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "admin/Login-ADM-Ecoponto.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Login ADM EcoPontos | EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/home-adm.css?v=2"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "pages/tela-inicia.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Login-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "pages/tela-inicia.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "pages/ecopontos.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Login-ADM.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/home-adm.js"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "admin/Home-ADM.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Hub ADM Plataforma | EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/mapa.css?v=15"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/home-adm-ecoponto.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/adm-sidebar-icons.js"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "pages/tela-inicia.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Home-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Coletas-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/materias-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/relatorio-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/configuracoes-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Home-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Coletas-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/materias-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/relatorio-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/configuracoes-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/Ecoponto.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/mapa.js?v=13"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/home-adm-ecoponto.js"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "admin/Home-ADM-Ecoponto.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Painel ADM EcoPonto | EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/mapa.css?v=15"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/home-adm-ecoponto.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/coletas-adm-ecoponto.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/adm-sidebar-icons.js"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "pages/tela-inicia.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Home-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Coletas-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/materias-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/relatorio-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/configuracoes-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Home-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Coletas-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/materias-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/relatorio-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/configuracoes-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "mapa/mapa.js?v=14"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/coletas-adm-ecoponto.js"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "admin/Coletas-ADM-Ecoponto.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Gerenciamento de Coletas | EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/home-adm-ecoponto.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/css/edicaoperfil.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/configuracoes-adm-ecoponto.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/adm-sidebar-icons.js"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "pages/tela-inicia.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Home-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Coletas-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/materias-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/relatorio-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/configuracoes-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Home-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Coletas-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/materias-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/relatorio-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/configuracoes-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/mulher.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/image.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/lapis.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/configuracoes-adm-ecoponto.js"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "admin/configuracoes-ADM-Ecoponto.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "FALHA",
+        "Detalhe":  "O servidor remoto retornou um erro: (404) Não Localizado."
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/relatorio-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/home-adm-ecoponto.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/relatorio-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/coletas-adm-ecoponto.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/relatorio-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/relatorio-adm-ecoponto.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/relatorio-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/adm-sidebar-icons.js"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/relatorio-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "pages/tela-inicia.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/relatorio-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/relatorio-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Home-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/relatorio-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Coletas-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/relatorio-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/materias-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/relatorio-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/relatorio-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/relatorio-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/configuracoes-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/relatorio-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Home-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/relatorio-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Coletas-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/relatorio-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/materias-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/relatorio-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/relatorio-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/relatorio-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/configuracoes-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/relatorio-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/relatorio-adm-ecoponto.js"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "admin/relatorio-ADM-Ecoponto.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Relatórios e Análises | EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/materias-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/home-adm-ecoponto.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/materias-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/coletas-adm-ecoponto.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/materias-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/materias-adm-ecoponto.css"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/materias-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/adm-sidebar-icons.js"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/materias-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "pages/tela-inicia.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/materias-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "assets/images/logo.2.png"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/materias-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Home-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/materias-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Coletas-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/materias-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/materias-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/materias-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/relatorio-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/materias-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/configuracoes-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/materias-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Home-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/materias-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/Coletas-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/materias-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/materias-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/materias-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/relatorio-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/materias-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/configuracoes-ADM-Ecoponto.html"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/materias-ADM-Ecoponto.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "admin/materias-adm-ecoponto.js"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "admin/materias-ADM-Ecoponto.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Gerenciamento de Materiais | EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "admin/edicao-perfil-admin.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "configuracoes-ADM-Ecoponto.html#editar-perfil"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "admin/edicao-perfil-admin.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Editar Perfil | EcoColeta"
+    },
+    {
+        "Tipo":  "Caixa branca",
+        "Pagina":  "mapa/mapa.html",
+        "Teste":  "Asset referenciado",
+        "Resultado":  "FALHA",
+        "Detalhe":  "pages/tela-inicia.html#eco-pontos-mapa"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "mapa/mapa.html",
+        "Teste":  "HTTP GET",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200 | Redirecionando…"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "auth/login.php",
+        "Teste":  "API PHP",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "auth/cadastro.php",
+        "Teste":  "API PHP",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "auth/recuperar.php",
+        "Teste":  "API PHP",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "auth/resetar_senha.php",
+        "Teste":  "API PHP",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "auth/verificar_cadastro.php",
+        "Teste":  "API PHP",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "auth/verificar_codigo_recuperacao.php",
+        "Teste":  "API PHP",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "admin/Login-ADM.php",
+        "Teste":  "API PHP",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "admin/Login-ADM-Ecoponto.php",
+        "Teste":  "API PHP",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "api/ecocheck-api.php",
+        "Teste":  "API PHP",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 400"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "api/logout.php",
+        "Teste":  "API PHP",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "api/meu_perfil.php",
+        "Teste":  "API PHP",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "api/notificacoes.php",
+        "Teste":  "API PHP",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "api/agendamento_coleta.php",
+        "Teste":  "API PHP",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200"
+    },
+    {
+        "Tipo":  "Caixa preta",
+        "Pagina":  "api/test-php-json.php",
+        "Teste":  "API PHP",
+        "Resultado":  "OK",
+        "Detalhe":  "HTTP 200"
+    }
+]

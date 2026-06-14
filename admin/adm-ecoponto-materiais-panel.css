@@ -1,0 +1,236 @@
+
+.adm-ecoponto-card-wrap {
+  width: 100%;
+}
+
+.adm-ecoponto-card-wrap--loading {
+  min-height: 280px;
+  opacity: 0.55;
+}
+
+.adm-ecoponto-card-public.card-ecoponto {
+  width: 100%;
+  max-width: 100%;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 18px 40px rgba(15, 44, 77, 0.08);
+  border: 1px solid rgba(47, 143, 131, 0.12);
+  border-left: 6px solid #2f8f83;
+}
+
+.adm-ecoponto-card-public h2 {
+  margin: 0 0 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(28, 59, 87, 0.12);
+  color: #1c3b57;
+  font-size: 22px;
+  font-family: "Space Grotesk", "Sora", sans-serif;
+}
+
+.adm-ecoponto-card-public .endereco {
+  font-size: 14px;
+  color: #1d3e5a;
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(28, 59, 87, 0.1);
+  font-weight: 700;
+}
+
+.adm-ecoponto-card-public .endereco-pin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+  border-radius: 999px;
+  background: rgba(47, 143, 131, 0.12);
+}
+
+.adm-ecoponto-card-public .horario h3,
+.adm-ecoponto-card-public .materiais h3,
+.adm-ecoponto-card-public .nao-aceitos h3 {
+  margin: 0 0 10px;
+  color: #34495e;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.adm-ecoponto-card-public .horario,
+.adm-ecoponto-card-public .materiais,
+.adm-ecoponto-card-public .nao-aceitos {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(28, 59, 87, 0.1);
+}
+
+.adm-ecoponto-card-public .nao-aceitos {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.adm-ecoponto-card-public .horario-linha {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 8px;
+  margin: 4px 0;
+  font-size: 13px;
+  color: #526071;
+}
+
+.adm-ecoponto-card-public .horario-linha strong {
+  color: #34495e;
+  font-weight: 600;
+}
+
+.adm-ecoponto-card-public .icons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(70px, 1fr));
+  gap: 14px 12px;
+  margin-top: 10px;
+}
+
+.adm-ecoponto-card-public .icons div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.adm-ecoponto-card-public .icons div span {
+  font-size: 13px;
+  color: #4f5e72;
+}
+
+.adm-ecoponto-card-public .icons img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.adm-ecoponto-card-public .icons-nao-aceitos {
+  grid-template-columns: repeat(3, minmax(78px, 1fr)) !important;
+}
+
+.adm-ecoponto-card-public .icons-nao-aceitos div {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  text-align: left;
+}
+
+.adm-ecoponto-card-public .icons-nao-aceitos span:not(.nao-aceito-icon) {
+  margin-top: 0;
+  color: #34495e;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.adm-ecoponto-card-public .nao-aceito-icon {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  margin: 0 !important;
+  border: 3px solid #ee3b32;
+  border-radius: 50%;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.adm-ecoponto-card-wrap--compact .adm-ecoponto-card-public {
+  padding: 18px 20px;
+}
+
+.adm-ecoponto-card-wrap--compact .adm-ecoponto-card-public h2 {
+  font-size: 1.15rem;
+}
+
+.adm-eco-materiais-panel {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(15, 63, 37, 0.1);
+  display: grid;
+  gap: 1rem;
+}
+
+.adm-eco-materiais-panel--loading {
+  min-height: 120px;
+  opacity: 0.55;
+}
+
+.adm-eco-materiais-block h3 {
+  margin: 0 0 0.65rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f3f25;
+}
+
+.adm-eco-materiais-block--no h3 {
+  color: #8b2e2e;
+}
+
+.adm-eco-materiais-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 0.65rem;
+}
+
+.adm-eco-mat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #1a3d2e;
+}
+
+.adm-eco-mat-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.adm-eco-mat-item__icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.adm-eco-mat-item--no {
+  color: #7a3030;
+}
+
+.adm-eco-materiais-empty {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #5a6b62;
+  grid-column: 1 / -1;
+}
+
+.adm-eco-materiais-strip {
+  margin-bottom: 1.25rem;
+}
+
+.adm-eco-materiais-strip .adm-eco-materiais-panel {
+  margin-top: 0;
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(15, 63, 37, 0.12);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #f8fcf9 0%, #f2f8f4 100%);
+}
+
+@media (min-width: 720px) {
+  .adm-eco-materiais-panel--split {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <base href="../" data-app-base>
+  <script>(function(){var p=location.pathname.replace(/\\/g,"/"),b=document.querySelector("base[data-app-base]"),m=p.match(/^(.*\/)(?:auth|admin|pages|mapa)\/[^/]+$/);if(b)b.href=m?m[1]:p.replace(/\/[^/]*$/,"/")||"/";})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranking EcoColeta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/ranking.css?v=10">
+  <link rel="stylesheet" href="assets/css/header.css?v=11">
+  <link rel="stylesheet" href="assets/css/footer.css?v=9">
+  <link rel="stylesheet" href="assets/css/notif-popup.css?v=10">
+</head>
+<body class="app">
+
+    <header class="topo">
+  <div class="nav-left">
+    <a href="tela-inicia.html" class="logo-link">
+      <img class="eco-brand-img" src="assets/images/logo.2.bak.png?v=6" alt="EcoColeta" width="192" height="84" decoding="async">
+    </a>
+    <nav>
+      <ul class="menu">
+        <li><a href="tela-inicia.html">Home</a></li>
+        <li><a href="pagina-relatorio.html">Gerar Relatório</a></li>
+        <li><a href="como-funciona.html">Como Funciona</a></li>
+        <li><a href="ecopontos.html">EcoPontos</a></li>
+        <li><a href="premios-disponiveis.html">Prêmios</a></li>
+        <li><a href="educacao-ambiental.html">Educação</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="Ranking.html">Ranking</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="icones">
+    <div class="notif-wrapper">
+      <button type="button" class="notif-btn" aria-label="Notificações">
+          <img src="assets/images/icon notificacao.png" alt="Notificações" class="icon" loading="lazy" decoding="async">
+      </button>
+      <div class="notif-overlay hidden">
+        <div class="notif-box">
+          <div class="header">
+            <h2>Notificações</h2>
+            <span class="gear">⚙️</span>
+          </div>
+          <div class="section">
+            <p class="section-title">IMPORTANTE</p>
+            <div class="item">
+              <div class="icon green">♻️</div>
+              <div>
+                <p>EcoColeta Novo ponto de coleta disponível próxima a você!</p>
+                <span>há 30 minutos</span>
+              </div>
+            </div>
+          </div>
+          <div class="section">
+            <p class="section-title">MAIS NOTIFICAÇÕES</p>
+            <div class="item">
+              <div class="icon yellow">🏆</div>
+              <div class="content">
+                <p>Parabéns! Você ganhou <b>50 pontos</b> pela sua coleta de hoje</p>
+                <span>há 3 horas</span>
+              </div>
+              <div class="badge">+50 pts</div>
+            </div>
+            <div class="item">
+              <div class="icon purple">📅</div>
+              <div>
+                <p><b>Lembrete:</b> Dia de coleta no bairro amanhã</p>
+                <span>há 5 horas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="perfil.html">
+      <img src="assets/images/icons pessoa.png" alt="Perfil" loading="lazy" decoding="async">
+    </a>
+  </div>
+</header>
+
+<script src="assets/js/ecocoleta-paths.js?v=6"></script>
+<script src="assets/js/header-nav.js?v=16"></script>
+<script src="assets/js/notif-popup.js?v=10"></script>
+
+    <section class="ranking-section">
+
+      <div class="ranking-hero">
+        <div class="ranking-hero-copy">
+          <span class="ranking-badge">Premiação EcoColeta</span>
+          <h1>Ranking das ruas que mais transformam reciclagem em impacto.</h1>
+          <p>Suba no pódio, acompanhe sua posição e veja quais ruas estão liderando a coleta sustentável da semana.</p>
+          <p class="ranking-premio-hint" id="rankingPremioHint">A rua campeã da semana concede <strong>100 EcoPoints</strong> a cada morador cadastrado na rua.</p>
+          <div class="ranking-bonus-banner hidden" id="rankingBonusBanner" role="status" aria-live="polite"></div>
+        </div>
+        <div class="ranking-prize-card" aria-label="Destaque da premiação">
+          <span class="prize-crown">🏆</span>
+          <strong>—</strong>
+          <small>Líder da semana</small>
+          <p>— pts</p>
+        </div>
+      </div>
+
+      <div class="ranking-visitor-panel hidden" id="rankingVisitorPanel">
+        <div>
+          <span class="visitor-kicker">Modo visitante</span>
+          <h2>Veja o ranking geral sem entrar.</h2>
+          <p>Para acompanhar sua posição, progresso mensal e metas pessoais, faça login ou crie sua conta EcoColeta.</p>
+        </div>
+        <div class="visitor-actions">
+          <a href="auth/login.html" id="rankingVisitorLogin">Entrar</a>
+          <a href="auth/cadastro.html" id="rankingVisitorCadastro">Cadastrar</a>
+        </div>
+      </div>
+
+      <div class="topo-ranking">
+        <div>
+          <span class="section-kicker">Leaderboard</span>
+          <h2>Classificação semanal</h2>
+        </div>
+
+        <div class="busca">
+          <input type="text" placeholder="Buscar rua ou bairro">
+          <button type="button" aria-label="Buscar"> <img src="assets/images/lupa.png" alt="" loading="lazy" decoding="async"></button>
+        </div>
+      </div>
+
+      <div class="podio-ranking" aria-label="Pódio do ranking">
+        <article class="podio-card podio-2">
+          <span class="award-medal award-medal--silver">2</span>
+          <p>2º lugar</p>
+          <h3>—</h3>
+          <strong>— pts</strong>
+          <small>—</small>
+        </article>
+        <article class="podio-card podio-1">
+          <span class="award-medal award-medal--gold">1</span>
+          <p>1º lugar</p>
+          <h3>—</h3>
+          <strong>— pts</strong>
+          <small>—</small>
+        </article>
+        <article class="podio-card podio-3">
+          <span class="award-medal award-medal--bronze">3</span>
+          <p>3º lugar</p>
+          <h3>—</h3>
+          <strong>— pts</strong>
+          <small>—</small>
+        </article>
+      </div>
+
+        <div class="container-ranking">
+         <div class="tabela">
+      <div class="table-heading">
+        <div>
+          <span>Top participantes</span>
+          <h3>Disputa por EcoPoints</h3>
+        </div>
+        <p>Atualizado semanalmente</p>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Posição</th>
+            <th>Rua</th>
+            <th>Pontos</th>
+            <th>Reciclagem</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr><td colspan="4">Carregando ranking das ruas…</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="cards">
+
+  <div class="card card-total-reciclado" data-public-card="total-reciclado">
+    <div class="card-head">
+      <span class="card-award-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 4.5L4.2 9.2l2.8 2.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4.2 9.2h5.1c1.2 0 2.2.7 2.7 1.8l1.5 3.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M17 4.5l2.8 4.7-2.8 2.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M19.8 9.2h-5.1c-1.2 0-2.2.7-2.7 1.8l-1.5 3.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 19.5l-2.8-4.7 2.8-2.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9.2 14.8h5.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <h3>Total reciclado</h3>
+    </div>
+    <p class="numero">—</p>
+    <p class="card-caption">Materiais reciclados na semana</p>
+  </div>
+  <div class="card" data-guest-card="posicao">
+    <span class="card-award-icon">🎖️</span>
+    <h3>Ranking Semanal</h3>
+    <p class="numero">—</p>
+    <p>Posição da sua rua na semana</p>
+  </div>
+  <div class="card" data-guest-card="progresso">
+    <span class="card-award-icon">🎯</span>
+    <h3>Seu progresso</h3>
+
+    <div class="progress-circle">
+      <span>—</span>
+    </div>
+
+    <p class="meta">
+  <span class="titulo-meta">Meta Mensal</span><br>
+     Carregando…
+</p>
+  </div>
+
+</div>
+</section>
+
+<footer id="ecocoleta-site-footer"></footer>
+<script src="assets/js/footer.js?v=10"></script>
+<script src="assets/js/ranking.js?v=10" defer></script>
+</body>
+</html>

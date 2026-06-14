@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <base href="../" data-app-base>
+  <script>(function(){var p=location.pathname.replace(/\\/g,"/"),b=document.querySelector("base[data-app-base]"),m=p.match(/^(.*\/)(?:auth|admin|pages|mapa)\/[^/]+$/);if(b)b.href=m?m[1]:p.replace(/\/[^/]*$/,"/")||"/";})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecopontos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="assets/css/ecopontos.css?v=2">
+  <link rel="stylesheet" href="mapa/mapa.css?v=78">
+  <link rel="stylesheet" href="assets/css/header.css?v=11">
+  <link rel="stylesheet" href="assets/css/footer.css?v=9">
+  <link rel="stylesheet" href="assets/css/notif-popup.css">
+  <script>
+    window.tailwind = window.tailwind || {};
+    window.tailwind.config = {
+      corePlugins: { preflight: false },
+      theme: {
+        extend: {
+          fontFamily: {
+            sora: ['Sora', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="pagina-ecopontos">
+
+    <header class="topo">
+  <div class="nav-left">
+    <a href="tela-inicia.html" class="logo-link">
+      <img class="eco-brand-img" src="assets/images/logo.2.bak.png?v=6" alt="EcoColeta" width="192" height="84" decoding="async">
+    </a>
+    <nav>
+      <ul class="menu">
+        <li><a href="tela-inicia.html">Home</a></li>
+        <li><a href="pagina-relatorio.html">Gerar Relatório</a></li>
+        <li><a href="como-funciona.html">Como Funciona</a></li>
+        <li><a href="ecopontos.html">EcoPontos</a></li>
+        <li><a href="premios-disponiveis.html">Prêmios</a></li>
+        <li><a href="educacao-ambiental.html">Educação</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="Ranking.html">Ranking</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="icones">
+    <div class="notif-wrapper">
+      <button type="button" class="notif-btn" aria-label="Notificações">
+          <img src="assets/images/icon notificacao.png" alt="Notificações" class="icon" loading="lazy" decoding="async">
+      </button>
+      <div class="notif-overlay hidden">
+        <div class="notif-box">
+          <div class="header">
+            <h2>Notificações</h2>
+            <span class="gear">⚙️</span>
+          </div>
+          <div class="section">
+            <p class="section-title">IMPORTANTE</p>
+            <div class="item">
+              <div class="icon green">♻️</div>
+              <div>
+                <p>EcoColeta Novo ponto de coleta disponível próxima a você!</p>
+                <span>há 30 minutos</span>
+              </div>
+            </div>
+          </div>
+          <div class="section">
+            <p class="section-title">MAIS NOTIFICAÇÕES</p>
+            <div class="item">
+              <div class="icon yellow">🏆</div>
+              <div class="content">
+                <p>Parabéns! Você ganhou <b>50 pontos</b> pela sua coleta de hoje</p>
+                <span>há 3 horas</span>
+              </div>
+              <div class="badge">+50 pts</div>
+            </div>
+            <div class="item">
+              <div class="icon purple">📅</div>
+              <div>
+                <p><b>Lembrete:</b> Dia de coleta no bairro amanhã</p>
+                <span>há 5 horas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="perfil.html">
+      <img src="assets/images/icons pessoa.png" alt="Perfil" loading="lazy" decoding="async">
+    </a>
+  </div>
+</header>
+
+<script src="assets/js/ecocoleta-paths.js?v=6"></script>
+<script src="assets/js/header-nav.js?v=16"></script>
+<script src="assets/js/notif-popup.js?v=3"></script>
+<main>
+  <div class="ecopontos">
+
+    <h2 class="titulo">Ecopontos</h2>
+
+<div class="container ecopontos-container">
+  <div class="mapa-box ecopontos-map-card eco-pontos card">
+    <div class="mapa-main mapa-main--embed">
+      <section class="mapa-toolbar ecopontos-map-toolbar" aria-labelledby="mapa-ecopontos-titulo">
+        <h3 id="mapa-ecopontos-titulo" class="mapa-embed-title">Mapa de EcoPontos</h3>
+        <p id="mapa-status" class="mapa-status mapa-status--sr-only" role="status" aria-live="polite">Carregando ecopontos...</p>
+      </section>
+
+      <div class="mapa-leaflet-wrap">
+        <button type="button" id="map-locate-btn" class="map-locate-btn" aria-label="Centralizar mapa nos ecopontos" title="Ver todos os ecopontos">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10Z"/>
+            <circle cx="12" cy="11" r="2.2"/>
+          </svg>
+          <span>Ver todos</span>
+        </button>
+        <div id="map" class="mapa-leaflet" role="application" aria-label="Mapa interativo de ecopontos"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lista lista-empty" aria-live="polite">
+  </div>
+</div>
+</main>
+<footer id="ecocoleta-site-footer" class="footer">
+  <div class="footer-container">
+
+    <div class="footer-info">
+      <h4>Institucional</h4>
+      <p><img src="assets/images/icons pessoa.png" class="icon" loading="lazy" decoding="async"> Universidade Faculdade Paraíso</p>
+      <p><img src="assets/images/cnpj..png" class="icon" loading="lazy" decoding="async"> CNPJ: 00.000.000/0000-00</p>
+    </div>
+
+    <div class="footer-logo">
+      <img class="eco-brand-img" src="assets/images/telas.png?v=2" alt="EcoColeta" loading="lazy" decoding="async">
+    </div>
+
+    <div class="footer-contato">
+      <h4>Contato</h4>
+      <p><img src="assets/images/telefone-.png" class="icon" loading="lazy" decoding="async"> (88) 90000-0000</p>
+      <p><img src="assets/images/o-email 1.png" class="icon" loading="lazy" decoding="async"> ecocoleta@gmail.com</p>
+    </div>
+
+  </div>
+
+  <div class="social">
+    <img src="assets/images/icons facebook.png" loading="lazy" decoding="async">
+    <img src="assets/images/email.2.png" loading="lazy" decoding="async">
+    <img src="assets/images/icons apicativo X.png" loading="lazy" decoding="async">
+    <img src="assets/images/icons-youtube.png" loading="lazy" decoding="async">
+    <img src="assets/images/icons-instagram.png" loading="lazy" decoding="async">
+  </div>
+
+  <div class="footer-copy">
+    <p>©️ 2026 Todos os direitos reservados</p>
+  </div>
+</footer>
+
+  <div id="eco-geo-overlay" class="home-geo-overlay hidden geo-overlay--closed" role="dialog" aria-modal="true" aria-labelledby="eco-geo-title" aria-describedby="eco-geo-desc" aria-hidden="true" hidden>
+    <div class="home-geo-backdrop" data-geo-backdrop aria-hidden="true"></div>
+    <div class="home-geo-dialog">
+      <div class="home-geo-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 21s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10Z"/>
+          <circle cx="12" cy="11" r="2.2"/>
+        </svg>
+      </div>
+      <h2 id="eco-geo-title" data-geo-title>Disponibilizar sua localização?</h2>
+      <p id="eco-geo-desc" data-geo-desc>Usamos sua posição atual para mostrar onde você está no mapa e traçar a rota até o ecoponto, com distância e tempo estimados.</p>
+      <label class="home-geo-once" for="eco-geo-once">
+        <input type="checkbox" id="eco-geo-once" data-geo-once name="eco-geo-once">
+        <span>Lembrar minha escolha neste dispositivo</span>
+      </label>
+      <div class="home-geo-actions">
+        <button type="button" id="eco-geo-allow" data-geo-allow class="home-geo-btn home-geo-btn--primary">Sim, permitir localização</button>
+        <button type="button" id="eco-geo-deny" data-geo-deny class="home-geo-btn home-geo-btn--ghost">Agora não</button>
+      </div>
+    </div>
+  </div>
+
+<script src="assets/js/footer.js?v=10"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="assets/js/ecopontos-catalog.js?v=2"></script>
+<script src="mapa/mapa.js?v=68"></script>
+<script src="assets/js/ecopontos.js?v=3"></script>
+</body>
+</html>

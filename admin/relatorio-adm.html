@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <base href="../">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="admin/plat-adm-theme-boot.js?v=1"></script>
+  <title>Relatórios e Análises | EcoColeta</title>
+  <style>
+    html.plat-auth-checking body { visibility: hidden;  animation: ecoAuthReveal 0s linear 3s forwards; }
+    @keyframes ecoAuthReveal { to { visibility: visible; } }
+  </style>
+  <script>document.documentElement.classList.add("plat-auth-checking");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin/home-adm.css?v=12">
+  <link rel="stylesheet" href="admin/plat-sidebar-pro.css?v=2">
+  <link rel="stylesheet" href="admin/plat-adm-premium.css?v=1">
+  <link rel="stylesheet" href="admin/relatorio-adm.css?v=2">
+  <link rel="stylesheet" href="assets/css/logo.css?v=11">
+  <script src="assets/js/ecocoleta-paths.js?v=2"></script>
+  <script src="assets/js/ecocoleta-export.js?v=1"></script>
+</head>
+<body class="plat-dashboard plat-relatorio-adm">
+  <script src="admin/adm-sidebar-icons.js"></script>
+  <script src="admin/adm-plataforma-icons.js"></script>
+
+  <div class="plat-app">
+    <header class="plat-header">
+      <a href="pages/tela-inicia.html" class="plat-header-brand">
+        <img class="eco-brand-img" src="assets/images/logo.2.png?v=5" alt="EcoColeta" width="192" height="84" decoding="async">
+      </a>
+      <div class="plat-header-actions">
+        <button type="button" class="plat-profile-btn" id="profileToggle" aria-label="Menu do administrador" aria-expanded="false" aria-haspopup="true">
+          <span class="plat-avatar" aria-hidden="true">
+            <span class="plat-avatar__inner">
+              <span class="plat-avatar__initial" id="profileInitial">A</span>
+            </span>
+          </span>
+        </button>
+        <div class="plat-profile-menu hidden" id="profileMenu" role="menu">
+          <p class="plat-profile-name" id="profileName">Administrador</p>
+          <p class="plat-profile-email" id="profileEmail">—</p>
+          <p class="plat-profile-role" id="profileRole">Plataforma EcoColeta</p>
+          <button type="button" id="logoutAdmin" role="menuitem">Sair da conta</button>
+        </div>
+      </div>
+    </header>
+
+    <aside id="platSidebar"></aside>
+
+    <main class="plat-main">
+      <header class="plat-rel-head">
+        <div class="plat-rel-head__text">
+          <h1>Relatórios e Análises</h1>
+          <p>Gere relatórios de acordo com suas exigências</p>
+        </div>
+        <button type="button" class="plat-rel-export" id="btnExportarRelatorio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          Exportar relatório
+        </button>
+      </header>
+
+      <form class="plat-rel-filters" id="relatorioFilters" aria-label="Filtros do relatório">
+        <label class="plat-rel-field plat-rel-field--period">
+          <span>Período — início</span>
+          <input type="date" id="filterDataInicio" name="data_inicio">
+        </label>
+        <label class="plat-rel-field plat-rel-field--period">
+          <span>Período — fim</span>
+          <input type="date" id="filterDataFim" name="data_fim">
+        </label>
+        <label class="plat-rel-field plat-rel-field--bairro">
+          <span>Local</span>
+          <select id="filterBairro" name="bairro">
+            <option value="">Selecione o bairro</option>
+          </select>
+        </label>
+      </form>
+
+      <section class="plat-rel-kpi-grid" aria-label="Indicadores do relatório">
+        <article class="plat-rel-kpi">
+          <div class="plat-rel-kpi__icon plat-rel-kpi__icon--recycle" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 19H4.815a1.815 1.815 0 0 1-1.43-2.87L7 11v4"/><path d="M11 19h8.5a1.5 1.5 0 0 0 1.48-1.75L18 11"/><path d="m7 11-1.5-4.5a1.5 1.5 0 0 1 1.42-1.95H11"/><path d="M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></svg>
+          </div>
+          <div>
+            <span class="plat-rel-kpi__label">Total coletado</span>
+            <strong class="plat-rel-kpi__value" id="kpiTotalColetado">—</strong>
+            <span class="plat-rel-kpi__trend" id="kpiTotalTrend" hidden></span>
+          </div>
+        </article>
+        <article class="plat-rel-kpi">
+          <div class="plat-rel-kpi__icon plat-rel-kpi__icon--pin" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <span class="plat-rel-kpi__label">Ecopontos ativos</span>
+            <strong class="plat-rel-kpi__value" id="kpiEcopontos">—</strong>
+          </div>
+        </article>
+        <article class="plat-rel-kpi">
+          <div class="plat-rel-kpi__icon plat-rel-kpi__icon--users" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <span class="plat-rel-kpi__label">Participações</span>
+            <strong class="plat-rel-kpi__value" id="kpiParticipacoes">—</strong>
+          </div>
+        </article>
+      </section>
+
+      <section class="plat-rel-charts" aria-label="Gráficos analíticos">
+        <article class="plat-panel plat-rel-chart-card">
+          <header class="plat-panel-head">
+            <h2>Coleta mensal</h2>
+            <span class="plat-rel-chart-trend" id="chartMensalTrend"></span>
+          </header>
+          <div class="plat-rel-chart-wrap">
+            <canvas id="chartColetaMensal" aria-label="Coleta mensal em toneladas"></canvas>
+          </div>
+        </article>
+
+        <article class="plat-panel plat-rel-chart-card">
+          <header class="plat-panel-head">
+            <h2>Materiais coletados</h2>
+          </header>
+          <div class="plat-rel-chart-wrap plat-rel-chart-wrap--donut">
+            <div class="plat-rel-donut-canvas">
+              <canvas id="chartMateriais" aria-label="Distribuição por material"></canvas>
+              <div class="plat-rel-donut-center">
+                <strong id="donutKg">—</strong>
+                <span id="donutPct">—</span>
+              </div>
+            </div>
+            <ul class="plat-rel-legend" id="legendMateriais" aria-label="Legenda dos materiais"></ul>
+          </div>
+        </article>
+
+        <article class="plat-panel plat-rel-chart-card">
+          <header class="plat-panel-head">
+            <h2>Evolução de coleta</h2>
+          </header>
+          <div class="plat-rel-chart-wrap">
+            <canvas id="chartEvolucao" aria-label="Evolução de coleta por mês"></canvas>
+          </div>
+        </article>
+      </section>
+
+      <section class="plat-panel plat-rel-impact" aria-label="Impacto ambiental">
+        <header class="plat-rel-impact-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <h2>Impacto ambiental</h2>
+        </header>
+        <div class="plat-rel-impact-grid">
+          <article class="plat-rel-impact-item">
+            <div class="plat-rel-impact-item__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><path d="M12 8a4 4 0 0 0 0-8 4 4 0 0 0 0 8Z"/></svg>
+            </div>
+            <div>
+              <strong id="impactoArvores">—</strong>
+              <span>Árvores conservadas</span>
+            </div>
+          </article>
+          <article class="plat-rel-impact-item">
+            <div class="plat-rel-impact-item__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12c2-4 6-8 10-8s8 4 10 8"/><path d="M12 4v16"/></svg>
+            </div>
+            <div>
+              <strong id="impactoAgua">—</strong>
+              <span>Litros de água conservados</span>
+            </div>
+          </article>
+          <article class="plat-rel-impact-item">
+            <div class="plat-rel-impact-item__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <div>
+              <strong id="impactoEnergia">—</strong>
+              <span>MWh de energia conservados</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="admin/plat-sidebar-nav.js?v=3"></script>
+  <script src="admin/plat-adm-shell.js?v=1"></script>
+  <script src="admin/relatorio-adm.js?v=5" defer></script>
+</body>
+</html>

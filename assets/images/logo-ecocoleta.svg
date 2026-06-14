@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 580 255" role="img" aria-label="EcoColeta">
+  <defs>
+    <clipPath id="eco-icon-clip">
+      <rect x="0" y="0" width="220" height="255"/>
+    </clipPath>
+    <clipPath id="eco-word-clip">
+      <rect x="196" y="172" width="384" height="78"/>
+    </clipPath>
+  </defs>
+  <image
+    clip-path="url(#eco-icon-clip)"
+    xlink:href="telas.png"
+    x="-62"
+    y="-22"
+    width="500"
+    height="500"
+    preserveAspectRatio="xMidYMin meet"/>
+  <image
+    clip-path="url(#eco-word-clip)"
+    xlink:href="telas.png"
+    x="120"
+    y="-338"
+    width="500"
+    height="500"
+    preserveAspectRatio="xMidYMax meet"/>
+</svg>

@@ -1,0 +1,75 @@
+﻿=== VISTORIA EcoColeta ===
+Data: 2026-06-14 01:24:12
+Servidor: ONLINE
+Paginas HTML: 43
+
+RESUMO
+- OK (sem problemas): 43 / 43
+- 404: 0
+- Tela branca / corpo vazio: 0
+- Outros problemas: 0
+
+=== URLs LEGADAS (.htaccess) ===
+  [OK] /tela-inicia.html -> HTTP 200
+  [OK] /perfil.html -> HTTP 200
+  [OK] /login.html -> HTTP 200
+  [OK] /cadastro.html -> HTTP 200
+  [OK] /Ranking.html -> HTTP 200
+  [OK] /quem-somos.html -> HTTP 200
+  [OK] /Home-ADM.html -> HTTP 200
+  [OK] /Login-ADM-Ecoponto.html -> HTTP 200
+  [OK] /relatorio.html -> HTTP 200
+  [OK] /pagina-relatorio.html -> HTTP 200
+  [OK] /agendar-coleta.html -> HTTP 200
+  [OK] /ecopontos.html -> HTTP 200
+
+=== APIs (amostra) ===
+  api/ecocheck-api.php?action=status: HTTP 200
+  api/meu_perfil.php: HTTP 200
+  api/ranking.php: HTTP 200
+  auth/login.php: HTTP 200
+
+=== TODAS AS PAGINAS ===
+[OK] admin/Coletas-ADM-Ecoponto.html          HTTP 200   12437 bytes
+[OK] admin/Home-ADM-Ecoponto.html             HTTP 200   14668 bytes
+[OK] admin/Home-ADM.html                      HTTP 200   15091 bytes
+[OK] admin/Login-ADM-Ecoponto.html            HTTP 200   12428 bytes
+[OK] admin/Login-ADM.html                     HTTP 200   12656 bytes
+[OK] admin/agendamento-adm.html               HTTP 200   12034 bytes
+[OK] admin/configuracoes-ADM-Ecoponto.html    HTTP 200   28416 bytes
+[OK] admin/configuracoes-adm.html             HTTP 200   37851 bytes
+[OK] admin/ecoponto-adm.html                  HTTP 200    9117 bytes
+[OK] admin/edicao-perfil-admin.html           HTTP 200     768 bytes
+[OK] admin/mapa-publico-adm.html              HTTP 200    6895 bytes
+[OK] admin/materias-ADM-Ecoponto.html         HTTP 200   13136 bytes
+[OK] admin/relatorio-ADM-Ecoponto.html        HTTP 200   12250 bytes
+[OK] admin/relatorio-adm.html                 HTTP 200    9683 bytes
+[OK] admin/usuarios-adm.html                  HTTP 200    8934 bytes
+[OK] auth/cadastro.html                       HTTP 200   32976 bytes
+[OK] auth/login-temp.html                     HTTP 200     883 bytes
+[OK] auth/login.html                          HTTP 200   23463 bytes
+[OK] auth/nova-senha.html                     HTTP 200   15995 bytes
+[OK] auth/recuperar.html                      HTTP 200   10464 bytes
+[OK] auth/resetar.html                        HTTP 200    3408 bytes
+[OK] auth/senha-criada.html                   HTTP 200    4267 bytes
+[OK] auth/verificacao.html                    HTTP 200   18371 bytes
+[OK] auth/verificar-cadastro.html             HTTP 200   17534 bytes
+[OK] index.html                               HTTP 200   14593 bytes
+[OK] mapa/mapa.html                           HTTP 200     765 bytes
+[OK] pages/Ranking.html                       HTTP 200    8951 bytes
+[OK] pages/agendar-coleta.html                HTTP 200    7719 bytes
+[OK] pages/balanca-ecoponto.html              HTTP 200   11191 bytes
+[OK] pages/como-funciona.html                 HTTP 200    8887 bytes
+[OK] pages/ecopontos.html                     HTTP 200    8620 bytes
+[OK] pages/edicaoperfil.html                  HTTP 200    7638 bytes
+[OK] pages/educacao-ambiental.html            HTTP 200   19945 bytes
+[OK] pages/formulario-coleta.html             HTTP 200    7856 bytes
+[OK] pages/mapa.html                          HTTP 200     759 bytes
+[OK] pages/notif-popup.html                   HTTP 200    2750 bytes
+[OK] pages/pagina-relatorio.html              HTTP 200   14359 bytes
+[OK] pages/perfil.html                        HTTP 200   21575 bytes
+[OK] pages/premios-disponiveis.html           HTTP 200    5988 bytes
+[OK] pages/quem-somos.html                    HTTP 200   16513 bytes
+[OK] pages/relatorio-mensal.html              HTTP 200    9387 bytes
+[OK] pages/relatorio.html                     HTTP 200   14359 bytes
+[OK] pages/tela-inicia.html                   HTTP 200   14593 bytes

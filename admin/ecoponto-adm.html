@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <base href="../">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="admin/plat-adm-theme-boot.js?v=2"></script>
+  <title>Gestão de Ecopontos | EcoColeta</title>
+  <style>
+    html.plat-auth-checking body { visibility: hidden;  animation: ecoAuthReveal 0s linear 3s forwards; }
+    @keyframes ecoAuthReveal { to { visibility: visible; } }
+  </style>
+  <script>document.documentElement.classList.add("plat-auth-checking");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="mapa/mapa.css?v=78">
+  <link rel="stylesheet" href="admin/home-adm.css?v=14">
+  <link rel="stylesheet" href="admin/plat-sidebar-pro.css?v=3">
+  <link rel="stylesheet" href="admin/plat-adm-premium.css?v=2">
+  <link rel="stylesheet" href="admin/ecoponto-adm.css?v=2">
+  <link rel="stylesheet" href="assets/css/logo.css?v=11">
+  <script src="assets/js/ecocoleta-paths.js?v=3"></script>
+  <script src="assets/js/ecopontos-catalog.js?v=2"></script>
+</head>
+<body class="plat-dashboard plat-ecopontos-adm">
+  <script src="admin/adm-sidebar-icons.js"></script>
+  <script src="admin/adm-plataforma-icons.js"></script>
+
+  <div class="plat-app">
+    <header class="plat-header">
+      <a href="pages/tela-inicia.html" class="plat-header-brand">
+        <img class="eco-brand-img" src="assets/images/logo.2.png?v=5" alt="EcoColeta" width="192" height="84" decoding="async">
+      </a>
+      <div class="plat-header-actions">
+        <button type="button" class="plat-profile-btn" id="profileToggle" aria-label="Menu do administrador" aria-expanded="false" aria-haspopup="true">
+          <span class="plat-avatar" aria-hidden="true">
+            <span class="plat-avatar__inner">
+              <span class="plat-avatar__initial" id="profileInitial">A</span>
+            </span>
+          </span>
+        </button>
+        <div class="plat-profile-menu hidden" id="profileMenu" role="menu">
+          <p class="plat-profile-name" id="profileName">Administrador</p>
+          <p class="plat-profile-email" id="profileEmail">—</p>
+          <p class="plat-profile-role" id="profileRole">Plataforma EcoColeta</p>
+          <button type="button" id="logoutAdmin" role="menuitem">Sair da conta</button>
+        </div>
+      </div>
+    </header>
+
+    <aside id="platSidebar"></aside>
+
+    <main class="plat-main">
+      <header class="plat-page-head">
+        <div>
+          <h1>Gestão de Ecopontos</h1>
+          <p>Gerencie os ecopontos cadastrados na plataforma</p>
+        </div>
+        <button type="button" class="plat-btn plat-btn--primary" id="btnAddEcoponto">+ Adicionar Ecoponto</button>
+      </header>
+
+      <section class="plat-eco-kpi-grid" aria-label="Resumo dos ecopontos">
+        <article class="plat-eco-kpi">
+          <div class="plat-eco-kpi__icon plat-eco-kpi__icon--pin" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><use href="#plat-icon-map"/></svg>
+          </div>
+          <div>
+            <span class="plat-eco-kpi__label">Ecopontos cadastrados</span>
+            <strong class="plat-eco-kpi__value" id="kpiTotal">—</strong>
+          </div>
+        </article>
+        <article class="plat-eco-kpi">
+          <div class="plat-eco-kpi__icon plat-eco-kpi__icon--ok" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <div>
+            <span class="plat-eco-kpi__label">Prontos para operação</span>
+            <strong class="plat-eco-kpi__value" id="kpiAtivos">—</strong>
+          </div>
+        </article>
+        <article class="plat-eco-kpi">
+          <div class="plat-eco-kpi__icon plat-eco-kpi__icon--warn" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg>
+          </div>
+          <div>
+            <span class="plat-eco-kpi__label">Indisponíveis no momento</span>
+            <strong class="plat-eco-kpi__value" id="kpiManutencao">—</strong>
+          </div>
+        </article>
+      </section>
+
+      <div class="plat-eco-layout">
+        <section class="plat-eco-table-panel" aria-label="Lista de ecopontos">
+          <div class="plat-eco-table-wrap">
+            <table class="plat-eco-table">
+              <thead>
+                <tr>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Bairro</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Capacidade</th>
+                  <th scope="col">Responsável</th>
+                  <th scope="col">Ações</th>
+                </tr>
+              </thead>
+              <tbody id="ecopontosTableBody"></tbody>
+            </table>
+          </div>
+          <nav class="plat-eco-pagination" id="ecopontosPagination" aria-label="Paginação da tabela"></nav>
+        </section>
+
+        <section class="plat-map-panel" aria-label="Mapa dos ecopontos">
+          <h2>Mapa da rede</h2>
+          <div class="plat-map-wrap">
+            <div id="ecoponto-adm-map" role="application" aria-label="Mapa com ecopontos"></div>
+          </div>
+          <div class="plat-map-legend">
+            <span><i class="is-ativo" aria-hidden="true"></i> Ativos: <strong id="legendAtivos">0</strong></span>
+            <span><i class="is-manutencao" aria-hidden="true"></i> Em manutenção: <strong id="legendManutencao">0</strong></span>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="plat-eco-modal hidden" id="ecopontoModal" role="dialog" aria-modal="true" aria-labelledby="ecopontoModalTitle">
+    <div class="plat-eco-modal__backdrop" id="ecopontoModalBackdrop"></div>
+    <div class="plat-eco-modal__panel">
+      <header class="plat-eco-modal__head">
+        <h2 id="ecopontoModalTitle">Ecoponto</h2>
+        <button type="button" class="plat-eco-modal__close" id="ecopontoModalClose" aria-label="Fechar">&times;</button>
+      </header>
+      <form id="ecopontoForm" class="plat-eco-modal__form" novalidate>
+        <input type="hidden" id="ecopontoIdPev" name="id_pev" value="0">
+        <input type="hidden" id="ecopontoCatalogId" name="catalog_id" value="">
+        <label>
+          <span>Nome</span>
+          <input type="text" id="ecopontoName" name="name" required maxlength="100">
+        </label>
+        <label>
+          <span>Bairro</span>
+          <input type="text" id="ecopontoBairro" name="bairro" maxlength="100">
+        </label>
+        <label>
+          <span>Cidade</span>
+          <input type="text" id="ecopontoCity" name="city" maxlength="120">
+        </label>
+        <label>
+          <span>Endereço completo</span>
+          <input type="text" id="ecopontoAddress" name="address" maxlength="255">
+        </label>
+        <div class="plat-eco-modal__row">
+          <label>
+            <span>Latitude</span>
+            <input type="text" id="ecopontoLat" name="lat" inputmode="decimal" placeholder="-7.2127">
+          </label>
+          <label>
+            <span>Longitude</span>
+            <input type="text" id="ecopontoLng" name="lng" inputmode="decimal" placeholder="-39.3155">
+          </label>
+        </div>
+        <div class="plat-eco-modal__row">
+          <label>
+            <span>Status</span>
+            <select id="ecopontoStatus" name="status">
+              <option value="ativo">Ativo</option>
+              <option value="manutencao">Em manutenção</option>
+            </select>
+          </label>
+          <label>
+            <span>Capacidade (%)</span>
+            <input type="number" id="ecopontoCapacidade" name="capacidade" min="0" max="100" value="70">
+          </label>
+        </div>
+        <label>
+          <span>Responsável</span>
+          <input type="text" id="ecopontoResponsavel" name="responsavel" maxlength="120">
+        </label>
+        <p class="plat-eco-modal__hint" id="ecopontoModalHint">
+          Sem latitude/longitude o ecoponto aparece na tabela, mas não no mapa.
+        </p>
+        <footer class="plat-eco-modal__foot">
+          <button type="button" class="plat-btn plat-btn--ghost" id="ecopontoModalCancel">Cancelar</button>
+          <button type="submit" class="plat-btn plat-btn--primary" id="ecopontoModalSave">Salvar</button>
+        </footer>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="admin/plat-sidebar-nav.js?v=3"></script>
+  <script src="admin/plat-adm-shell.js?v=1"></script>
+  <script src="admin/ecoponto-adm.js?v=2" defer></script>
+</body>
+</html>

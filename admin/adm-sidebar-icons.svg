@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <symbol id="adm-icon-menu" viewBox="0 0 24 24">
+    <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="adm-icon-home" viewBox="0 0 24 24">
+    <path d="M4 10.5 12 4l8 6.5V20a1.75 1.75 0 0 1-1.75 1.75H5.75A1.75 1.75 0 0 1 4 20v-9.5Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+    <path d="M10 21.75V14h4v7.75" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="adm-icon-truck" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M3 8.5A1.5 1.5 0 0 1 4.5 7H13a1.5 1.5 0 0 1 1.5 1.5V11h2.04a1.5 1.5 0 0 1 1.34.83l1.46 2.92A1.5 1.5 0 0 1 19.5 16.5H21v2.25a.75.75 0 0 1-.75.75H19a2.25 2.25 0 0 1-4.5 0H9.5a2.25 2.25 0 0 1-4.5 0H3a.75.75 0 0 1-.75-.75V8.5Zm2.25 9.75a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm11.25 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM5.25 8.5h7.35l1.65 1.65H5.25V8.5Z"/>
+  </symbol>
+  <symbol id="adm-icon-recycle" viewBox="0 0 24 24">
+    <path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m14 16-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8.293 13.596 7.196 9.5 3.1 10.598" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m9.635 9.5 1.288-.45a1.785 1.785 0 0 1 2.056 1.033l1.243 4.157" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m4 4 3.35 3.35" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m18.6 7.5-2.35 2.35" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="adm-icon-reports" viewBox="0 0 24 24">
+    <path d="M16 2v5h5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+    <path d="M9 2v5H4a2 2 0 0 0-2 2v13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="adm-icon-settings" viewBox="0 0 24 24">
+    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+    <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.75"/>
+  </symbol>
+</svg>

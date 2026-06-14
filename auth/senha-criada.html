@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="auth-view">
+<head>
+  <base href="../" data-app-base>
+  <script>(function(){var p=location.pathname.replace(/\\/g,"/"),b=document.querySelector("base[data-app-base]"),m=p.match(/^(.*\/)(?:auth|admin|pages|mapa)\/[^/]+$/);if(b)b.href=m?m[1]:p.replace(/\/[^/]*$/,"/")||"/";})();</script>
+  <script>(function(){var p=location.pathname.replace(/\\/g,"/"),b=document.querySelector("base[data-app-base]"),m=p.match(/^(.*\/)(?:auth|admin|pages|mapa)\/[^/]+$/);if(b)b.href=m?m[1]:p.replace(/\/[^/]*$/,"/")||"/";})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Senha Criada - EcoColeta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/auth-background.css?v=2">
+  <link rel="stylesheet" href="assets/css/auth-screens.css?v=1">
+  <style>
+    .auth .container {
+      background: rgba(255, 255, 255, 0.98);
+      padding: 48px 32px;
+      border-radius: 24px;
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      margin: 0 auto;
+      display: block;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    .auth .container h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1E3A8A;
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
+    }
+
+    .check {
+      font-size: 64px;
+      color: #2E7D32;
+      margin: 24px 0 28px 0;
+      display: block;
+      animation: scaleUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      line-height: 1;
+    }
+
+    @keyframes scaleUp {
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .mensagem {
+      color: #475569;
+      font-size: 15px;
+      margin-bottom: 32px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .auth .logo-container {
+      margin-bottom: 20px;
+    }
+
+    .auth .logo-container img {
+      width: auto;
+      max-width: min(260px, 88vw);
+      max-height: min(140px, 22vh);
+      height: auto;
+      object-fit: contain;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 15px;
+      letter-spacing: 0.3px;
+    }
+
+    a button:hover,
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(46, 125, 50, 0.2);
+    }
+
+    a button:active,
+    button:active {
+      transform: translateY(0);
+    }
+
+    .btn-verde {
+      background: linear-gradient(135deg, #8FFFC7 0%, #7fd9b5 100%);
+      color: #0f2c21;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(143, 255, 199, 0.3);
+    }
+
+    .btn-verde:hover {
+      box-shadow: 0 8px 25px rgba(143, 255, 199, 0.4);
+    }
+
+    a {
+      text-decoration: none;
+      display: block;
+    }
+
+    a button {
+      margin: 0;
+    }
+
+    @media (max-width: 480px) {
+      .auth .container {
+        padding: 40px 24px;
+        max-width: 100%;
+      }
+
+      .auth .container h2 {
+        font-size: 24px;
+      }
+
+      .check {
+        font-size: 56px;
+      }
+
+      button {
+        padding: 13px 16px;
+        font-size: 14px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/logo.css?v=14">
+</head>
+
+<body class="auth senha-criada">
+
+  <div class="auth logo-container">
+    <img class="auth-logo-img" src="assets/images/logo.2.png?v=3" alt="EcoColeta" width="200" height="88" fetchpriority="high" decoding="async">
+  </div>
+
+  <div class="container">
+    <h2>Senha redefinida com sucesso</h2>
+
+    <p class="check">✔</p>
+
+    <p class="mensagem">
+      Sua senha foi alterada com segurança. Você já pode fazer login com sua nova senha.
+    </p>
+
+    <a href="auth/login.html">
+      <button class="btn-verde">Voltar ao Login</button>
+    </a>
+  </div>
+
+</body>
+</html>

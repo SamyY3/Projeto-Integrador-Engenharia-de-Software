@@ -1,0 +1,312 @@
+
+
+:root {
+
+  --eco-logo-ratio: 2.275;
+  --eco-logo-file: url("../images/logo-ecocoleta.svg?v=5");
+
+  --eco-logo-h-header: 84px;
+  --eco-logo-w-header: 192px;
+  --eco-logo-h-header-sm: 70px;
+  --eco-logo-w-header-sm: 160px;
+
+  --eco-logo-h-admin: 76px;
+  --eco-logo-w-admin: 174px;
+  --eco-logo-h-admin-sm: 64px;
+  --eco-logo-w-admin-sm: 146px;
+
+  --eco-logo-h-auth: 88px;
+  --eco-logo-w-auth: 200px;
+  --eco-logo-h-auth-sm: 76px;
+  --eco-logo-w-auth-sm: 180px;
+
+  --eco-logo-h-footer: 80px;
+  --eco-logo-w-footer: 184px;
+  --eco-logo-shadow: drop-shadow(0 3px 14px rgba(15, 44, 33, 0.14));
+  --eco-logo-premium-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.72) 0%, rgba(245, 252, 248, 0.55) 100%);
+  --eco-logo-premium-ring: 1px solid rgba(47, 143, 131, 0.14);
+  --eco-logo-premium-shadow: 0 6px 24px rgba(15, 44, 33, 0.1), 0 1px 0 rgba(255, 255, 255, 0.85) inset;
+}
+
+.logo-link,
+.adm-header-brand,
+.plat-header-brand,
+.eco-premium-brand,
+.hub-brand,
+.footer-logo-link,
+.login-brand,
+.brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  line-height: 0;
+  text-decoration: none;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0;
+  border-radius: 0 !important;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  appearance: none;
+  vertical-align: middle;
+}
+
+.auth-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 0;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  appearance: none;
+  vertical-align: middle;
+}
+
+.eco-premium-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: min(100%, var(--eco-auth-card-max-w, 420px));
+  max-width: var(--eco-auth-card-max-w, 420px);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.eco-brand-img,
+.logo-link img,
+.adm-header-brand img,
+.plat-header-brand img,
+.hub-brand img,
+.login-brand img,
+.brand img,
+.eco-premium-brand img,
+.footer-logo-link img,
+#ecocoleta-site-footer .footer-logo-link img,
+img.eco-logo-inline,
+img.logo:not(.auth-logo-img) {
+  display: block;
+  width: auto;
+  height: var(--eco-logo-h-header);
+  max-width: var(--eco-logo-w-header);
+  max-height: var(--eco-logo-h-header);
+  min-width: 0;
+  object-fit: contain;
+  object-position: left center;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  image-rendering: auto;
+  -webkit-optimize-contrast: auto;
+  filter: var(--eco-logo-shadow);
+  transition: opacity 0.22s ease, filter 0.22s ease, transform 0.22s ease;
+}
+
+header.topo .logo-link img.eco-brand-img,
+header.adm-header .adm-header-brand img.eco-brand-img,
+header.plat-header .plat-header-brand img.eco-brand-img,
+.eco-premium-top .eco-premium-brand img.eco-brand-img {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+header.topo .logo-link,
+.topo .logo-link {
+  max-width: min(42vw, var(--eco-logo-w-header));
+  min-height: 0;
+  padding: 0 !important;
+  margin-right: 4px;
+  border-radius: 0 !important;
+  background: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+header.topo .logo-link img,
+.topo .logo-link img {
+  height: var(--eco-logo-h-header);
+  max-height: var(--eco-logo-h-header);
+  max-width: var(--eco-logo-w-header);
+  filter: none !important;
+}
+
+.adm-header-brand,
+.plat-header-brand {
+  min-height: var(--eco-logo-h-admin);
+  padding: 0 !important;
+  margin-right: 6px;
+  border-radius: 0;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.adm-header-brand img,
+.plat-header-brand img {
+  height: var(--eco-logo-h-admin);
+  max-height: var(--eco-logo-h-admin);
+  max-width: var(--eco-logo-w-admin);
+  object-position: left center;
+}
+
+.eco-premium-brand img {
+  height: var(--eco-logo-h-auth);
+  max-height: min(var(--eco-logo-h-auth), 22vh);
+  max-width: min(var(--eco-logo-w-auth), 88vw);
+  margin-left: auto;
+  margin-right: auto;
+  object-position: center;
+  filter: drop-shadow(0 6px 22px rgba(15, 44, 33, 0.16));
+}
+
+.footer-logo-link img,
+#ecocoleta-site-footer .footer-logo-link img {
+  height: var(--eco-logo-h-footer);
+  max-height: var(--eco-logo-h-footer);
+  max-width: var(--eco-logo-w-footer);
+  opacity: 0.98;
+}
+
+img.eco-logo-inline {
+  height: 72px;
+  max-height: 72px;
+  max-width: min(165px, 88%);
+}
+
+header.topo .logo-link:hover,
+.topo .logo-link:hover,
+header.topo .logo-link:focus,
+.topo .logo-link:focus,
+header.topo .logo-link:focus-visible,
+.topo .logo-link:focus-visible {
+  background: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+header.topo .logo-link:hover img,
+.topo .logo-link:hover img {
+  filter: none !important;
+  transform: none !important;
+}
+
+.adm-header-brand:hover img,
+.plat-header-brand:hover img,
+.hub-brand:hover img,
+.eco-premium-brand:hover img,
+.footer-logo-link:hover img {
+  opacity: 1;
+  transform: scale(1.03);
+  filter: drop-shadow(0 6px 20px rgba(15, 44, 33, 0.2));
+}
+
+.adm-header-brand:hover,
+.plat-header-brand:hover,
+.eco-premium-brand:hover,
+.footer-logo-link:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(15, 44, 33, 0.12), 0 1px 0 rgba(255, 255, 255, 0.9) inset !important;
+}
+
+.adm-header-brand:focus-visible,
+.plat-header-brand:focus-visible,
+.logo-link:focus-visible,
+.footer-logo-link:focus-visible,
+.eco-premium-brand:focus-visible,
+.login-brand:focus-visible {
+  outline: 2px solid rgba(18, 160, 106, 0.45);
+  outline-offset: 4px;
+  border-radius: 2px;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+html[data-adm-tema="dark"] .adm-header-brand img,
+html[data-plat-tema="dark"] .plat-header-brand img,
+body.page-login-adm .eco-premium-brand img,
+body.page-login-ecoponto .eco-premium-brand img {
+  filter: brightness(1.06) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+}
+
+html[data-adm-tema="dark"] .adm-header-brand,
+html[data-plat-tema="dark"] .plat-header-brand,
+body.page-login-adm .eco-premium-brand,
+body.page-login-ecoponto .eco-premium-brand {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 900px) {
+  .eco-brand-img,
+  .logo-link img,
+  header.topo .logo-link img,
+  .topo .logo-link img {
+    height: var(--eco-logo-h-header-sm);
+    max-height: var(--eco-logo-h-header-sm);
+    max-width: var(--eco-logo-w-header-sm);
+  }
+
+  header.topo .logo-link,
+  .topo .logo-link {
+    max-width: min(52vw, var(--eco-logo-w-header-sm));
+    min-height: 0;
+  }
+
+  .adm-header-brand img,
+  .plat-header-brand img {
+    height: var(--eco-logo-h-admin-sm);
+    max-height: var(--eco-logo-h-admin-sm);
+    max-width: var(--eco-logo-w-admin-sm);
+  }
+
+  .adm-header-brand,
+  .plat-header-brand {
+    min-height: var(--eco-logo-h-admin-sm);
+  }
+}
+
+@media (max-width: 520px) {
+  .eco-premium-brand img {
+    height: var(--eco-logo-h-auth-sm);
+    max-height: min(var(--eco-logo-h-auth-sm), 15vh);
+    max-width: min(var(--eco-logo-w-auth-sm), 90vw);
+  }
+}
+
+@media (max-height: 720px) {
+  .eco-premium-brand img {
+    height: 96px;
+    max-height: min(96px, 20vh);
+    max-width: min(220px, 88vw);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eco-brand-img,
+  .logo-link img,
+  .adm-header-brand img,
+  .plat-header-brand img,
+  .eco-premium-brand img {
+    transition: none;
+  }
+}

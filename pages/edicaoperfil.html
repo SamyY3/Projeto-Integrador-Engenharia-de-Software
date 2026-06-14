@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <base href="../">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Perfil</title>
+  <style>
+    html.edicao-auth-checking body {
+      visibility: hidden;
+     animation: ecoAuthReveal 0s linear 3s forwards; }
+    @keyframes ecoAuthReveal { to { visibility: visible; } }
+  </style>
+  <script>
+    (function () {
+      if (localStorage.getItem('loggedIn') === 'true') {
+        document.documentElement.classList.add('edicao-auth-checking');
+        return;
+      }
+      var p = location.pathname.replace(/\\/g, '/');
+      var m = p.match(/^(.*\/)(?:auth|admin|pages|mapa)\/[^/]+$/);
+      var root = m ? m[1] : p.replace(/\/[^/]*$/, '/') || '/';
+      location.replace(root + 'auth/login.html?redirect=' + encodeURIComponent('pages/edicaoperfil.html'));
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/edicaoperfil.css">
+  <link rel="stylesheet" href="assets/css/header.css?v=11">
+  <link rel="stylesheet" href="assets/css/notif-popup.css?v=10">
+  <script src="assets/js/ecocoleta-paths.js?v=7"></script>
+</head>
+
+<body class="app editar-perfil">
+
+    <header class="topo">
+  <div class="nav-left">
+    <a href="tela-inicia.html" class="logo-link">
+      <img class="eco-brand-img" src="assets/images/logo.2.bak.png?v=6" alt="EcoColeta" width="192" height="84" decoding="async">
+    </a>
+    <nav>
+      <ul class="menu">
+        <li><a href="tela-inicia.html">Home</a></li>
+        <li><a href="pagina-relatorio.html">Gerar Relatório</a></li>
+        <li><a href="como-funciona.html">Como Funciona</a></li>
+        <li><a href="ecopontos.html">EcoPontos</a></li>
+        <li><a href="premios-disponiveis.html">Prêmios</a></li>
+        <li><a href="educacao-ambiental.html">Educação</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="Ranking.html">Ranking</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="icones">
+    <div class="notif-wrapper">
+      <button type="button" class="notif-btn" aria-label="Notificações">
+          <img src="assets/images/icon notificacao.png" alt="Notificações" class="icon" loading="lazy" decoding="async">
+      </button>
+      <div class="notif-overlay hidden">
+        <div class="notif-box">
+          <div class="header">
+            <h2>Notificações</h2>
+            <span class="gear">⚙️</span>
+          </div>
+          <div class="section">
+            <p class="section-title">IMPORTANTE</p>
+            <div class="item">
+              <div class="icon green">♻️</div>
+              <div>
+                <p>EcoColeta Novo ponto de coleta disponível próxima a você!</p>
+                <span>há 30 minutos</span>
+              </div>
+            </div>
+          </div>
+          <div class="section">
+            <p class="section-title">MAIS NOTIFICAÇÕES</p>
+            <div class="item">
+              <div class="icon yellow">🏆</div>
+              <div class="content">
+                <p>Parabéns! Você ganhou <b>50 pontos</b> pela sua coleta de hoje</p>
+                <span>há 3 horas</span>
+              </div>
+              <div class="badge">+50 pts</div>
+            </div>
+            <div class="item">
+              <div class="icon purple">📅</div>
+              <div>
+                <p><b>Lembrete:</b> Dia de coleta no bairro amanhã</p>
+                <span>há 5 horas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="perfil.html">
+      <img src="assets/images/icons pessoa.png" alt="Perfil" loading="lazy" decoding="async">
+    </a>
+  </div>
+</header>
+
+  <div class="modal-overlay">
+    <div class="modal">
+      <div class="perfil-container">
+
+        <div class="perfil-header">
+          <div>
+            <span class="page-label">Perfil</span>
+            <h1 class="perfil-titulo">Editar perfil</h1>
+            <p class="perfil-subtitulo">Atualize seus dados de acesso e mantenha seu perfil seguro e alinhado com a sua conta.</p>
+          </div>
+          <button type="button" class="close-modal" onclick="fecharModal()">×</button>
+        </div>
+
+        <div class="perfil-topo">
+          <div class="perfil-info">
+            <div class="foto-box foto-box-edicao">
+              <input type="file" id="fileInput" class="edicao-foto-input" accept="image/*" tabindex="-1" title="">
+              <label for="fileInput" class="foto-avatar-label" id="fotoAvatarLabel">
+                <img src="assets/images/mulher.png" class="foto-perfil" id="fotoPerfilEdicao" alt="Foto do perfil" loading="lazy" decoding="async">
+                <span class="foto-avatar-overlay" aria-hidden="true">Alterar foto</span>
+              </label>
+              <button type="button" class="icone-camera-btn" id="iconeCameraBtn" aria-label="Abrir seletor de imagem">
+                <img src="assets/images/image.png" class="icone-camera" alt="" loading="lazy" decoding="async">
+              </button>
+            </div>
+
+            <div class="nome-com-lapis">
+              <span class="nome">Carregando…</span>
+              <button type="button" class="lapis" aria-label="Editar nome">
+                <img src="assets/images/lapis.png" alt="" loading="lazy" decoding="async">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="perfil-form">
+          <div class="campos-form">
+            <div class="perfil-campo">
+              <label for="editEmail">E-mail</label>
+              <input id="editEmail" type="email" placeholder="Digite aqui o seu e-mail..." autocomplete="email" required>
+              <span class="field-error" id="emailError"></span>
+            </div>
+
+            <div class="perfil-campo">
+              <label for="editConfirmEmail">Confirmar e-mail</label>
+              <input id="editConfirmEmail" type="email" placeholder="Confirme seu e-mail..." autocomplete="email" required>
+              <span class="field-error" id="confirmEmailError"></span>
+            </div>
+
+            <div class="perfil-campo">
+              <label for="editPassword">Senha</label>
+              <input id="editPassword" type="password" placeholder="Deixe em branco para manter a senha atual" autocomplete="new-password">
+              <span class="field-error" id="passwordError"></span>
+            </div>
+
+            <div class="perfil-campo">
+              <label for="editConfirmPassword">Confirmar senha</label>
+              <input id="editConfirmPassword" type="password" placeholder="Repita a nova senha" autocomplete="new-password">
+              <span class="field-error" id="confirmPasswordError"></span>
+            </div>
+          </div>
+
+          <button type="button" class="perfil-botao" onclick="confirmarPerfil()">Confirmar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="save-confirm-overlay hidden" id="saveConfirmOverlay">
+    <div class="save-confirm-dialog">
+      <p>Tem certeza que deseja salvar as alterações?</p>
+      <div class="save-confirm-actions">
+        <button type="button" class="btn-cancel" id="cancelSaveBtn">Cancelar</button>
+        <button type="button" class="btn-editar" id="confirmSaveBtn">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/edicaoperfil.js"></script>
+  <script src="assets/js/header-nav.js?v=16"></script>
+  <script src="assets/js/notif-popup.js?v=10"></script>
+  <script>
+    function fecharModal() {
+      window.history.back();
+    }
+  </script>
+</body>
+</html>

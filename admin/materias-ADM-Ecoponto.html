@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <base href="../" data-app-base>
+  <script>(function(){var p=location.pathname.replace(/\\/g,"/"),b=document.querySelector("base[data-app-base]"),m=p.match(/^(.*\/)(?:auth|admin|pages|mapa)\/[^/]+$/);if(b)b.href=m?m[1]:p.replace(/\/[^/]*$/,"/")||"/";})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="admin/adm-ecoponto-theme-boot.js?v=1"></script>
+  <title>Gerenciamento de Materiais | EcoColeta</title>
+  <style>
+    html.admin-auth-checking .adm-app {
+      opacity: 0;
+      pointer-events: none;
+      animation: ecoAuthReveal 0s linear 2s forwards;
+    }
+    @keyframes ecoAuthReveal {
+      to {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  </style>
+  <script>
+    document.documentElement.classList.add("admin-auth-checking");
+    (function () {
+      function revelarPaginaAdmin() {
+        document.documentElement.classList.remove("admin-auth-checking");
+      }
+      document.addEventListener("DOMContentLoaded", revelarPaginaAdmin);
+      window.addEventListener("load", revelarPaginaAdmin);
+      window.setTimeout(revelarPaginaAdmin, 2500);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/notif-popup.css?v=10">
+  <script src="admin/adm-ecoponto-sidebar-boot.js?v=1"></script>
+  <link rel="stylesheet" href="admin/home-adm-ecoponto.css?v=30">
+  <link rel="stylesheet" href="admin/adm-ecoponto-pro.css?v=23">
+  <link rel="stylesheet" href="admin/coletas-adm-ecoponto.css?v=4">
+  <link rel="stylesheet" href="admin/materias-adm-ecoponto.css?v=16">
+  <link rel="stylesheet" href="admin/adm-notificacoes.css?v=3">
+</head>
+<body class="admin-dashboard-page adm-materias-page">
+  <script src="admin/adm-sidebar-icons.js"></script>
+  <div class="adm-app">
+  <script src="admin/adm-ecoponto-sidebar-layout.js?v=2"></script>
+    <header class="adm-header">
+      <a href="pages/tela-inicia.html" class="adm-header-brand">
+        <img class="eco-brand-img" src="assets/images/logo.2.png?v=5" alt="EcoColeta" width="192" height="84" decoding="async">
+      </a>
+      <div class="adm-header-actions">
+        <button type="button" class="adm-profile-btn" id="profileToggle" aria-label="Menu do administrador" aria-expanded="false" aria-haspopup="true">
+          <span class="adm-avatar adm-avatar--sm" aria-hidden="true">
+            <span class="adm-avatar__circle">
+              <span class="adm-profile-initial" id="profileInitial">A</span>
+            </span>
+          </span>
+        </button>
+        <div class="adm-profile-menu hidden" id="profileMenu" role="menu">
+          <p class="adm-profile-name" id="profileName">Administrador</p>
+          <p class="adm-profile-email" id="profileEmail">—</p>
+          <p class="adm-profile-point" id="profilePoint">EcoPonto</p>
+          <button type="button" id="logoutAdmin" role="menuitem">Sair da conta</button>
+        </div>
+      </div>
+    </header>
+
+    <aside id="admSidebar"></aside>
+
+    <main class="adm-main adm-materias-main">
+      <p class="dashboard-auth-error" id="dashboardAuthError" role="alert"></p>
+
+      <header class="adm-materias-head">
+        <p class="adm-page-eyebrow">Materiais</p>
+        <h1 id="materiasPageTitle" class="adm-materias-title">Gerenciamento de Materiais</h1>
+        <p class="adm-materias-subtitle" id="materiasEcopontoHint">EcoPonto parceiro</p>
+      </header>
+
+      <form class="adm-coletas-filters adm-materias-filters" id="materiasFilters" novalidate>
+        <label class="adm-filter-field">
+          <span>Tipo de material</span>
+          <select id="filterMaterial" name="material">
+            <option value="">Todos</option>
+            <option value="plastico">Plástico</option>
+            <option value="papel">Papel</option>
+            <option value="vidro">Vidro</option>
+            <option value="metal">Metal</option>
+            <option value="organico">Orgânico</option>
+          </select>
+        </label>
+        <label class="adm-filter-field">
+          <span>Período</span>
+          <select id="filterPeriodo" name="periodo">
+            <option value="">Todos</option>
+            <option value="hoje">Hoje</option>
+            <option value="semana">Esta semana</option>
+            <option value="mes" selected>Este mês</option>
+            <option value="trimestre">Trimestre</option>
+          </select>
+        </label>
+        <label class="adm-filter-field">
+          <span>Ecoponto</span>
+          <select id="filterEcoponto" name="ecoponto">
+            <option value="">Todos</option>
+            <option value="atual" id="filterEcopontoAtual">Meu EcoPonto</option>
+          </select>
+        </label>
+        <button type="submit" class="adm-filter-apply">Aplicar</button>
+      </form>
+
+      <div class="adm-materias-grid">
+        <article class="adm-card adm-materias-table-card">
+          <header class="adm-section-head adm-table-card-head">
+            <div class="adm-section-head__copy">
+              <h2 class="adm-section-head__title adm-card-title">Materiais registrados</h2>
+              <p class="adm-section-head__sub">Entregas e volumes do período selecionado</p>
+            </div>
+          </header>
+          <div class="adm-table-wrap">
+            <table class="adm-table adm-materias-table" id="materiasTable">
+              <thead>
+                <tr>
+                  <th scope="col">Material</th>
+                  <th scope="col">Quantidade</th>
+                  <th scope="col">Usuário</th>
+                  <th scope="col">Data</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Responsável</th>
+                </tr>
+              </thead>
+              <tbody id="materiasTableBody"></tbody>
+            </table>
+          </div>
+          <p class="adm-coletas-empty hidden" id="materiasEmpty" role="status">Nenhum material encontrado com os filtros selecionados.</p>
+          <nav class="adm-materias-pager hidden" id="materiasPager" aria-label="Paginação da tabela de materiais">
+            <button type="button" class="adm-materias-pager__btn" id="materiasPagerPrev" disabled>Anterior</button>
+            <span class="adm-materias-pager__info" id="materiasPagerInfo">Página 1 de 1</span>
+            <button type="button" class="adm-materias-pager__btn" id="materiasPagerNext" disabled>Próxima</button>
+          </nav>
+        </article>
+
+        <article class="adm-card adm-materias-chart-card">
+          <div class="adm-materias-chart-head">
+            <div class="adm-materias-chart-head__text">
+              <h2 class="adm-card-title">Quantidade por Material</h2>
+              <p class="adm-materias-chart-sub">Volume recebido no período selecionado</p>
+            </div>
+            <div class="adm-materias-chart-total" id="chartMateriaisTotal" aria-live="polite">
+              <span class="adm-materias-chart-total__label">Total</span>
+              <strong class="adm-materias-chart-total__value">0 kg</strong>
+            </div>
+          </div>
+          <div class="adm-materias-chart-panel">
+            <div class="adm-materias-chart-legend" id="chartMateriaisLegend" aria-hidden="true"></div>
+            <div class="adm-materias-chart-wrap">
+              <canvas id="chartMateriaisQuantidade" aria-label="Quantidade por tipo de material"></canvas>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <section class="adm-materias-footer" aria-label="Resumo e ações">
+        <div class="adm-materias-kpis">
+          <article class="adm-materias-kpi-card adm-materias-kpi-card--total">
+            <span class="adm-materias-kpi-icon adm-materias-kpi-icon--total adm-materias-kpi-icon--halo" aria-hidden="true">
+              <svg class="adm-materias-kpi-icon__svg" viewBox="0 0 24 24" fill="currentColor" focusable="false" aria-hidden="true">
+                <path d="M7 4h10l1 3H6l1-3Zm-1 5h12l-1 11H7L6 9Zm4 2v7h2v-7h-2Zm4 0v7h2v-7h-2Z"/>
+              </svg>
+            </span>
+            <div class="adm-materias-kpi-body">
+              <span class="adm-materias-kpi-label">Total Coletado</span>
+              <strong class="adm-materias-kpi-value" id="materiasKpiTotal">0 kg</strong>
+            </div>
+          </article>
+          <article class="adm-materias-kpi-card adm-materias-kpi-card--top adm-materias-kpi-card--mat-empty">
+            <span class="adm-materias-kpi-icon adm-materias-kpi-icon--material adm-materias-kpi-icon--halo" id="materiasKpiTopIcon" aria-hidden="true">
+              <svg class="adm-materias-kpi-icon__svg" viewBox="0 0 24 24" fill="currentColor" focusable="false" aria-hidden="true">
+                <path d="M10 2h4v2h2c.55 0 1 .45 1 1v1h-1v12c0 1.1-.9 2-2 2H9c-1.1 0-2-.9-2-2V6H6V5c0-.55.45-1 1-1h2V2zm-1 6h2v2H9V8zm0 3.5h2V14H9v-1.5zm0 3.5h2V18H9v-1.5z"/>
+              </svg>
+            </span>
+            <div class="adm-materias-kpi-body">
+              <span class="adm-materias-kpi-label">Material Mais Reciclado</span>
+              <strong class="adm-materias-kpi-value" id="materiasKpiTop">—</strong>
+            </div>
+          </article>
+          <article class="adm-materias-kpi-card adm-materias-kpi-card--rate">
+            <span class="adm-materias-kpi-icon adm-materias-kpi-icon--rate adm-materias-kpi-icon--halo" aria-hidden="true">
+              <svg class="adm-materias-kpi-icon__svg" viewBox="0 0 24 24" fill="currentColor" focusable="false" aria-hidden="true">
+                <path d="M4 17.5V16l5.8-5.8 3.4 3.4L19.5 8V6h2.5v2h-1.8l-6 6.1-3.4-3.4L5.5 16.3v1.2H4Z"/>
+              </svg>
+            </span>
+            <div class="adm-materias-kpi-body">
+              <span class="adm-materias-kpi-label">Taxa de Reciclagem</span>
+              <strong class="adm-materias-kpi-value" id="materiasKpiTaxa">0%</strong>
+            </div>
+          </article>
+        </div>
+
+        <div class="adm-materias-actions">
+          <button type="button" class="adm-materias-btn adm-materias-btn--outline" data-mat-action="atualizar">Atualizar Dados</button>
+          <button type="button" class="adm-materias-btn adm-materias-btn--outline" data-mat-action="exportar">Exportar Relatório</button>
+          <button type="button" class="adm-materias-btn adm-materias-btn--primary" data-mat-action="registrar">Registrar Material</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="admMatModal" class="adm-coleta-modal hidden" aria-hidden="true">
+    <div class="adm-coleta-modal__backdrop" data-mat-modal-close tabindex="-1"></div>
+    <div
+      class="adm-coleta-modal__panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="admMatModalTitle"
+      aria-describedby="admMatModalDesc"
+    >
+      <button type="button" class="adm-coleta-modal__close" data-mat-modal-close aria-label="Fechar">&times;</button>
+      <header class="adm-coleta-modal__head">
+        <span class="adm-coleta-modal__icon" id="admMatModalIcon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 3v12m0 0l4-4m-4 4l-4-4M5 19h14" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div>
+          <p class="adm-coleta-modal__kicker" id="admMatModalKicker">Novo registro</p>
+          <h2 id="admMatModalTitle">Registrar material</h2>
+          <p id="admMatModalDesc" class="adm-coleta-modal__desc">
+            Informe o tipo, a quantidade e o morador vinculado. O registro entra na lista e nos indicadores do período.
+          </p>
+        </div>
+      </header>
+      <div class="adm-coleta-modal__context hidden" id="admMatModalContext"></div>
+      <div class="adm-coleta-modal__body" id="admMatModalBody"></div>
+      <p class="adm-coleta-modal__error hidden" id="admMatModalError" role="alert"></p>
+      <footer class="adm-coleta-modal__foot">
+        <button type="button" class="adm-coleta-modal__btn adm-coleta-modal__btn--ghost" data-mat-modal-close>Cancelar</button>
+        <button type="button" class="adm-coleta-modal__btn adm-coleta-modal__btn--primary" id="admMatModalConfirm">Registrar</button>
+      </footer>
+    </div>
+  </div>
+
+  <div id="admMatToast" class="adm-coleta-toast hidden" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/ecocoleta-paths.js?v=3"></script>
+  <script src="admin/adm-ecoponto-sidebar-nav.js?v=19"></script>
+  <script src="admin/adm-ecoponto-common.js?v=8"></script>
+  <script src="assets/js/ecocoleta-export.js?v=1"></script>
+  <script src="admin/materias-adm-ecoponto.js?v=19"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" async></script>
+  <script src="admin/adm-notificacoes.js?v=3" defer></script>
+</body>
+</html>

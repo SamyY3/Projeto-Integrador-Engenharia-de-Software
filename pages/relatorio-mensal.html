@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <base href="../" data-app-base>
+  <script>(function(){var p=location.pathname.replace(/\\/g,"/"),b=document.querySelector("base[data-app-base]"),m=p.match(/^(.*\/)(?:auth|admin|pages|mapa)\/[^/]+$/);if(b)b.href=m?m[1]:p.replace(/\/[^/]*$/,"/")||"/";})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatório Mensal | EcoColeta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/relatorio-mensal.css">
+  <link rel="stylesheet" href="assets/css/header.css?v=12">
+  <link rel="stylesheet" href="assets/css/footer.css?v=9">
+  <link rel="stylesheet" href="assets/css/notif-popup.css?v=10">
+  <script src="assets/js/ecocoleta-paths.js?v=7"></script>
+</head>
+<body class="app relatorio-mensal">
+
+    <header class="topo">
+  <div class="nav-left">
+    <a href="tela-inicia.html" class="logo-link" aria-label="EcoColeta — início">
+      <img class="eco-brand-img" src="assets/images/logo.2.bak.png?v=6" alt="EcoColeta" width="192" height="84" decoding="async">
+    </a>
+    <nav>
+      <ul class="menu">
+        <li><a href="tela-inicia.html">Home</a></li>
+        <li><a href="pagina-relatorio.html">Gerar Relatório</a></li>
+        <li><a href="como-funciona.html">Como Funciona</a></li>
+        <li><a href="ecopontos.html">EcoPontos</a></li>
+        <li><a href="premios-disponiveis.html">Prêmios</a></li>
+        <li><a href="educacao-ambiental.html">Educação</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="Ranking.html">Ranking</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="icones">
+    <div class="notif-wrapper">
+      <button type="button" class="notif-btn" aria-label="Notificações">
+          <img src="assets/images/icon notificacao.png" alt="Notificações" class="icon" loading="lazy" decoding="async">
+      </button>
+      <div class="notif-overlay hidden">
+        <div class="notif-box">
+          <div class="header">
+            <h2>Notificações</h2>
+            <span class="gear">⚙️</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="perfil.html">
+      <img src="assets/images/icons pessoa.png" alt="Perfil" loading="lazy" decoding="async">
+    </a>
+  </div>
+</header>
+
+<script src="assets/js/header-nav.js?v=16"></script>
+<script src="assets/js/notif-popup.js?v=10"></script>
+
+  <main>
+    <div class="content-wrapper">
+      <section class="report-header">
+        <div>
+          <p class="subtitle">Relatório Mensal</p>
+          <h1>Março de 2026</h1>
+        </div>
+        <div class="week-badge">Mês 03</div>
+      </section>
+
+      <section class="report-cards">
+        <article class="report-card">
+          <p>Total reciclado</p>
+          <strong>16,1 kg</strong>
+          <span>(+2,7 kg vs. mês anterior)</span>
+        </article>
+        <article class="report-card">
+          <p>EcoPontos ganhos</p>
+          <strong>32</strong>
+          <span>(+6 pontos)</span>
+        </article>
+        <article class="report-card">
+          <p>Dia mais produtivo</p>
+          <strong>Sexta-feira</strong>
+          <span>3.5kg reciclados</span>
+        </article>
+      </section>
+
+      <section class="weekly-chart-card">
+        <div class="weekly-chart-header">
+          <div>
+            <h2>Kg reciclados por dia</h2>
+          </div>
+          <div class="weekly-target">Meta do mês: <strong>15,0 kg</strong></div>
+        </div>
+
+        <div class="weekly-chart">
+          <div class="y-axis">
+            <span>4</span>
+            <span>3</span>
+            <span>2</span>
+            <span>1</span>
+            <span>0</span>
+          </div>
+          <div class="bars-grid">
+            <div class="bar-item">
+              <span class="day-label">S</span>
+              <div class="bar-area">
+                <span class="bar" style="--bar-height: 29%;">1 kg</span>
+              </div>
+              <span class="date-label">18/03</span>
+            </div>
+            <div class="bar-item green">
+              <span class="day-label">T</span>
+              <div class="bar-area">
+                <span class="bar" style="--bar-height: 57%;">2 kg</span>
+              </div>
+              <span class="date-label">19/03</span>
+            </div>
+            <div class="bar-item">
+              <span class="day-label">Q</span>
+              <div class="bar-area">
+                <span class="bar" style="--bar-height: 80%;">2,8 kg</span>
+              </div>
+              <span class="date-label">20/03</span>
+            </div>
+            <div class="bar-item green">
+              <span class="day-label">Q</span>
+              <div class="bar-area">
+                <span class="bar" style="--bar-height: 71%;">2,5 kg</span>
+              </div>
+              <span class="date-label">21/03</span>
+            </div>
+            <div class="bar-item">
+              <span class="day-label">S</span>
+              <div class="bar-area">
+                <span class="bar" style="--bar-height: 100%;">3,5 kg</span>
+              </div>
+              <span class="date-label">22/03</span>
+            </div>
+            <div class="bar-item green">
+              <span class="day-label">S</span>
+              <div class="bar-area">
+                <span class="bar" style="--bar-height: 51%;">1,8 kg</span>
+              </div>
+              <span class="date-label">23/03</span>
+            </div>
+            <div class="bar-item">
+              <span class="day-label">D</span>
+              <div class="bar-area">
+                <span class="bar" style="--bar-height: 71%;">2,5 kg</span>
+              </div>
+              <span class="date-label">24/03</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="weekly-summary">
+          <span>Total do mês: <strong>16,1 kg</strong></span>
+          <span>Média diária: <strong>2,3 kg</strong></span>
+        </div>
+      </section>
+
+      <section class="daily-details">
+        <h3>Detalhamento por dia</h3>
+        <ul>
+          <li><span>Segunda-feira</span><strong>1 kg</strong></li>
+          <li><span>Terça-feira</span><strong>2 kg</strong></li>
+          <li><span>Quarta-feira</span><strong>2,8 kg</strong></li>
+          <li><span>Quinta-feira</span><strong>2,5 kg</strong></li>
+          <li><span>Sexta-feira <span class="best-day">Melhor dia</span></span><strong>3,5 kg</strong></li>
+          <li><span>Sábado</span><strong>1,8 kg</strong></li>
+          <li><span>Domingo</span><strong>2,5 kg</strong></li>
+        </ul>
+      </section>
+
+      <section class="performance-note">
+        <div>
+          <strong>Desempenho: +20% melhor que o mês passado!</strong>
+          <p>Parabéns você está fazendo a diferença para o meio ambiente</p>
+        </div>
+      </section>
+
+      <section class="report-actions">
+        <a href="#" id="downloadPdfBtn" class="action-btn download-btn">Baixar PDF</a>
+        <a href="#" id="shareReportBtn" class="action-btn share-btn">Compartilhar</a>
+        <a href="pagina-relatorio.html" class="action-btn period-btn">Ver outro período</a>
+      </section>
+
+      <footer class="report-footer">
+        <p>Relatório gerado em 24 de março de 2026 às 18:30 • ecoColeta</p>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const downloadBtn = document.getElementById('downloadPdfBtn');
+      const shareBtn = document.getElementById('shareReportBtn');
+      const shareData = {
+        title: 'Relatório Mensal EcoColeta',
+        text: 'Confira meu relatório mensal no EcoColeta.',
+        url: window.location.href
+      };
+
+      downloadBtn?.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.print();
+      });
+
+      shareBtn?.addEventListener('click', async function(event) {
+        event.preventDefault();
+
+        if (navigator.share) {
+          try {
+            await navigator.share(shareData);
+          } catch (error) {
+            console.log('Compartilhamento cancelado ou não disponível', error);
+          }
+          return;
+        }
+
+        const copyText = shareData.url;
+        if (navigator.clipboard && window.isSecureContext) {
+          try {
+            await navigator.clipboard.writeText(copyText);
+            alert('Link do relatório copiado para a área de transferência!');
+            return;
+          } catch (copyError) {
+            console.log('Erro ao copiar para a área de transferência', copyError);
+          }
+        }
+
+        const tempTextarea = document.createElement('textarea');
+        tempTextarea.value = copyText;
+        tempTextarea.style.position = 'fixed';
+        tempTextarea.style.left = '-9999px';
+        document.body.appendChild(tempTextarea);
+        tempTextarea.focus();
+        tempTextarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempTextarea);
+        alert('Link do relatório copiado para a área de transferência!');
+      });
+    });
+  </script>
+</body>
+</html>

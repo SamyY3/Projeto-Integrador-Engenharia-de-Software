@@ -1,0 +1,196 @@
+
+:root {
+  --eco-auth-card-max-w: 420px;
+  --eco-auth-logo-h: clamp(62px, 10vh, 82px);
+  --eco-auth-logo-w: min(196px, 72vw);
+  --eco-auth-logo-gap: clamp(18px, 2.8vh, 26px);
+}
+
+body.auth.cadastro {
+  --eco-auth-card-max-w: 440px;
+}
+
+body.auth.login,
+body.auth.cadastro,
+body.auth.recuperar,
+body.auth.verificar-cadastro,
+body.auth.verificacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: auto;
+  max-height: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: clamp(22px, 4.5vh, 42px) clamp(16px, 4vw, 24px);
+  gap: 0;
+  box-sizing: border-box;
+}
+
+.auth-brand,
+body.auth > a.auth-brand,
+body.auth > .logo-container.auth-brand-wrap {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  max-width: none;
+  margin: 0 auto var(--eco-auth-logo-gap);
+  padding: 0;
+  text-decoration: none;
+  line-height: 0;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-radius: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.2s ease;
+}
+
+.auth-brand:hover {
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none;
+  opacity: 0.92;
+}
+
+.auth-brand:focus-visible {
+  outline: 2px solid rgba(18, 160, 106, 0.45);
+  outline-offset: 6px;
+  border-radius: 4px;
+}
+
+.auth-brand img,
+body.auth > .logo-container img,
+body.auth > img.auth-logo-img,
+body.auth .auth-logo-img {
+  display: block;
+  height: var(--eco-auth-logo-h);
+  width: auto;
+  max-width: var(--eco-auth-logo-w);
+  max-height: var(--eco-auth-logo-h);
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center center;
+  filter: drop-shadow(0 4px 14px rgba(15, 44, 33, 0.12));
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+.auth-brand:hover img {
+  filter: drop-shadow(0 5px 16px rgba(15, 44, 33, 0.16));
+}
+
+body.auth > .container {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: var(--eco-auth-card-max-w);
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body.auth .php-banner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--eco-auth-card-max-w);
+  margin: 0 auto 14px;
+  box-sizing: border-box;
+}
+
+body.auth .form-group,
+body.auth .password-field {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+body.auth .password-field input {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+body.auth .password-field .password-toggle {
+  box-sizing: border-box;
+}
+
+body.auth .form-actions {
+  clear: both;
+  width: 100%;
+}
+
+body.auth .form-actions .link {
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  :root {
+    --eco-auth-logo-h: clamp(54px, 9vh, 70px);
+    --eco-auth-logo-w: min(172px, 78vw);
+    --eco-auth-logo-gap: 16px;
+  }
+
+  body.auth.login,
+  body.auth.cadastro,
+  body.auth.recuperar,
+  body.auth.verificar-cadastro,
+  body.auth.verificacao {
+    padding: 18px 14px;
+  }
+}
+
+@media (max-height: 720px) {
+  :root {
+    --eco-auth-logo-h: clamp(50px, 8.5vh, 68px);
+    --eco-auth-logo-gap: 14px;
+  }
+}
+
+.ecocheck-trigger.is-idle .ecocheck-icon--loading,
+.ecocheck-trigger.is-idle .ecocheck-icon--verified {
+  display: none !important;
+}
+
+.ecocheck-widget svg.ecocheck-icon,
+.ecocheck-trigger svg.ecocheck-icon {
+  display: none !important;
+  position: absolute;
+  inset: 0;
+  width: 18px !important;
+  height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+  margin: auto;
+}
+
+.ecocheck-trigger.is-loading .ecocheck-icon--loading {
+  display: block !important;
+}
+
+.ecocheck-trigger.is-verified .ecocheck-icon--verified {
+  display: block !important;
+}
+
+.ecocheck-trigger.is-verified .ecocheck-icon--loading,
+.ecocheck-trigger.is-loading .ecocheck-icon--verified {
+  display: none !important;
+}
+
+.ecocheck-widget button.ecocheck-trigger,
+button.ecocheck-trigger {
+  max-width: 100%;
+  box-sizing: border-box;
+}

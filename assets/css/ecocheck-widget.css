@@ -1,0 +1,330 @@
+
+
+:root {
+  --ecocheck-surface: linear-gradient(135deg, #ffffff 0%, #f6fffa 52%, #eef9f3 100%);
+  --ecocheck-surface-verified: linear-gradient(135deg, #f9fffc 0%, #e9f9ef 100%);
+  --ecocheck-border: rgba(18, 137, 93, 0.24);
+  --ecocheck-border-hover: rgba(18, 137, 93, 0.42);
+  --ecocheck-border-verified: rgba(15, 107, 56, 0.52);
+  --ecocheck-text: #0f3f25;
+  --ecocheck-text-verified: #0f6b38;
+  --ecocheck-brand: #12895d;
+  --ecocheck-brand-deep: #0f6b38;
+  --ecocheck-tag: #7a9a88;
+  --ecocheck-shadow: 0 10px 28px rgba(9, 40, 28, 0.08);
+  --ecocheck-shadow-hover: 0 14px 36px rgba(9, 40, 28, 0.11);
+  --ecocheck-focus: 0 0 0 3px rgba(143, 255, 199, 0.38);
+}
+
+.ecocheck-widget {
+  margin: 16px 0 20px;
+}
+
+.ecocheck-widget button.ecocheck-trigger,
+button.ecocheck-trigger {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 12px;
+  padding: 15px 18px;
+  border-radius: 16px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  opacity: 1;
+}
+
+.auth button.ecocheck-trigger:hover,
+button.ecocheck-trigger:hover:not(:disabled):not(.is-verified):not(.is-loading) {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.ecocheck-trigger {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 15px 18px;
+  border-radius: 16px;
+  border: 1px solid var(--ecocheck-border);
+  background: var(--ecocheck-surface);
+  box-shadow: var(--ecocheck-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  font-family: "Sora", system-ui, -apple-system, sans-serif;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    border-color 0.22s ease,
+    background 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.22s ease;
+}
+
+.ecocheck-trigger::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 85% 130% at 100% 0%, rgba(143, 255, 199, 0.2), transparent 58%);
+  opacity: 0.9;
+}
+
+.ecocheck-trigger:hover:not(:disabled):not(.is-verified):not(.is-loading) {
+  border-color: var(--ecocheck-border-hover);
+  box-shadow: var(--ecocheck-shadow-hover), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  transform: translateY(-1px);
+}
+
+.ecocheck-trigger:focus-visible {
+  outline: none;
+  border-color: var(--ecocheck-border-hover);
+  box-shadow: var(--ecocheck-shadow-hover), var(--ecocheck-focus);
+}
+
+.ecocheck-trigger.is-loading {
+  cursor: wait;
+  pointer-events: none;
+}
+
+.ecocheck-trigger.is-challenge {
+  cursor: pointer;
+  border-color: rgba(18, 137, 93, 0.32);
+}
+
+.ecocheck-trigger.is-verified {
+  cursor: default;
+  border-color: var(--ecocheck-border-verified);
+  background: var(--ecocheck-surface-verified);
+  box-shadow:
+    0 8px 24px rgba(15, 107, 56, 0.12),
+    inset 0 0 0 1px rgba(143, 255, 199, 0.35);
+}
+
+.ecocheck-trigger:disabled.is-verified {
+  opacity: 1;
+}
+
+.ecocheck-trigger__main {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  flex: 1;
+}
+
+.ecocheck-trigger__icon {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1.5px solid rgba(15, 107, 56, 0.22);
+  border-radius: 6px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(9, 40, 28, 0.07);
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+
+.ecocheck-icon--idle,
+.ecocheck-icon--pending {
+  display: none !important;
+}
+
+.ecocheck-widget svg.ecocheck-icon,
+.ecocheck-trigger svg.ecocheck-icon,
+svg.ecocheck-icon {
+  display: none !important;
+  position: absolute;
+  inset: 0;
+  width: 18px !important;
+  height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+  min-width: 18px;
+  min-height: 18px;
+  margin: auto;
+  padding: 0;
+  flex: 0 0 18px;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.ecocheck-trigger.is-idle .ecocheck-icon--loading,
+.ecocheck-trigger.is-idle .ecocheck-icon--verified,
+.ecocheck-trigger.is-challenge .ecocheck-icon--loading,
+.ecocheck-trigger.is-challenge .ecocheck-icon--verified {
+  display: none !important;
+}
+
+.ecocheck-trigger.is-loading .ecocheck-icon--loading {
+  display: block !important;
+}
+
+.ecocheck-trigger.is-verified .ecocheck-trigger__icon {
+  border-color: rgba(15, 107, 56, 0.4);
+  background: #f4fbf7;
+  box-shadow: 0 2px 10px rgba(15, 107, 56, 0.14);
+}
+
+.ecocheck-trigger.is-verified .ecocheck-icon--verified {
+  display: block !important;
+  width: 18px;
+  height: 18px;
+  animation: ecocheck-check-pop 0.45s cubic-bezier(0.34, 1.4, 0.64, 1) forwards;
+}
+
+.ecocheck-trigger.is-verified .ecocheck-icon--loading,
+.ecocheck-trigger.is-loading .ecocheck-icon--verified {
+  display: none !important;
+}
+
+.ecocheck-check-path {
+  stroke: #0f6b38;
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  animation: ecocheck-check-draw 0.35s ease 0.12s forwards;
+}
+
+.ecocheck-trigger.is-verified .ecocheck-check-path {
+  stroke-dashoffset: 0;
+}
+
+@keyframes ecocheck-check-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ecocheck-check-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.ecocheck-icon--loading {
+  animation: ecocheck-spin 0.85s linear infinite;
+}
+
+.ecocheck-icon--loading circle {
+  stroke: #c5d9cc;
+}
+
+.ecocheck-icon--loading path {
+  stroke: var(--ecocheck-brand);
+}
+
+@keyframes ecocheck-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ecocheck-trigger__label,
+.ecocheck-trigger__title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--ecocheck-text);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  transition: color 0.2s ease;
+}
+
+.ecocheck-trigger.is-verified .ecocheck-trigger__label {
+  color: var(--ecocheck-text-verified);
+  font-weight: 700;
+}
+
+.ecocheck-trigger.is-loading .ecocheck-trigger__label {
+  color: var(--ecocheck-brand);
+}
+
+.ecocheck-trigger__brand {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  flex-shrink: 0;
+  text-align: right;
+  line-height: 1.1;
+  padding-left: 8px;
+}
+
+.ecocheck-trigger__brand-name {
+  font-family: "Space Grotesk", "Sora", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--ecocheck-brand) 0%, var(--ecocheck-brand-deep) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ecocheck-trigger__brand-tag {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--ecocheck-tag);
+  text-transform: uppercase;
+}
+
+.ecocheck-trigger__status,
+.ecocheck-trigger__sub {
+  display: none !important;
+}
+
+.ecocheck-trigger__icon:not([data-ecocheck-icon]) {
+  font-size: 0;
+  color: transparent;
+}
+
+.login-card .ecocheck-trigger,
+.eco-login-card .ecocheck-trigger {
+  background: linear-gradient(135deg, #ffffff 0%, #f4fbf7 55%, #ecf8f1 100%);
+}
+
+@media (max-width: 480px) {
+  .ecocheck-trigger {
+    padding: 13px 14px;
+    gap: 10px;
+  }
+
+  .ecocheck-trigger__label,
+  .ecocheck-trigger__title {
+    font-size: 0.92rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ecocheck-trigger:hover:not(:disabled):not(.is-verified):not(.is-loading) {
+    transform: none;
+  }
+
+  .ecocheck-icon--loading,
+  .ecocheck-trigger.is-verified .ecocheck-icon--verified,
+  .ecocheck-check-path {
+    animation: none;
+  }
+
+  .ecocheck-check-path {
+    stroke-dashoffset: 0;
+  }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <base href="../">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="admin/plat-adm-theme-boot.js?v=1"></script>
+  <title>Mapa Público | EcoColeta</title>
+  <style>
+    html.plat-auth-checking body { visibility: hidden;  animation: ecoAuthReveal 0s linear 3s forwards; }
+    @keyframes ecoAuthReveal { to { visibility: visible; } }
+  </style>
+  <script>document.documentElement.classList.add("plat-auth-checking");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="mapa/mapa.css?v=78">
+  <link rel="stylesheet" href="admin/home-adm.css?v=12">
+  <link rel="stylesheet" href="admin/plat-sidebar-pro.css?v=2">
+  <link rel="stylesheet" href="admin/plat-adm-premium.css?v=1">
+  <link rel="stylesheet" href="admin/mapa-publico-adm.css?v=1">
+  <link rel="stylesheet" href="assets/css/logo.css?v=11">
+  <script src="assets/js/ecocoleta-paths.js?v=2"></script>
+  <script src="assets/js/ecopontos-catalog.js?v=2"></script>
+</head>
+<body class="plat-dashboard plat-mapa-publico-adm">
+  <script src="admin/adm-sidebar-icons.js"></script>
+  <script src="admin/adm-plataforma-icons.js"></script>
+
+  <div class="plat-app">
+    <header class="plat-header">
+      <a href="pages/tela-inicia.html" class="plat-header-brand">
+        <img class="eco-brand-img" src="assets/images/logo.2.png?v=5" alt="EcoColeta" width="192" height="84" decoding="async">
+      </a>
+      <div class="plat-header-actions">
+        <button type="button" class="plat-profile-btn" id="profileToggle" aria-label="Menu do administrador" aria-expanded="false" aria-haspopup="true">
+          <span class="plat-avatar" aria-hidden="true">
+            <span class="plat-avatar__inner">
+              <span class="plat-avatar__initial" id="profileInitial">A</span>
+            </span>
+          </span>
+        </button>
+        <div class="plat-profile-menu hidden" id="profileMenu" role="menu">
+          <p class="plat-profile-name" id="profileName">Administrador</p>
+          <p class="plat-profile-email" id="profileEmail">—</p>
+          <p class="plat-profile-role" id="profileRole">Plataforma EcoColeta</p>
+          <button type="button" id="logoutAdmin" role="menuitem">Sair da conta</button>
+        </div>
+      </div>
+    </header>
+
+    <aside id="platSidebar"></aside>
+
+    <main class="plat-main plat-mp-main">
+      <header class="plat-mp-head">
+        <div class="plat-mp-head__text">
+          <h1>Mapa público</h1>
+          <p>Visualize a rede de ecopontos como o morador enxerga na plataforma</p>
+        </div>
+        <div class="plat-mp-head__actions">
+          <button type="button" class="plat-btn plat-btn--ghost" id="btnCentralizar">Centralizar rede</button>
+          <a href="pages/ecopontos.html" class="plat-btn plat-btn--primary" target="_blank" rel="noopener noreferrer">
+            Abrir mapa do morador
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+          </a>
+        </div>
+      </header>
+
+      <section class="plat-mp-kpi-grid" aria-label="Resumo da rede no mapa">
+        <article class="plat-mp-kpi">
+          <span class="plat-mp-kpi__label">Pontos no mapa</span>
+          <strong class="plat-mp-kpi__value" id="kpiVisiveis">—</strong>
+        </article>
+        <article class="plat-mp-kpi">
+          <span class="plat-mp-kpi__label">Disponíveis</span>
+          <strong class="plat-mp-kpi__value plat-mp-kpi__value--ok" id="kpiAtivos">—</strong>
+        </article>
+        <article class="plat-mp-kpi">
+          <span class="plat-mp-kpi__label">Em manutenção</span>
+          <strong class="plat-mp-kpi__value plat-mp-kpi__value--warn" id="kpiManutencao">—</strong>
+        </article>
+        <article class="plat-mp-kpi">
+          <span class="plat-mp-kpi__label">Cidades atendidas</span>
+          <strong class="plat-mp-kpi__value" id="kpiCidades">—</strong>
+        </article>
+      </section>
+
+      <div class="plat-mp-layout">
+        <section class="plat-mp-map-panel" aria-label="Mapa interativo">
+          <div class="plat-mp-map-toolbar">
+            <span class="plat-mp-map-live">
+              <i aria-hidden="true"></i> Pré-visualização ao vivo
+            </span>
+            <div class="plat-mp-map-legend" aria-hidden="false">
+              <span><i class="is-ativo"></i> Ativo</span>
+              <span><i class="is-manutencao"></i> Manutenção</span>
+            </div>
+          </div>
+          <div class="plat-mp-map-wrap">
+            <div id="mapaPublicoAdm" role="application" aria-label="Mapa público dos ecopontos"></div>
+          </div>
+        </section>
+
+        <aside class="plat-mp-side" aria-label="Lista de ecopontos">
+          <div class="plat-mp-side-head">
+            <h2>Ecopontos na região</h2>
+            <p id="mpListCount">— pontos</p>
+          </div>
+
+          <div class="plat-mp-filters">
+            <label class="plat-mp-search">
+              <span class="visually-hidden">Buscar ecoponto</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <input type="search" id="mpSearch" placeholder="Buscar nome ou bairro…" autocomplete="off">
+            </label>
+            <label class="plat-mp-select">
+              <span>Status</span>
+              <select id="mpFilterStatus">
+                <option value="">Todos</option>
+                <option value="ativo">Disponíveis</option>
+                <option value="manutencao">Em manutenção</option>
+              </select>
+            </label>
+            <label class="plat-mp-select">
+              <span>Cidade</span>
+              <select id="mpFilterCidade">
+                <option value="">Todas</option>
+              </select>
+            </label>
+          </div>
+
+          <ul class="plat-mp-list" id="mpList" role="list"></ul>
+          <p class="plat-mp-list-empty hidden" id="mpListEmpty">Nenhum ecoponto corresponde aos filtros.</p>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="admin/plat-sidebar-nav.js?v=3"></script>
+  <script src="admin/plat-adm-shell.js?v=1"></script>
+  <script src="admin/mapa-publico-adm.js?v=2" defer></script>
+</body>
+</html>

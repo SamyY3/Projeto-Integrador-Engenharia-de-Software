@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <base href="../" data-app-base>
+  <script>(function(){var p=location.pathname.replace(/\\/g,"/"),b=document.querySelector("base[data-app-base]"),m=p.match(/^(.*\/)(?:auth|admin|pages|mapa)\/[^/]+$/);if(b)b.href=m?m[1]:p.replace(/\/[^/]*$/,"/")||"/";})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educação Ambiental | EcoColeta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/educacao-ambiental.css">
+  <link rel="stylesheet" href="assets/css/header.css?v=11">
+  <link rel="stylesheet" href="assets/css/footer.css?v=9">
+  <link rel="stylesheet" href="assets/css/notif-popup.css?v=10">
+</head>
+<body class="app educacao-ambiental">
+
+    <header class="topo">
+  <div class="nav-left">
+    <a href="tela-inicia.html" class="logo-link">
+      <img class="eco-brand-img" src="assets/images/logo.2.bak.png?v=6" alt="EcoColeta" width="192" height="84" decoding="async">
+    </a>
+    <nav>
+      <ul class="menu">
+        <li><a href="tela-inicia.html">Home</a></li>
+        <li><a href="pagina-relatorio.html">Gerar Relatório</a></li>
+        <li><a href="como-funciona.html">Como Funciona</a></li>
+        <li><a href="ecopontos.html">EcoPontos</a></li>
+        <li><a href="premios-disponiveis.html">Prêmios</a></li>
+        <li><a href="educacao-ambiental.html">Educação</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="Ranking.html">Ranking</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="icones">
+    <div class="notif-wrapper">
+      <button type="button" class="notif-btn" aria-label="Notificações">
+          <img src="assets/images/icon notificacao.png" alt="Notificações" class="icon" loading="lazy" decoding="async">
+      </button>
+      <div class="notif-overlay hidden">
+        <div class="notif-box">
+          <div class="header">
+            <h2>Notificações</h2>
+            <span class="gear">⚙️</span>
+          </div>
+          <div class="section">
+            <p class="section-title">IMPORTANTE</p>
+            <div class="item">
+              <div class="icon green">♻️</div>
+              <div>
+                <p>EcoColeta Novo ponto de coleta disponível próxima a você!</p>
+                <span>há 30 minutos</span>
+              </div>
+            </div>
+          </div>
+          <div class="section">
+            <p class="section-title">MAIS NOTIFICAÇÕES</p>
+            <div class="item">
+              <div class="icon yellow">🏆</div>
+              <div class="content">
+                <p>Parabéns! Você ganhou <b>50 pontos</b> pela sua coleta de hoje</p>
+                <span>há 3 horas</span>
+              </div>
+              <div class="badge">+50 pts</div>
+            </div>
+            <div class="item">
+              <div class="icon purple">📅</div>
+              <div>
+                <p><b>Lembrete:</b> Dia de coleta no bairro amanhã</p>
+                <span>há 5 horas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="perfil.html">
+      <img src="assets/images/icons pessoa.png" alt="Perfil" loading="lazy" decoding="async">
+    </a>
+  </div>
+</header>
+
+<script src="assets/js/ecocoleta-paths.js?v=6"></script>
+<script src="assets/js/header-nav.js?v=16"></script>
+<script src="assets/js/notif-popup.js?v=10"></script>
+
+<section class="educacao-hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="hero-badge">Educação Ambiental</span>
+      <h1>Descubra como separar o lixo e cuidar do planeta com ações simples.</h1>
+      <p>Aprenda os tipos de resíduos e a maneira correta de descartar cada material para tornar a reciclagem mais eficiente.</p>
+      <a href="#tipos-de-lixo" class="btn-primary">Veja os tipos de lixo</a>
+    </div>
+    <div class="hero-cards">
+      <div class="hero-card hero-card-top">
+        <p>01</p>
+        <h3>Identifique os resíduos</h3>
+        <span>Entenda a diferença entre plástico, papel, vidro, metal e orgânico.</span>
+      </div>
+      <div class="hero-card hero-card-middle">
+        <p>02</p>
+        <h3>Separe corretamente</h3>
+        <span>Saiba quais itens precisam ser lavados, triturados ou descartados secos.</span>
+      </div>
+      <div class="hero-card hero-card-bottom">
+        <p>03</p>
+        <h3>Transforme em impacto</h3>
+        <span>Ajude a reduzir resíduos e ganhar pontos com a EcoColeta.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="container main-content">
+  <section class="section-intro">
+    <div class="section-label">Como fazer</div>
+    <h2>Separe o lixo certo e faça sua reciclagem valer mais.</h2>
+    <p>Conhecer os tipos de resíduos e a forma correta de descarte é a etapa mais importante para melhorar a coleta seletiva e reduzir a contaminação do material.</p>
+  </section>
+
+  <section class="types-section" id="tipos-de-lixo">
+    <div class="section-label">Tipos de lixo</div>
+    <h2>Os principais resíduos e a forma correta de descartar.</h2>
+    <div class="waste-carousel">
+      <div class="waste-carousel-nav">
+        <button type="button" class="waste-btn" id="wastePrev">Anterior</button>
+        <span class="waste-carousel-indicator"><span id="wasteCurrentPage">1</span> / <span id="wasteTotalPages">3</span></span>
+        <button type="button" class="waste-btn" id="wasteNext">Próximo</button>
+      </div>
+      <div class="waste-track-wrapper">
+        <div class="waste-track">
+          <div class="waste-panel">
+            <article class="waste-card waste-plastic">
+              <div class="waste-icon" aria-label="Ícone de garrafa plástica">🧴</div>
+              <h3>Plástico</h3>
+              <p>Garrafas, embalagens, sacolas e potes. Lave com água, amasse levemente e descarte limpo e seco.</p>
+              <div class="waste-more" aria-hidden="true">
+                <h4>O que não pode ser reciclado</h4>
+                <div class="waste-tags"><span>Isopor sujo</span><span>Embalagens metalizadas</span><span>Plástico sujo</span></div>
+                <h4>Dicas importantes</h4>
+                <p>Retire rótulos quando possível. Amasse garrafas para economizar espaço. Evite descartar plásticos sujos ou engordurados.</p>
+                <strong>Como descartar</strong>
+                <p>Limpo e seco na lixeira vermelha.</p>
+                <small>Tempo de decomposição: 100 a 450 anos</small>
+              </div>
+            </article>
+            <article class="waste-card waste-paper">
+              <div class="waste-icon" aria-label="Ícone de papel">📄</div>
+              <h3>Papel</h3>
+              <p>Jornais, cartolinas, caixas e folhas. Separe por tipo, descarte secos e evite misturar com papel sujo ou encharcado.</p>
+              <div class="waste-more" aria-hidden="true">
+                <h4>O que não pode ser reciclado</h4>
+                <div class="waste-tags"><span>Papel higiênico</span><span>Guardanapo usado</span><span>Papel engordurado</span></div>
+                <h4>Dicas importantes</h4>
+                <p>Mantenha seco, dobre caixas para reduzir volume e não misture com restos de comida.</p>
+                <strong>Como descartar</strong>
+                <p>Seco e limpo na lixeira azul.</p>
+                <small>Tempo de decomposição: 3 a 6 meses</small>
+              </div>
+            </article>
+            <article class="waste-card waste-glass">
+              <div class="waste-icon" aria-label="Ícone de vidro">🍾</div>
+              <h3>Vidro</h3>
+              <p>Garrafas e potes. Enxágue, remova tampas e descarte intacto para evitar quebra e aumentar a reciclagem.</p>
+              <div class="waste-more" aria-hidden="true">
+                <h4>O que não pode ser reciclado</h4>
+                <div class="waste-tags"><span>Espelho</span><span>Cerâmica</span><span>Lâmpada</span></div>
+                <h4>Dicas importantes</h4>
+                <p>Evite quebrar. Se estiver trincado, embale com papelão e identifique para proteger coletores.</p>
+                <strong>Como descartar</strong>
+                <p>Limpo e sem tampa na lixeira verde.</p>
+                <small>Tempo de decomposição: mais de 4.000 anos</small>
+              </div>
+            </article>
+          </div>
+          <div class="waste-panel">
+            <article class="waste-card waste-metal">
+              <div class="waste-icon" aria-label="Ícone de metal">🥫</div>
+              <h3>Metal</h3>
+              <p>Latas, tampas e embalagens. Amasse quando possível e coloque junto com outros metais limpos.</p>
+              <div class="waste-more" aria-hidden="true">
+                <h4>O que não pode ser reciclado</h4>
+                <div class="waste-tags"><span>Lata com tinta</span><span>Esponja de aço</span><span>Clipes sujos</span></div>
+                <h4>Dicas importantes</h4>
+                <p>Remova restos de alimento e achate latas para facilitar o armazenamento e o transporte.</p>
+                <strong>Como descartar</strong>
+                <p>Limpo e seco na lixeira amarela.</p>
+                <small>Tempo de decomposição: 50 a 500 anos</small>
+              </div>
+            </article>
+            <article class="waste-card waste-organic">
+              <div class="waste-icon" aria-label="Ícone de resíduo orgânico">🍃</div>
+              <h3>Orgânico</h3>
+              <p>Restos de comida, cascas e folhas. Mantenha em recipiente fechado e use como composto ou descarte em coleta orgânica.</p>
+              <div class="waste-more" aria-hidden="true">
+                <h4>O que não deve misturar</h4>
+                <div class="waste-tags"><span>Óleo</span><span>Vidro</span><span>Plástico</span></div>
+                <h4>Dicas importantes</h4>
+                <p>Separe cascas, folhas e sobras vegetais. Evite líquidos em excesso para reduzir mau cheiro.</p>
+                <strong>Como descartar</strong>
+                <p>Composte ou descarte em coleta orgânica.</p>
+                <small>Tempo de decomposição: semanas a meses</small>
+              </div>
+            </article>
+            <article class="waste-card waste-construction">
+              <div class="waste-icon" aria-label="Ícone de entulho de construção">🧱</div>
+              <h3>Construção</h3>
+              <p>Resíduos de obras como concreto, tijolo, cerâmica e gesso. Leve a pontos específicos ou a cooperativas especializadas.</p>
+              <div class="waste-more" aria-hidden="true">
+                <h4>O que exige cuidado</h4>
+                <div class="waste-tags"><span>Tinta</span><span>Solvente</span><span>Amianto</span></div>
+                <h4>Dicas importantes</h4>
+                <p>Não descarte entulho em terrenos ou calçadas. Separe madeira, metal e restos minerais.</p>
+                <strong>Como descartar</strong>
+                <p>Leve para ecopontos ou coleta de entulho autorizada.</p>
+                <small>Tempo de decomposição: indeterminado</small>
+              </div>
+            </article>
+          </div>
+          <div class="waste-panel">
+            <article class="waste-card waste-rejects">
+              <div class="waste-icon" aria-label="Ícone de rejeitos">🗑️</div>
+              <h3>Rejeitos</h3>
+              <p>Materiais contaminados ou não recicláveis, como fraldas, restos de comida suja e embalagens contaminadas. Descarte no lixo comum, seguindo o regulamento local.</p>
+              <div class="waste-more" aria-hidden="true">
+                <h4>Exemplos comuns</h4>
+                <div class="waste-tags"><span>Fraldas</span><span>Absorventes</span><span>Papel sujo</span></div>
+                <h4>Dicas importantes</h4>
+                <p>Embale bem materiais com risco sanitário e reduza ao máximo o volume antes do descarte.</p>
+                <strong>Como descartar</strong>
+                <p>Lixo comum, sempre bem fechado.</p>
+                <small>Destino: aterro sanitário</small>
+              </div>
+            </article>
+            <article class="waste-card waste-electronic">
+              <div class="waste-icon" aria-label="Ícone de resíduo eletrônico">🔌</div>
+              <h3>Eletrônico</h3>
+              <p>Celulares, baterias, cabos e pequenos aparelhos. Entregue em pontos de coleta específicos para resíduos eletrônicos.</p>
+              <div class="waste-more" aria-hidden="true">
+                <h4>Não descarte no comum</h4>
+                <div class="waste-tags"><span>Baterias</span><span>Pilhas</span><span>Carregadores</span></div>
+                <h4>Dicas importantes</h4>
+                <p>Apague dados pessoais, mantenha baterias protegidas e não abra equipamentos danificados.</p>
+                <strong>Como descartar</strong>
+                <p>Entregue em pontos de logística reversa.</p>
+                <small>Risco: metais pesados e contaminação</small>
+              </div>
+            </article>
+            <article class="waste-card waste-textile">
+              <div class="waste-icon" aria-label="Ícone de tecido">👕</div>
+              <h3>Têxtil</h3>
+              <p>Roupas, calçados e tecidos. Reutilize ou doe peças em bom estado; peças danificadas devem ir para pontos de coleta têxtil.</p>
+              <div class="waste-more" aria-hidden="true">
+                <h4>Evite descartar</h4>
+                <div class="waste-tags"><span>Peça molhada</span><span>Tecido contaminado</span><span>Calçado sujo</span></div>
+                <h4>Dicas importantes</h4>
+                <p>Lave, seque e separe peças em bom estado para doação. Tecidos ruins podem virar retalhos.</p>
+                <strong>Como descartar</strong>
+                <p>Doe ou leve para coleta têxtil especializada.</p>
+                <small>Tempo de decomposição: meses a décadas</small>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="disposal-section">
+    <div class="section-label">Descartar certo</div>
+    <h2>4 passos para que o descarte seja realmente eficiente.</h2>
+    <div class="disposal-steps">
+      <div class="step-card">
+        <span>1</span>
+        <h3>Classifique o resíduo</h3>
+        <p>Separe plástico, papel, vidro, metal, orgânico, construção, eletrônico e rejeitos em recipientes distintos.</p>
+      </div>
+      <div class="step-card">
+        <span>2</span>
+        <h3>Limpe e seque</h3>
+        <p>Retire restos e enxágue embalagens para evitar contaminação entre os materiais.</p>
+      </div>
+      <div class="step-card">
+        <span>3</span>
+        <h3>Não misture</h3>
+        <p>Evite juntar plástico com papel ou orgânico com vidro, pois isso inviabiliza a reciclagem.</p>
+      </div>
+      <div class="step-card">
+        <span>4</span>
+        <h3>Use o ecoponto certo</h3>
+        <p>Leve seus resíduos ao ponto de coleta adequado ou siga o calendário de coleta seletiva da sua região.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="guide-section">
+    <div class="section-label">Boas práticas</div>
+    <h2>Escolhas simples que fazem diferença todos os dias.</h2>
+    <div class="guide-grid">
+      <article>
+        <h3>Evite embalagens desnecessárias</h3>
+        <p>Prefira produtos com menos plástico e use embalagens reutilizáveis sempre que possível.</p>
+      </article>
+      <article>
+        <h3>Reaproveite antes de descartar</h3>
+        <p>Dê nova vida a potes, vidros e sacolas antes de enviá-los ao ecoponto.</p>
+      </article>
+      <article>
+        <h3>Organize sua casa</h3>
+        <p>Tenha lixeiras identificadas e facilite a separação do lixo de toda a família.</p>
+      </article>
+      <article>
+        <h3>Compartilhe conhecimento</h3>
+        <p>Incentive amigos e vizinhos a separar o lixo e a usar a Ecocoleta em seu bairro.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-panel">
+      <h2>Hora de transformar atitude em resultado.</h2>
+      <p>Separe corretamente seus resíduos e descubra como a EcoColeta transforma o seu descarte em benefícios reais.</p>
+      <a href="ecopontos.html" class="btn-secondary">Veja os ecopontos</a>
+    </div>
+  </section>
+
+</main>
+
+<footer id="ecocoleta-site-footer" class="footer">
+  <div class="footer-container">
+
+    <div class="footer-info">
+      <h4>Institucional</h4>
+      <p><img src="assets/images/icons pessoa.png" class="icon" loading="lazy" decoding="async"> Universidade Faculdade Paraíso</p>
+      <p><img src="assets/images/cnpj..png" class="icon" loading="lazy" decoding="async"> CNPJ: 00.000.000/0000-00</p>
+    </div>
+
+    <div class="footer-logo">
+      <img class="eco-brand-img" src="assets/images/telas.png?v=2" alt="EcoColeta" loading="lazy" decoding="async">
+    </div>
+
+    <div class="footer-contato">
+      <h4>Contato</h4>
+      <p><img src="assets/images/telefone-.png" class="icon" loading="lazy" decoding="async"> (88) 90000-0000</p>
+      <p><img src="assets/images/o-email 1.png" class="icon" loading="lazy" decoding="async"> ecocoleta@gmail.com</p>
+    </div>
+
+  </div>
+
+  <div class="social">
+    <img src="assets/images/icons facebook.png" alt="Facebook" loading="lazy" decoding="async">
+    <img src="assets/images/email.2.png" alt="Email" loading="lazy" decoding="async">
+    <img src="assets/images/icons apicativo X.png" alt="X" loading="lazy" decoding="async">
+    <img src="assets/images/icons-youtube.png" alt="YouTube" loading="lazy" decoding="async">
+    <img src="assets/images/icons-instagram.png" alt="Instagram" loading="lazy" decoding="async">
+  </div>
+
+  <div class="footer-copy">
+    <p>©️ 2026 Todos os direitos reservados</p>
+  </div>
+</footer>
+<script src="assets/js/footer.js?v=10"></script>
+
+<script src="assets/js/home.js"></script>
+<script>
+  const wastePrev = document.getElementById('wastePrev');
+  const wasteNext = document.getElementById('wasteNext');
+  const wasteWrapper = document.querySelector('.waste-track-wrapper');
+  const wasteTrack = document.querySelector('.waste-track');
+  const wasteCurrentPage = document.getElementById('wasteCurrentPage');
+  const wasteTotalPages = document.getElementById('wasteTotalPages');
+
+  let currentWastePage = 0;
+  const totalWastePages = document.querySelectorAll('.waste-panel').length;
+
+  function updateWasteCarousel() {
+    const trackStyles = window.getComputedStyle(wasteTrack);
+    const panelGap = parseFloat(trackStyles.columnGap || trackStyles.gap || '0') || 0;
+    const panelWidth = wasteWrapper ? wasteWrapper.clientWidth : 0;
+    const offset = currentWastePage * (panelWidth + panelGap);
+    wasteTrack.style.transform = `translateX(-${offset}px)`;
+    wasteCurrentPage.textContent = currentWastePage + 1;
+    wastePrev.disabled = currentWastePage === 0;
+    wasteNext.disabled = currentWastePage === totalWastePages - 1;
+  }
+
+  wastePrev.addEventListener('click', () => {
+    if (currentWastePage > 0) {
+      currentWastePage -= 1;
+      updateWasteCarousel();
+    }
+  });
+
+  wasteNext.addEventListener('click', () => {
+    if (currentWastePage < totalWastePages - 1) {
+      currentWastePage += 1;
+      updateWasteCarousel();
+    }
+  });
+
+  wasteTotalPages.textContent = totalWastePages;
+  updateWasteCarousel();
+  var wasteResizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(wasteResizeTimer);
+    wasteResizeTimer = setTimeout(updateWasteCarousel, 120);
+  });
+</script>
+</body>
+</html>

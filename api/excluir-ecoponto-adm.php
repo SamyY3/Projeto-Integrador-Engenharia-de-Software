@@ -1,0 +1,41 @@
+<?php
+require_once dirname(__DIR__) . '/includes/session-bootstrap.php';
+ini_set("display_errors", "0");
+error_reporting(0);
+
+ecocoleta_session_start();
+header("Content-Type: application/json; charset=utf-8");
+header("Cache-Control: no-store, no-cache, must-revalidate");
+
+require_once dirname(__DIR__) . "/includes/conexao.php";
+require_once dirname(__DIR__) . "/includes/admin-plataforma-helpers.php";
+require_once dirname(__DIR__) . "/includes/ecopontos-repository.php";
+
+ecoplat_exigir_sessao();
+
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    ecoplat_json_erro("Método não permitido.", 405);
+}
+
+$idPev = (int) ($_POST["id_pev"] ?? 0);
+if ($idPev <= 0) {
+    $raw = file_get_contents("php://input");
+    if (is_string($raw) && $raw !== "") {
+        $decoded = json_decode($raw, true);
+        if (is_array($decoded)) {
+            $idPev = (int) ($decoded["id_pev"] ?? 0);
+        }
+    }
+}
+
+try {
+    ecopontos_excluir($conn, $idPev);
+    ecoplat_json_ok([
+        "id_pev" => $idPev,
+        "resumo" => ecopontos_calcular_resumo(ecopontos_listar_do_banco($conn)),
+    ]);
+} catch (InvalidArgumentException $e) {
+    ecoplat_json_erro($e->getMessage());
+} catch (Throwable $e) {
+    ecoplat_json_erro("Não foi possível excluir o ecoponto.");
+}

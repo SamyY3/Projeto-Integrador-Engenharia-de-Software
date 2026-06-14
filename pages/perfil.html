@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <base href="../" data-app-base>
+  <script>(function(){var p=location.pathname.replace(/\\/g,"/"),b=document.querySelector("base[data-app-base]"),m=p.match(/^(.*\/)(?:auth|admin|pages|mapa)\/[^/]+$/);if(b)b.href=m?m[1]:p.replace(/\/[^/]*$/,"/")||"/";})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil do Usuário</title>
+  <style>
+    html.perfil-auth-checking body {
+      visibility: hidden;
+     animation: ecoAuthReveal 0s linear 3s forwards; }
+    @keyframes ecoAuthReveal { to { visibility: visible; } }
+  </style>
+  <script>
+    (function () {
+      if (localStorage.getItem('loggedIn') === 'true') {
+        document.documentElement.classList.add('perfil-auth-checking');
+        return;
+      }
+      var p = location.pathname.replace(/\\/g, '/');
+      var m = p.match(/^(.*\/)(?:auth|admin|pages|mapa)\/[^/]+$/);
+      var root = m ? m[1] : p.replace(/\/[^/]*$/, '/') || '/';
+      location.replace(root + 'auth/login.html?redirect=' + encodeURIComponent('pages/perfil.html'));
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/perfil.css?v=4">
+  <link rel="stylesheet" href="assets/css/perfil-avatar.css">
+  <link rel="stylesheet" href="assets/css/header.css?v=11">
+  <link rel="stylesheet" href="assets/css/footer.css?v=9">
+  <link rel="stylesheet" href="assets/css/notif-popup.css?v=10">
+  <link rel="stylesheet" href="assets/css/user-popup.css">
+  <script src="assets/js/ecocoleta-paths.js?v=7"></script>
+</head>
+
+<body class="app perfil">
+
+    <header class="topo">
+  <div class="nav-left">
+    <a href="tela-inicia.html" class="logo-link">
+      <img class="eco-brand-img" src="assets/images/logo.2.bak.png?v=6" alt="EcoColeta" width="192" height="84" decoding="async">
+    </a>
+    <nav>
+      <ul class="menu">
+        <li><a href="tela-inicia.html">Home</a></li>
+        <li><a href="pagina-relatorio.html">Gerar Relatório</a></li>
+        <li><a href="como-funciona.html">Como Funciona</a></li>
+        <li><a href="ecopontos.html">EcoPontos</a></li>
+        <li><a href="premios-disponiveis.html">Prêmios</a></li>
+        <li><a href="educacao-ambiental.html">Educação</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+        <li><a href="Ranking.html">Ranking</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="icones">
+    <div class="notif-wrapper">
+      <button type="button" class="notif-btn" aria-label="Notificações">
+          <img src="assets/images/icon notificacao.png" alt="Notificações" class="icon" loading="lazy" decoding="async">
+      </button>
+      <div class="notif-overlay hidden">
+        <div class="notif-box">
+          <div class="header">
+            <h2>Notificações</h2>
+            <span class="gear">⚙️</span>
+          </div>
+          <div class="section">
+            <p class="section-title">IMPORTANTE</p>
+            <div class="item">
+              <div class="icon green">♻️</div>
+              <div>
+                <p>EcoColeta Novo ponto de coleta disponível próxima a você!</p>
+                <span>há 30 minutos</span>
+              </div>
+            </div>
+          </div>
+          <div class="section">
+            <p class="section-title">MAIS NOTIFICAÇÕES</p>
+            <div class="item">
+              <div class="icon yellow">🏆</div>
+              <div class="content">
+                <p>Parabéns! Você ganhou <b>50 pontos</b> pela sua coleta de hoje</p>
+                <span>há 3 horas</span>
+              </div>
+              <div class="badge">+50 pts</div>
+            </div>
+            <div class="item">
+              <div class="icon purple">📅</div>
+              <div>
+                <p><b>Lembrete:</b> Dia de coleta no bairro amanhã</p>
+                <span>há 5 horas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="perfil.html">
+      <img src="assets/images/icons pessoa.png" alt="Perfil" loading="lazy" decoding="async">
+    </a>
+  </div>
+</header>
+
+<div class="container">
+
+  <h2 class="titulo-perfil">Perfil do Usuário</h2>
+
+  <div class="perfil-card">
+    <div class="perfil-esquerda">
+      <div class="avatar-perfil" id="cardAvatar">
+        <input type="file" id="avatarPerfilFile" class="avatar-perfil__file" accept="image/*" tabindex="-1">
+        <label for="avatarPerfilFile" class="avatar-perfil__ring" id="cardAvatarRing" aria-label="Alterar foto do perfil">
+          <img id="avatarPerfilImg" class="avatar-perfil__img foto-perfil" alt="" loading="lazy" decoding="async">
+          <span class="avatar-perfil__placeholder" aria-hidden="true">
+            <svg viewBox="0 0 64 64" width="44" height="44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="32" cy="24" r="11" stroke="currentColor" stroke-width="2.2"/>
+              <path d="M14 52c2-10 10-15 18-15s16 5 18 15" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+            <span class="avatar-perfil__hint">Adicionar foto</span>
+          </span>
+          <span class="avatar-perfil__overlay" aria-hidden="true">
+            <span class="avatar-perfil__cta">Alterar foto</span>
+          </span>
+        </label>
+        <button type="button" class="avatar-perfil__library-btn" id="avatarOpenLibraryBtn">Fotos anteriores</button>
+      </div>
+
+      <div class="info-perfil">
+        <h2 id="profileDisplayName">Carregando…</h2>
+        <p id="profileDisplayEmail">—</p>
+        <div id="user-points" class="ecopontos">2.000 EcoPoints</div>
+      </div>
+    </div>
+
+    <div class="perfil-card-acoes">
+      <button type="button" class="btn-editar" id="openPerfilModal">
+        Editar perfil <img src="assets/images/lapis.png" class="icone-lapis" alt="" loading="lazy" decoding="async">
+      </button>
+      <button type="button" class="btn-excluir-conta" id="openDeleteAccountOverlay">
+        Excluir minha conta
+      </button>
+      <button type="button" class="btn-sair-conta" id="logoutBtn">
+        <span class="btn-sair-icone" aria-hidden="true">↪</span>
+        <span>Sair da conta</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="perfil-modal-overlay hidden" id="perfilModal">
+    <div class="perfil-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="perfil-modal-header">
+        <div>
+          <span class="page-label">Perfil</span>
+          <h2 class="modal-title" id="modalTitle">Editar perfil</h2>
+          <p class="modal-text">Atualize seus dados rapidamente, sem sair da página.</p>
+        </div>
+        <button type="button" class="close-modal" id="closePerfilModal" aria-label="Fechar edição">×</button>
+      </div>
+
+      <form id="perfilForm" class="modal-body" novalidate>
+        <div class="perfil-topo">
+
+          <div class="perfil-info">
+
+            <div class="foto-box foto-box--avatar">
+              <div class="avatar-perfil avatar-perfil--sm" id="modalAvatarMini">
+                <input type="file" id="avatarPerfilFileModal" class="avatar-perfil__file" accept="image/*" tabindex="-1">
+                <label for="avatarPerfilFileModal" class="avatar-perfil__ring" id="modalAvatarRing" aria-label="Alterar foto do perfil">
+                  <img id="modalFoto" class="avatar-perfil__img foto-perfil" alt="" loading="lazy" decoding="async">
+                  <span class="avatar-perfil__placeholder" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="32" cy="24" r="11" stroke="currentColor" stroke-width="2.2"/>
+                      <path d="M14 52c2-10 10-15 18-15s16 5 18 15" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="avatar-perfil__hint">Foto</span>
+                  </span>
+                  <span class="avatar-perfil__overlay" aria-hidden="true">
+                    <span class="avatar-perfil__cta">Alterar foto</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div class="nome-com-lapis">
+              <span class="nome" id="modalNome">—</span>
+              <button type="button" class="lapis" id="editNameBtn" aria-label="Editar nome">
+                <img src="assets/images/lapis.png" alt="Editar nome" loading="lazy" decoding="async">
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="perfil-form">
+
+          <div class="perfil-campo">
+            <label>E-mail</label>
+            <input type="email" id="modalEmail" placeholder="Digite aqui o seu e-mail..." required>
+          </div>
+
+          <div class="perfil-campo">
+            <label>Confirmar e-mail</label>
+            <input type="email" id="modalEmailConfirm" placeholder="Confirme seu e-mail..." required>
+          </div>
+
+          <div class="perfil-campo">
+            <label>Senha</label>
+            <input type="password" id="modalPassword" placeholder="Deixe em branco para manter a senha atual" autocomplete="new-password">
+          </div>
+
+          <div class="perfil-campo">
+            <label>Confirmar senha</label>
+            <input type="password" id="modalPasswordConfirm" placeholder="Repita a nova senha" autocomplete="new-password">
+          </div>
+
+          <div class="perfil-campo endereco-campo hidden">
+            <label>CEP</label>
+            <input type="text" id="modalCep" placeholder="Digite o CEP..." required>
+          </div>
+
+          <div class="perfil-campo endereco-campo hidden">
+            <label>Cidade / Estado</label>
+            <input type="text" id="modalCidadeEstado" placeholder="Digite a cidade e o estado..." required>
+          </div>
+
+          <div class="perfil-campo endereco-campo hidden">
+            <label>Rua ou avenida</label>
+            <input type="text" id="modalRua" placeholder="Ex.: Rua São Pedro ou Av. Padre Cícero" required>
+          </div>
+
+          <div class="perfil-campo endereco-campo hidden">
+            <label>Número</label>
+            <input type="text" id="modalNumero" placeholder="Digite o número..." required>
+          </div>
+
+          <div class="perfil-campo endereco-campo hidden">
+            <label>Bairro</label>
+            <input type="text" id="modalBairro" placeholder="Digite o bairro..." required>
+          </div>
+
+          <div class="perfil-campo endereco-campo hidden">
+            <label>Complemento</label>
+            <input type="text" id="modalComplemento" placeholder="Digite o complemento...">
+          </div>
+
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn-cancel" id="cancelPerfilModal">Cancelar</button>
+          <button type="submit" class="btn-editar" id="confirmarPerfilBtn">Salvar alterações</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="save-confirm-overlay hidden" id="saveConfirmOverlay">
+    <div class="save-confirm-dialog">
+      <p>Tem certeza que deseja salvar as alterações?</p>
+      <div class="save-confirm-actions">
+        <button type="button" class="btn-cancel" id="cancelSaveBtn">Cancelar</button>
+        <button type="button" class="btn-editar" id="confirmSaveBtn">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="avatarPhotoModal" class="avatar-photo-modal hidden" aria-hidden="true">
+    <div class="avatar-photo-modal__backdrop"></div>
+    <div class="avatar-photo-modal__panel" role="dialog" aria-modal="true" aria-labelledby="avatarPhotoModalTitle">
+      <button type="button" class="avatar-photo-modal__close" id="avatarPhotoModalClose" aria-label="Fechar">&times;</button>
+      <h3 class="avatar-photo-modal__title" id="avatarPhotoModalTitle">Foto do perfil</h3>
+      <p class="avatar-photo-modal__lead">Toque em uma miniatura para voltar a usá-la. Ou escolha uma nova imagem.</p>
+      <div class="avatar-photo-modal__preview-wrap">
+        <img id="avatarPhotoPreview" class="avatar-photo-modal__preview" alt="Pré-visualização" loading="lazy" decoding="async">
+        <div class="avatar-photo-modal__preview-placeholder" id="avatarPhotoPreviewPh">
+          <svg viewBox="0 0 64 64" width="56" height="56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="32" cy="24" r="11" stroke="currentColor" stroke-width="2"/>
+            <path d="M14 52c2-10 10-15 18-15s16 5 18 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>Escolha uma imagem para ver o preview</span>
+        </div>
+      </div>
+      <input type="file" id="avatarPhotoFileInput" class="avatar-perfil__file" accept="image/*" tabindex="-1" title="">
+      <div class="avatar-photo-modal__actions">
+        <button type="button" class="avatar-photo-modal__btn-file" id="avatarPhotoModalChooseFile">Escolher imagem</button>
+        <button type="button" class="avatar-photo-modal__btn-cancel" id="avatarPhotoModalCancel">Fechar</button>
+      </div>
+      <p class="avatar-photo-modal__history-title">Imagens anteriores</p>
+      <div class="avatar-photo-history__grid" id="avatarPhotoHistoryGrid"></div>
+      <p class="avatar-photo-history__empty hidden" id="avatarPhotoHistoryEmpty">Nenhuma foto salva ainda — após salvar, elas aparecem aqui.</p>
+    </div>
+  </div>
+
+  <div class="delete-account-overlay hidden" id="deleteAccountOverlay">
+    <div class="delete-account-dialog" role="dialog" aria-modal="true" aria-labelledby="deleteAccountTitle">
+      <h3 id="deleteAccountTitle">Excluir conta</h3>
+      <p class="delete-account-text">Esta ação é permanente: seus dados na EcoColeta serão apagados e não poderão ser recuperados.</p>
+      <p class="delete-account-error hidden" id="deleteAccountError"></p>
+      <div class="delete-account-actions">
+        <button type="button" class="btn-cancel" id="cancelDeleteAccountBtn">Cancelar</button>
+        <button type="button" class="btn-confirmar-exclusao" id="confirmDeleteAccountBtn">Excluir definitivamente</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="conteudo-inferior">
+
+    <div class="linha-superior">
+      <div class="box historico-box">
+        <h3>Histórico de Reciclagem</h3>
+
+        <div class="item-historico">
+          <div class="historico-info">
+            <span class="bolinha-verde"></span>
+            <span>Coleta em EcoPonto Central</span>
+          </div>
+          <span class="data-historico">12/03/2026</span>
+        </div>
+
+        <div class="item-historico">
+          <div class="historico-info">
+            <span class="bolinha-verde"></span>
+            <span>Entrega de Papel e Vidro</span>
+          </div>
+          <span class="data-historico">05/02/2026</span>
+        </div>
+
+        <div class="item-historico">
+          <div class="historico-info">
+            <span class="bolinha-verde"></span>
+            <span>Reciclagem de Plástico</span>
+          </div>
+          <span class="data-historico">19/01/2026</span>
+        </div>
+
+        <div class="item-historico">
+          <div class="historico-info">
+            <span class="bolinha-verde"></span>
+            <span>Coleta de Lixo Eletrônico</span>
+          </div>
+          <span class="data-historico">10/01/2026</span>
+        </div>
+      </div>
+
+      <div class="box premios-box">
+        <div class="box-header">
+          <h3>Prêmios resgatados</h3>
+          <span class="box-tag" id="premios-count">0 itens</span>
+        </div>
+        <div class="premios-resgatados">
+          <ul class="premios-list" id="premios-list-perfil">
+            <li class="no-premios">Nenhum prêmio resgatado ainda</li>
+          </ul>
+        </div>
+        <a href="premios-disponiveis.html" class="link-resgatar-mais">
+          <span>Resgatar mais prêmios</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="linha-inferior">
+      <div class="box endereco-box endereco-box--sem-endereco" id="perfilEnderecoBox">
+        <div class="box-header">
+          <h3>Endereço</h3>
+          <span class="box-tag is-empty" id="perfilEnderecoTag">Pendente</span>
+        </div>
+        <p class="endereco-cidade" id="perfilEnderecoCidade">Carregando endereço…</p>
+        <p class="endereco-detalhe" id="perfilEnderecoLinha1">—</p>
+        <p class="endereco-detalhe" id="perfilEnderecoLinha2">—</p>
+        <p class="endereco-detalhe" id="perfilEnderecoLinha3">—</p>
+        <p class="endereco-detalhe" id="perfilEnderecoLinha4">—</p>
+        <p class="endereco-detalhe" id="perfilEnderecoLinha5">—</p>
+        <button type="button" class="btn-editar-endereco" id="editarEnderecoBtn">Cadastrar endereço</button>
+      </div>
+
+      <div class="box">
+        <div class="topo-notificacoes">
+          <h3>Notificações</h3>
+          <div class="notificacoes-actions">
+            <span class="box-tag" id="perfil-notificacoes-count">0 novas</span>
+            <button type="button" class="btn-atualizar-notificacoes" id="perfil-notificacoes-refresh">Atualizar</button>
+          </div>
+        </div>
+
+        <div class="notificacoes-lista-perfil" id="perfil-notificacoes-lista" aria-live="polite">
+          <p class="notificacoes-status">Carregando notificações...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-principal">
+      <h3 class="titulo-agendamento">Agendamento de coleta</h3>
+
+      <div class="area-agendamento">
+
+        <div class="Calendário-box">
+          <div class="calendar-header">
+            <h4 id="calendarMonthYear" class="titulo-calendario">Calendário de coleta - Maio 2026</h4>
+            <div class="calendar-controls">
+              <button type="button" id="calendarPrev" class="btn-calendar" aria-label="Mês anterior">◀</button>
+              <button type="button" id="calendarNext" class="btn-calendar" aria-label="Próximo mês">▶</button>
+            </div>
+          </div>
+
+          <div class="agenda-coleta">
+
+            <div class="cabecalho-dias">
+              <span>Horário</span>
+              <span>Seg<br>4</span>
+              <span>Ter<br>5</span>
+              <span>Qua<br>6</span>
+              <span>Qui<br>7</span>
+              <span>Sex<br>8</span>
+              <span>Sáb<br>9</span>
+              <span>Dom<br>10</span>
+            </div>
+
+            <div class="linha-horario">
+              <div class="hora">07:00 às 10:00</div>
+              <div class="celula"></div>
+              <div class="celula"></div>
+              <div class="celula"></div>
+              <div class="celula"></div>
+              <div class="celula coleta">Coleta</div>
+              <div class="celula coleta">Coleta</div>
+              <div class="celula"></div>
+            </div>
+
+            <div class="linha-horario">
+              <div class="hora">10:00 às 13:00</div>
+              <div class="celula coleta">Coleta</div>
+              <div class="celula"></div>
+              <div class="celula coleta">Coleta</div>
+              <div class="celula"></div>
+              <div class="celula"></div>
+              <div class="celula"></div>
+              <div class="celula"></div>
+            </div>
+
+            <div class="linha-horario">
+              <div class="hora">13:00 às 16:00</div>
+              <div class="celula"></div>
+              <div class="celula coleta">Coleta</div>
+              <div class="celula"></div>
+              <div class="celula coleta">Coleta</div>
+              <div class="celula"></div>
+              <div class="celula"></div>
+              <div class="celula"></div>
+            </div>
+
+            <div class="linha-horario">
+              <div class="hora">16:00 às 19:00</div>
+              <div class="celula"></div>
+              <div class="celula"></div>
+              <div class="celula"></div>
+              <div class="celula coleta">Coleta</div>
+              <div class="celula"></div>
+              <div class="celula"></div>
+              <div class="celula coleta">Coleta</div>
+            </div>
+
+            <div class="linha-horario">
+              <div class="hora">19:00 às 22:00</div>
+              <div class="celula coleta">Coleta</div>
+              <div class="celula"></div>
+              <div class="celula"></div>
+              <div class="celula"></div>
+              <div class="celula"></div>
+              <div class="celula coleta">Coleta</div>
+              <div class="celula"></div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="box-agenda">
+          <a href="agendar-coleta.html" class="card-nova-coleta">
+            <span>Agende uma nova coleta</span>
+            <span class="btn-mais" aria-hidden="true">+</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer id="ecocoleta-site-footer"></footer>
+<script src="assets/js/footer.js?v=10"></script>
+    <div class="footer-info">
+    </div>
+
+    <div class="footer-logo">
+    </div>
+
+    <div class="footer-contato">
+    </div>
+
+  </div>
+
+  <div class="social">
+  </div>
+
+  <div class="footer-copy">
+  </div>
+<script src="assets/js/header-nav.js?v=16"></script>
+<script src="assets/js/notif-popup.js?v=10"></script>
+<script src="assets/js/user-popup.js"></script>
+<script src="assets/js/perfil-avatar.js"></script>
+<script src="assets/js/perfil.js?v=7"></script>
+</body>
+</html>

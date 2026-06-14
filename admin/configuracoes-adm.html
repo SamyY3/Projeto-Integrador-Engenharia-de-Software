@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <base href="../">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="admin/plat-adm-theme-boot.js?v=2"></script>
+  <title>Configurações | EcoColeta</title>
+  <style>
+    html.plat-auth-checking body { visibility: hidden;  animation: ecoAuthReveal 0s linear 3s forwards; }
+    @keyframes ecoAuthReveal { to { visibility: visible; } }
+  </style>
+  <script>document.documentElement.classList.add("plat-auth-checking");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin/home-adm.css?v=14">
+  <link rel="stylesheet" href="admin/plat-sidebar-pro.css?v=3">
+  <link rel="stylesheet" href="admin/plat-adm-premium.css?v=2">
+  <link rel="stylesheet" href="assets/css/edicaoperfil.css">
+  <link rel="stylesheet" href="admin/configuracoes-adm.css?v=11">
+  <link rel="stylesheet" href="assets/css/logo.css?v=11">
+  <script src="assets/js/ecocoleta-paths.js?v=3"></script>
+</head>
+<body class="plat-dashboard plat-config-adm">
+  <script src="admin/adm-sidebar-icons.js"></script>
+  <script src="admin/adm-plataforma-icons.js"></script>
+
+  <div class="plat-app">
+    <header class="plat-header">
+      <a href="pages/tela-inicia.html" class="plat-header-brand">
+        <img class="eco-brand-img" src="assets/images/logo.2.png?v=5" alt="EcoColeta" width="192" height="84" decoding="async">
+      </a>
+      <div class="plat-header-actions">
+        <button type="button" class="plat-profile-btn" id="profileToggle" aria-label="Menu do administrador" aria-expanded="false" aria-haspopup="true">
+          <span class="plat-avatar" aria-hidden="true">
+            <span class="plat-avatar__inner">
+              <span class="plat-avatar__initial" id="profileInitial">A</span>
+            </span>
+          </span>
+        </button>
+        <div class="plat-profile-menu hidden" id="profileMenu" role="menu">
+          <p class="plat-profile-name" id="profileName">Administrador</p>
+          <p class="plat-profile-email" id="profileEmail">—</p>
+          <p class="plat-profile-role" id="profileRole">Plataforma EcoColeta</p>
+          <button type="button" id="logoutAdmin" role="menuitem">Sair da conta</button>
+        </div>
+      </div>
+    </header>
+
+    <aside id="platSidebar"></aside>
+
+    <main class="plat-main plat-config-main">
+      <p class="plat-config-alert hidden" id="configAuthError" role="alert"></p>
+
+      <header class="plat-config-page-head">
+        <div>
+          <p class="plat-config-kicker">Plataforma EcoColeta</p>
+          <h1>Configurações</h1>
+          <p class="plat-config-lead">Gerencie preferências, integrações e segurança do sistema.</p>
+        </div>
+        <span class="plat-config-status" id="cfgStatusBadge">
+          <span class="plat-config-status__dot" aria-hidden="true"></span>
+          <span id="cfgStatusText">Sincronizado</span>
+        </span>
+      </header>
+
+      <div class="plat-config-loading" id="cfgLoading" aria-live="polite" aria-busy="true">
+        <div class="plat-config-loading__spinner" aria-hidden="true"></div>
+        <p>Carregando configurações…</p>
+      </div>
+
+      <div class="plat-config-workspace is-loading" id="cfgGrid" hidden>
+        <div class="plat-config-col plat-config-col--account">
+          <p class="plat-config-section-label">Conta e acesso</p>
+
+        <section class="plat-config-card plat-config-card--profile" aria-labelledby="cfgProfileTitle">
+          <div class="plat-config-card__header plat-config-card__header--profile">
+            <span class="plat-config-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="8" r="4"/></svg>
+            </span>
+            <div class="plat-config-card__head-text">
+              <h2 class="plat-config-card__title" id="cfgProfileTitle">Perfil do Administrador</h2>
+              <p class="plat-config-card__desc">Sua conta no painel da plataforma EcoColeta</p>
+            </div>
+            <button type="button" class="plat-btn plat-btn--primary plat-config-card__action" id="btnEditProfile">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+              Editar Perfil
+            </button>
+          </div>
+          <div class="plat-config-profile">
+            <div class="plat-avatar plat-avatar--lg plat-config-profile-avatar" id="configAdminAvatarWrap" aria-hidden="true">
+              <span class="plat-avatar__inner">
+                <img alt="" class="plat-avatar__photo is-hidden" id="configAdminAvatar" width="80" height="80" decoding="async">
+                <span class="plat-avatar__initial" id="configAdminAvatarFallback">A</span>
+              </span>
+            </div>
+            <div class="plat-config-profile-info">
+              <h3 id="configAdminName">Administrador</h3>
+              <p id="configAdminEmail">—</p>
+              <span class="plat-config-badge plat-config-badge--profile" id="configAdminCargo">Administrador da plataforma</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="plat-config-card" aria-labelledby="cfgSecTitle">
+          <div class="plat-config-card__header">
+            <span class="plat-config-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </span>
+            <div class="plat-config-card__head-text">
+              <h2 class="plat-config-card__title" id="cfgSecTitle">Segurança</h2>
+              <p class="plat-config-card__desc">Proteção da conta e controle de acesso ao painel</p>
+            </div>
+          </div>
+          <div class="plat-config-card__body">
+            <div class="plat-config-security-grid">
+              <article class="plat-config-security-item">
+                <span class="plat-config-security-item__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777Z"/></svg>
+                </span>
+                <div class="plat-config-security-item__text">
+                  <strong>Alterar senha</strong>
+                  <span>Atualize sua senha de acesso ao painel</span>
+                </div>
+                <button type="button" class="plat-config-btn-outline" id="cfgBtnSenha">Alterar senha</button>
+              </article>
+              <article class="plat-config-security-item">
+                <span class="plat-config-security-item__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </span>
+                <div class="plat-config-security-item__text">
+                  <strong>Autenticação em dois fatores</strong>
+                  <span>Camada extra de proteção no login</span>
+                  <span class="plat-config-badge" id="cfg2faBadge">Inativo</span>
+                </div>
+                <button type="button" class="plat-config-btn-outline" id="cfgBtn2fa">Gerenciar 2FA</button>
+              </article>
+              <article class="plat-config-security-item">
+                <span class="plat-config-security-item__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </span>
+                <div class="plat-config-security-item__text">
+                  <strong>Sessões ativas</strong>
+                  <span>Dispositivos conectados à sua conta</span>
+                </div>
+                <button type="button" class="plat-config-btn-outline" id="cfgBtnSessoes">Ver sessões</button>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="plat-config-card" aria-labelledby="cfgUsersTitle">
+          <div class="plat-config-card__header">
+            <span class="plat-config-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <div class="plat-config-card__head-text">
+              <h2 class="plat-config-card__title" id="cfgUsersTitle">Usuários</h2>
+              <p class="plat-config-card__desc">Funções administrativas e níveis de acesso</p>
+            </div>
+          </div>
+          <div class="plat-config-card__body">
+            <p class="plat-config-subsection-title">Funções no sistema</p>
+            <div class="plat-config-roles-panel">
+              <ul class="plat-config-roles" id="cfgRolesList" aria-label="Funções do sistema"></ul>
+            </div>
+            <footer class="plat-config-card__footer">
+              <a href="admin/usuarios-adm.html" class="plat-config-link">
+                Gerenciar todos os usuários
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+            </footer>
+          </div>
+        </section>
+
+        <section class="plat-config-card" aria-labelledby="cfgPlatAdminsTitle">
+          <div class="plat-config-card__header">
+            <span class="plat-config-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 15v2m-6 4h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2zm10-10V7a4 4 0 0 0-8 0v4h8z"/></svg>
+            </span>
+            <div class="plat-config-card__head-text">
+              <h2 class="plat-config-card__title" id="cfgPlatAdminsTitle">Administradores da plataforma</h2>
+              <p class="plat-config-card__desc">Contas com acesso ao painel ADM</p>
+            </div>
+            <button type="button" class="plat-btn plat-btn--primary plat-config-card__action" id="btnAddPlatAdmin">Adicionar</button>
+          </div>
+          <div class="plat-config-card__body">
+            <ul class="plat-config-admins-list" id="cfgPlatAdminsList" aria-live="polite">
+              <li class="plat-config-admins-empty">Carregando…</li>
+            </ul>
+          </div>
+        </section>
+        </div>
+
+        <div class="plat-config-col plat-config-col--system">
+          <p class="plat-config-section-label">Sistema e integrações</p>
+
+        <section class="plat-config-card" aria-labelledby="cfgGeralTitle">
+          <div class="plat-config-card__header">
+            <span class="plat-config-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </span>
+            <div class="plat-config-card__head-text">
+              <h2 class="plat-config-card__title" id="cfgGeralTitle">Configurações gerais</h2>
+              <p class="plat-config-card__desc">Identidade pública e aparência do painel</p>
+            </div>
+          </div>
+          <div class="plat-config-card__body">
+            <div class="plat-config-field">
+              <label for="cfgNomeSite">Nome do site</label>
+              <input type="text" id="cfgNomeSite" name="nome_site" maxlength="120" autocomplete="organization" placeholder="EcoColeta">
+            </div>
+            <div class="plat-config-field">
+              <label for="cfgEmailContato">E-mail de contato</label>
+              <input type="email" id="cfgEmailContato" name="email_contato" maxlength="160" autocomplete="email" placeholder="contato@ecocoleta.com.br">
+            </div>
+            <div class="plat-config-field">
+              <span class="plat-config-label" id="cfgTemaLabel">Tema da interface</span>
+              <div class="plat-config-theme" role="group" aria-labelledby="cfgTemaLabel">
+                <button type="button" class="plat-config-theme__btn" data-tema="light" id="cfgTemaLight">
+                  <span class="plat-config-theme__preview plat-config-theme__preview--light" aria-hidden="true"></span>
+                  <span class="plat-config-theme__label">Modo claro</span>
+                </button>
+                <button type="button" class="plat-config-theme__btn is-active" data-tema="dark" id="cfgTemaDark">
+                  <span class="plat-config-theme__preview plat-config-theme__preview--dark" aria-hidden="true"></span>
+                  <span class="plat-config-theme__label">Modo escuro</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="plat-config-card" aria-labelledby="cfgNotifTitle">
+          <div class="plat-config-card__header">
+            <span class="plat-config-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            </span>
+            <div class="plat-config-card__head-text">
+              <h2 class="plat-config-card__title" id="cfgNotifTitle">Notificações</h2>
+              <p class="plat-config-card__desc">Alertas automáticos enviados aos administradores</p>
+            </div>
+          </div>
+          <div class="plat-config-card__body">
+            <ul class="plat-config-toggle-list">
+              <li>
+                <div class="plat-config-toggle-list__text">
+                  <strong>Coletas agendadas</strong>
+                  <span>Lembretes de coletas programadas para hoje</span>
+                </div>
+                <label class="plat-config-toggle">
+                  <input type="checkbox" id="cfgNotifColetas" data-notif="coletas_agendadas">
+                  <span class="plat-config-toggle__track" aria-hidden="true"></span>
+                </label>
+              </li>
+              <li>
+                <div class="plat-config-toggle-list__text">
+                  <strong>Ecopontos com problemas</strong>
+                  <span>Alertas de capacidade ou indisponibilidade</span>
+                </div>
+                <label class="plat-config-toggle">
+                  <input type="checkbox" id="cfgNotifEcopontos" data-notif="ecopontos_problemas">
+                  <span class="plat-config-toggle__track" aria-hidden="true"></span>
+                </label>
+              </li>
+              <li>
+                <div class="plat-config-toggle-list__text">
+                  <strong>Relatórios semanais</strong>
+                  <span>Resumo consolidado toda segunda-feira</span>
+                </div>
+                <label class="plat-config-toggle">
+                  <input type="checkbox" id="cfgNotifRelatorios" data-notif="relatorios_semanais">
+                  <span class="plat-config-toggle__track" aria-hidden="true"></span>
+                </label>
+              </li>
+              <li>
+                <div class="plat-config-toggle-list__text">
+                  <strong>Atualizações do sistema</strong>
+                  <span>Novidades de versão e manutenção programada</span>
+                </div>
+                <label class="plat-config-toggle">
+                  <input type="checkbox" id="cfgNotifAtualizacoes" data-notif="atualizacoes_sistema">
+                  <span class="plat-config-toggle__track" aria-hidden="true"></span>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="plat-config-card" aria-labelledby="cfgIntegTitle">
+          <div class="plat-config-card__header">
+            <span class="plat-config-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+            </span>
+            <div class="plat-config-card__head-text">
+              <h2 class="plat-config-card__title" id="cfgIntegTitle">Integrações</h2>
+              <p class="plat-config-card__desc">API e serviços externos conectados à plataforma</p>
+            </div>
+          </div>
+          <div class="plat-config-card__body">
+            <div class="plat-config-field">
+              <label for="cfgApiKey">Chave de API</label>
+              <p class="plat-config-hint">Use em integrações server-to-server. Mantenha em sigilo.</p>
+              <div class="plat-config-input-copy">
+                <input type="text" class="plat-config-input--mono" id="cfgApiKey" readonly>
+                <button type="button" class="plat-config-copy" data-copy="cfgApiKey">Copiar</button>
+              </div>
+            </div>
+
+            <div class="plat-config-divider">
+              <div class="plat-config-divider__head">
+                <span class="plat-config-divider__title">Google reCAPTCHA</span>
+                <span class="plat-config-badge plat-config-badge--on" id="cfgRecaptchaBadge">Ativo</span>
+              </div>
+              <ul class="plat-config-toggle-list plat-config-toggle-list--compact">
+                <li>
+                  <div class="plat-config-toggle-list__text">
+                    <strong>Verificação ativa</strong>
+                    <span>Protege formulários públicos contra bots</span>
+                  </div>
+                  <label class="plat-config-toggle">
+                    <input type="checkbox" id="cfgRecaptchaAtivo">
+                    <span class="plat-config-toggle__track" aria-hidden="true"></span>
+                  </label>
+                </li>
+              </ul>
+              <div class="plat-config-field">
+                <label for="cfgRecaptchaSite">Site key</label>
+                <div class="plat-config-input-copy">
+                  <input type="text" class="plat-config-input--mono" id="cfgRecaptchaSite" autocomplete="off" placeholder="6Lc…">
+                  <button type="button" class="plat-config-copy" data-copy="cfgRecaptchaSite">Copiar</button>
+                </div>
+              </div>
+              <div class="plat-config-field">
+                <label for="cfgRecaptchaSecret">Secret key</label>
+                <div class="plat-config-input-copy">
+                  <input type="password" class="plat-config-input--mono" id="cfgRecaptchaSecret" autocomplete="off" placeholder="••••••••">
+                  <button type="button" class="plat-config-copy plat-config-copy--icon" id="cfgToggleSecret" aria-label="Mostrar secret key">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
+                  <button type="button" class="plat-config-copy" data-copy="cfgRecaptchaSecret">Copiar</button>
+                </div>
+              </div>
+            </div>
+
+            <footer class="plat-config-card__footer">
+              <button type="button" class="plat-config-link plat-config-link--warn" id="cfgRegenApiKey">
+                Gerar nova chave de API
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+              </button>
+            </footer>
+          </div>
+        </section>
+        </div>
+      </div>
+
+      <div class="plat-config-savebar" id="cfgSavebar" hidden>
+        <div class="plat-config-savebar__info">
+          <span class="plat-config-savebar__pulse" aria-hidden="true"></span>
+          <div>
+            <strong>Alterações não salvas</strong>
+            <span>Salve ou descarte antes de sair desta página</span>
+          </div>
+        </div>
+        <div class="plat-config-savebar__actions">
+          <button type="button" class="plat-btn plat-btn--ghost" id="cfgCancel">Descartar</button>
+          <button type="button" class="plat-btn plat-btn--primary" id="cfgSave">Salvar alterações</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="plat-config-toast" id="cfgToast" role="status" aria-live="polite"></div>
+
+  <div class="plat-config-modal hidden" id="cfgModalSessoes" role="dialog" aria-modal="true" aria-labelledby="cfgModalSessoesTitle">
+    <div class="plat-config-modal__backdrop" data-close-modal="cfgModalSessoes"></div>
+    <div class="plat-config-modal__panel plat-config-modal__panel--sessions">
+      <button type="button" class="plat-config-modal__close" data-close-modal="cfgModalSessoes" aria-label="Fechar">&times;</button>
+      <header class="plat-config-modal__hero">
+        <span class="plat-config-modal__hero-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </span>
+        <h2 id="cfgModalSessoesTitle">Sessões ativas</h2>
+        <p>Toque em uma sessão para renomear ou desconectá-la</p>
+      </header>
+      <ul class="plat-config-sessions" id="cfgSessoesList" aria-label="Lista de sessões"></ul>
+    </div>
+  </div>
+
+  <div class="adm-config-modal hidden" id="editProfileModal" role="dialog" aria-modal="true" aria-labelledby="editProfileModalTitle">
+    <div class="adm-config-modal-backdrop" id="editProfileBackdrop" aria-hidden="true"></div>
+    <div class="adm-config-modal-panel">
+      <header class="adm-config-modal-head">
+        <button type="button" class="adm-config-modal-close" id="btnCloseEditProfile" aria-label="Fechar">×</button>
+        <p class="adm-config-modal-kicker">← Configurações</p>
+        <h2 id="editProfileModalTitle">Editar perfil do administrador</h2>
+        <p class="adm-config-modal-desc">Atualize nome, e-mail, senha e foto. Mesmas regras de segurança do perfil de usuário.</p>
+      </header>
+
+      <div class="adm-config-modal-body perfil-container adm-edicao-modal-card">
+        <div class="perfil-topo adm-edicao-modal-topo">
+          <div class="perfil-info">
+            <div class="foto-box foto-box-edicao" id="modalFotoBox">
+              <input type="file" id="modalFileInput" class="edicao-foto-input" accept="image/*" tabindex="-1" title="">
+              <label for="modalFileInput" class="foto-avatar-label">
+                <span class="foto-perfil-inicial" id="modalFotoInicial" aria-hidden="true">A</span>
+                <img class="foto-perfil" id="modalFotoPerfil" alt="Foto do administrador" decoding="async">
+                <span class="foto-avatar-overlay" aria-hidden="true">Alterar foto</span>
+              </label>
+              <button type="button" class="icone-camera-btn" id="modalCameraBtn" aria-label="Abrir seletor de imagem">
+                <img src="assets/images/image.png" class="icone-camera" alt="" loading="lazy" decoding="async">
+              </button>
+            </div>
+            <div class="adm-config-nome-wrap">
+              <label class="adm-config-nome-label" for="modalAdminNomeInput">Nome do administrador</label>
+              <input type="text" class="adm-config-nome-input" id="modalAdminNomeInput" maxlength="120" placeholder="Digite seu nome" autocomplete="name">
+            </div>
+          </div>
+        </div>
+
+        <form class="adm-edicao-modal-form" id="editProfileForm" novalidate>
+          <div class="adm-edicao-modal-grid">
+            <div class="perfil-campo">
+              <label for="modalCargo">Cargo</label>
+              <input id="modalCargo" type="text" placeholder="Administrador da plataforma" maxlength="120">
+            </div>
+            <div class="perfil-campo">
+              <label for="modalEmail">E-mail</label>
+              <input id="modalEmail" type="email" autocomplete="email" required>
+              <span class="field-error" id="modalEmailError"></span>
+            </div>
+            <div class="perfil-campo">
+              <label for="modalConfirmEmail">Confirmar e-mail</label>
+              <input id="modalConfirmEmail" type="email" autocomplete="email" required>
+              <span class="field-error" id="modalConfirmEmailError"></span>
+            </div>
+            <div class="perfil-campo adm-email-verify-wrap hidden" id="modalEmailVerifyPanel">
+              <div class="adm-email-verify">
+                <p class="adm-email-verify-title">Verificação para trocar o e-mail</p>
+                <p class="adm-email-verify-desc">Um código de 6 dígitos será enviado ao e-mail atual:</p>
+                <div class="adm-email-verify-canais" role="radiogroup" aria-label="Canal de verificação">
+                  <label class="adm-email-verify-canal">
+                    <input type="radio" name="modalEmailCanal" value="email" checked>
+                    <span>E-mail atual (<strong id="modalEmailCanalEmail">—</strong>)</span>
+                  </label>
+                </div>
+                <div class="adm-email-verify-actions">
+                  <button type="button" class="adm-config-btn adm-config-btn--ghost" id="btnEnviarCodigoEmail">Enviar código</button>
+                  <button type="button" class="adm-config-btn adm-config-btn--ghost adm-email-verify-reenviar hidden" id="btnReenviarCodigoEmail">Reenviar</button>
+                </div>
+                <div class="adm-email-verify-codigo hidden" id="modalEmailCodigoWrap">
+                  <label for="modalEmailCodigo">Código de verificação</label>
+                  <div class="adm-email-verify-codigo-row">
+                    <input type="text" id="modalEmailCodigo" class="adm-config-input adm-email-codigo-input" inputmode="numeric" maxlength="6" placeholder="000000" autocomplete="one-time-code">
+                    <button type="button" class="adm-config-btn adm-config-btn--primary" id="btnConfirmarCodigoEmail">Confirmar</button>
+                  </div>
+                  <p class="adm-email-verify-hint" id="modalEmailVerifyHint"></p>
+                  <span class="field-error" id="modalEmailCodigoError"></span>
+                </div>
+                <p class="adm-email-verify-ok hidden" id="modalEmailVerifyOk">E-mail verificado. Pode salvar as alterações.</p>
+              </div>
+            </div>
+            <div class="perfil-campo">
+              <label for="modalPassword">Nova senha</label>
+              <input id="modalPassword" type="password" placeholder="Deixe em branco para manter a atual" autocomplete="new-password">
+              <span class="field-error" id="modalPasswordError"></span>
+            </div>
+            <div class="perfil-campo">
+              <label for="modalConfirmPassword">Confirmar senha</label>
+              <input id="modalConfirmPassword" type="password" placeholder="Repita a nova senha" autocomplete="new-password">
+              <span class="field-error" id="modalConfirmPasswordError"></span>
+            </div>
+          </div>
+          <footer class="adm-config-modal-foot">
+            <button type="button" class="adm-config-btn adm-config-btn--ghost" id="btnCancelEditProfile">Cancelar</button>
+            <button type="submit" class="adm-config-btn adm-config-btn--primary" id="btnSaveEditProfile">Salvar alterações</button>
+          </footer>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="adm-save-confirm-overlay hidden" id="modalSaveConfirmOverlay" role="dialog" aria-modal="true" aria-labelledby="modalSaveConfirmTitle">
+    <div class="adm-save-confirm-backdrop" id="modalSaveConfirmBackdrop" aria-hidden="true"></div>
+    <div class="adm-save-confirm-dialog">
+      <div class="adm-save-confirm-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 21H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3l2-2h4l2 2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2z"/>
+          <circle cx="12" cy="13" r="3"/>
+        </svg>
+      </div>
+      <h3 class="adm-save-confirm-title" id="modalSaveConfirmTitle">Salvar alterações do perfil?</h3>
+      <p class="adm-save-confirm-desc">Nome, e-mail, foto e demais dados serão atualizados na sua conta administrativa.</p>
+      <div class="adm-save-confirm-actions">
+        <button type="button" class="adm-config-btn adm-config-btn--ghost" id="modalCancelSaveBtn">Cancelar</button>
+        <button type="button" class="adm-config-btn adm-config-btn--primary" id="modalConfirmSaveBtn">Confirmar e salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="plat-config-modal hidden" id="cfgModalSenha" role="dialog" aria-modal="true" aria-labelledby="cfgModalSenhaTitle">
+    <div class="plat-config-modal__backdrop" data-close-modal="cfgModalSenha"></div>
+    <div class="plat-config-modal__panel plat-config-modal__panel--form">
+      <button type="button" class="plat-config-modal__close" data-close-modal="cfgModalSenha" aria-label="Fechar">&times;</button>
+      <header class="plat-config-modal__hero plat-config-modal__hero--compact">
+        <span class="plat-config-modal__hero-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777Z"/></svg>
+        </span>
+        <h2 id="cfgModalSenhaTitle">Alterar senha</h2>
+        <p>Atualize sua senha de acesso ao painel da plataforma</p>
+      </header>
+      <form class="plat-config-modal__form" id="cfgSenhaForm" novalidate>
+        <div class="plat-config-field">
+          <label for="cfgSenhaAtual">Senha atual</label>
+          <input type="password" id="cfgSenhaAtual" name="senha_atual" autocomplete="current-password" required>
+          <p class="plat-config-field-error hidden" id="cfgSenhaAtualError" role="alert"></p>
+        </div>
+        <div class="plat-config-field">
+          <label for="cfgSenhaNova">Nova senha</label>
+          <input type="password" id="cfgSenhaNova" name="senha_nova" autocomplete="new-password" required minlength="8">
+          <p class="plat-config-hint">Mínimo 8 caracteres, com maiúscula, minúscula e número.</p>
+          <p class="plat-config-field-error hidden" id="cfgSenhaNovaError" role="alert"></p>
+        </div>
+        <div class="plat-config-field">
+          <label for="cfgSenhaConfirmar">Confirmar nova senha</label>
+          <input type="password" id="cfgSenhaConfirmar" name="senha_confirmar" autocomplete="new-password" required minlength="8">
+          <p class="plat-config-field-error hidden" id="cfgSenhaConfirmarError" role="alert"></p>
+        </div>
+        <p class="plat-config-modal__error hidden" id="cfgSenhaFormError" role="alert"></p>
+        <footer class="plat-config-modal__foot">
+          <button type="button" class="plat-btn plat-btn--ghost" data-close-modal="cfgModalSenha">Cancelar</button>
+          <button type="submit" class="plat-btn plat-btn--primary" id="cfgSenhaSubmit">Salvar nova senha</button>
+        </footer>
+      </form>
+    </div>
+  </div>
+
+  <div class="plat-config-modal hidden" id="cfgModalPerm" role="dialog" aria-modal="true" aria-labelledby="cfgModalPermTitle">
+    <div class="plat-config-modal__backdrop" data-close-modal="cfgModalPerm"></div>
+    <div class="plat-config-modal__panel plat-config-modal__panel--perms">
+      <button type="button" class="plat-config-modal__close" data-close-modal="cfgModalPerm" aria-label="Fechar">&times;</button>
+      <header class="plat-config-modal__hero">
+        <span class="plat-config-modal__hero-icon" id="cfgPermIcon" aria-hidden="true"></span>
+        <h2 id="cfgModalPermTitle">Permissões</h2>
+        <p>Gerencie as permissões dos administradores</p>
+      </header>
+      <ul class="plat-config-perms" id="cfgPermList" aria-label="Lista de permissões"></ul>
+      <footer class="plat-config-modal__foot">
+        <button type="button" class="plat-btn plat-btn--ghost" data-close-modal="cfgModalPerm">Fechar</button>
+        <button type="button" class="plat-btn plat-btn--primary" id="cfgPermSave">Aplicar permissões</button>
+      </footer>
+    </div>
+  </div>
+
+  <div class="plat-config-modal hidden" id="cfgModalPlatAdmin" role="dialog" aria-modal="true" aria-labelledby="cfgModalPlatAdminTitle">
+    <div class="plat-config-modal__backdrop" data-close-modal="cfgModalPlatAdmin"></div>
+    <div class="plat-config-modal__panel plat-config-modal__panel--narrow">
+      <button type="button" class="plat-config-modal__close" data-close-modal="cfgModalPlatAdmin" aria-label="Fechar">&times;</button>
+      <header class="plat-config-modal__hero">
+        <h2 id="cfgModalPlatAdminTitle">Administrador da plataforma</h2>
+        <p>Conta salva em administrador_plataforma</p>
+      </header>
+      <form id="cfgPlatAdminForm" class="plat-config-admin-form" novalidate>
+        <input type="hidden" id="cfgPlatAdminId" value="">
+        <label class="plat-config-field">
+          <span>Nome</span>
+          <input type="text" id="cfgPlatAdminNome" maxlength="120" required>
+        </label>
+        <label class="plat-config-field">
+          <span>E-mail</span>
+          <input type="email" id="cfgPlatAdminEmail" maxlength="160" required>
+        </label>
+        <label class="plat-config-field">
+          <span>Cargo</span>
+          <input type="text" id="cfgPlatAdminCargo" maxlength="120" placeholder="Administrador da plataforma">
+        </label>
+        <label class="plat-config-field">
+          <span>Senha</span>
+          <input type="password" id="cfgPlatAdminSenha" autocomplete="new-password" placeholder="Obrigatória para novo usuário">
+        </label>
+        <footer class="plat-config-modal__foot">
+          <button type="button" class="plat-btn plat-btn--ghost" data-close-modal="cfgModalPlatAdmin">Cancelar</button>
+          <button type="submit" class="plat-btn plat-btn--primary">Salvar</button>
+        </footer>
+      </form>
+    </div>
+  </div>
+
+  <script src="admin/plat-sidebar-nav.js?v=3"></script>
+  <script src="admin/plat-adm-shell.js?v=2"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var fileInput = document.getElementById("modalFileInput");
+      var foto = document.getElementById("modalFotoPerfil");
+      var fotoBox = document.getElementById("modalFotoBox");
+      var cameraBtn = document.getElementById("modalCameraBtn");
+
+      var fotoInicial = document.getElementById("modalFotoInicial");
+
+      function exibirArquivo(file) {
+        if (!file || !foto) return;
+        try {
+          if (foto._ecoObjectUrl) URL.revokeObjectURL(foto._ecoObjectUrl);
+          foto._ecoObjectUrl = URL.createObjectURL(file);
+          foto.onload = function () {
+            if (foto.naturalWidth > 0) {
+              if (fotoBox) fotoBox.classList.add("has-foto");
+              if (fotoInicial) fotoInicial.style.display = "none";
+            }
+          };
+          foto.onerror = function () {
+            if (fotoBox) fotoBox.classList.remove("has-foto");
+            if (fotoInicial) fotoInicial.style.display = "";
+            foto.removeAttribute("src");
+          };
+          foto.src = foto._ecoObjectUrl;
+          if (foto.complete && foto.naturalWidth > 0) {
+            if (fotoBox) fotoBox.classList.add("has-foto");
+            if (fotoInicial) fotoInicial.style.display = "none";
+          }
+        } catch (e) {
+          var reader = new FileReader();
+          reader.onload = function (ev) {
+            if (ev.target && typeof ev.target.result === "string") {
+              foto.src = ev.target.result;
+              if (fotoBox) fotoBox.classList.add("has-foto");
+              if (fotoInicial) fotoInicial.style.display = "none";
+            }
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+
+      if (fileInput && !fileInput.dataset.ecoFotoBound) {
+        fileInput.dataset.ecoFotoBound = "1";
+        fileInput.addEventListener("change", function () {
+          var file = fileInput.files && fileInput.files[0];
+          if (!file) return;
+          exibirArquivo(file);
+          if (typeof window.ecoRegistrarFotoPlatAdmin === "function") {
+            window.ecoRegistrarFotoPlatAdmin(file);
+          }
+        });
+      }
+
+      if (cameraBtn && fileInput && !cameraBtn.dataset.ecoFotoBound) {
+        cameraBtn.dataset.ecoFotoBound = "1";
+        cameraBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          fileInput.click();
+        });
+      }
+    });
+  </script>
+  <script src="admin/configuracoes-adm-perfil.js?v=2" defer></script>
+  <script src="admin/configuracoes-adm.js?v=8" defer></script>
+</body>
+</html>

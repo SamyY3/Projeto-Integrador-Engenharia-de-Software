@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <base href="../" data-app-base>
+  <script>(function(){var p=location.pathname.replace(/\\/g,"/"),b=document.querySelector("base[data-app-base]"),m=p.match(/^(.*\/)(?:auth|admin|pages|mapa)\/[^/]+$/);if(b)b.href=m?m[1]:p.replace(/\/[^/]*$/,"/")||"/";})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quero ser um Apoiador | EcoColeta</title>
+  <meta name="description" content="Solicite parceria como apoiador ou cadastre um EcoPonto na rede EcoColeta. Formulário com perguntas essenciais para contato e operação.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/home.css?v=13">
+  <link rel="stylesheet" href="assets/css/apoiador.css?v=6">
+  <link rel="stylesheet" href="assets/css/header.css?v=12">
+  <link rel="stylesheet" href="assets/css/footer.css?v=9">
+  <link rel="stylesheet" href="assets/css/notif-popup.css?v=10">
+</head>
+<body class="app apoiador-page">
+
+  <header class="topo">
+    <div class="nav-left">
+      <a href="tela-inicia.html" class="logo-link" aria-label="EcoColeta — início">
+        <img class="eco-brand-img" src="assets/images/logo.2.bak.png?v=6" alt="EcoColeta" width="192" height="84" decoding="async">
+      </a>
+      <nav>
+        <ul class="menu">
+          <li><a href="tela-inicia.html">Home</a></li>
+          <li><a href="pagina-relatorio.html">Gerar Relatório</a></li>
+          <li><a href="como-funciona.html">Como Funciona</a></li>
+          <li><a href="ecopontos.html">EcoPontos</a></li>
+          <li><a href="premios-disponiveis.html">Prêmios</a></li>
+          <li><a href="educacao-ambiental.html">Educação</a></li>
+          <li><a href="quem-somos.html">Quem Somos</a></li>
+          <li><a href="Ranking.html">Ranking</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="icones">
+      <div class="notif-wrapper">
+        <button type="button" class="notif-btn" aria-label="Notificações">
+          <img src="assets/images/icon notificacao.png" alt="" class="icon" loading="lazy" decoding="async">
+        </button>
+      </div>
+      <a href="perfil.html" aria-label="Perfil">
+        <img src="assets/images/icons pessoa.png" alt="" loading="lazy" decoding="async">
+      </a>
+    </div>
+  </header>
+
+  <section class="apo-hero">
+    <div class="apo-container apo-hero__grid">
+      <div>
+        <span class="apo-badge">Programa de Parcerias</span>
+        <h1>Quero ser um apoiador</h1>
+        <p class="apo-hero__lead">
+          Preencha o formulário com seus dados de contato e, se aplicável, as informações do EcoPonto.
+          Nossa equipe analisa cada solicitação e retorna por e-mail em até 2 dias úteis.
+        </p>
+        <div class="apo-hero__actions">
+          <a href="tela-inicia.html#eco-apoiadores" class="apo-btn apo-btn--ghost">Ver na home</a>
+        </div>
+      </div>
+      <aside class="apo-hero__panel" aria-label="Impacto do programa">
+        <h2>Impacto em números</h2>
+        <p>Parceiros que já impulsionam prêmios, ranking e conscientização no ecossistema EcoColeta.</p>
+        <div class="apo-stats" id="apo-stats-hero"></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="apo-section apo-section--light" id="eco-apoiadores">
+    <div class="apo-container">
+      <div class="apo-section__head">
+        <h2>Marcas que já apoiam</h2>
+        <p>O mesmo carrossel exibido na página inicial — empresas que acreditam em reciclagem com recompensa.</p>
+      </div>
+      <section class="apoiadores-section apoiadores-section--page" aria-label="Apoiadores em destaque">
+        <div id="eco-apoiadores-carousel-page"></div>
+      </section>
+    </div>
+  </section>
+
+  <section class="apo-section">
+    <div class="apo-container">
+      <div class="apo-section__head">
+        <h2>Conheça nossos apoiadores</h2>
+        <p>Perfis completos das marcas parceiras integradas ao catálogo da plataforma.</p>
+      </div>
+      <div class="apo-grid" id="apo-partners-grid"></div>
+    </div>
+  </section>
+
+  <section class="apo-section apo-section--light">
+    <div class="apo-container">
+      <div class="apo-section__head">
+        <h2>Por que apoiar a EcoColeta?</h2>
+        <p>Visibilidade premium, propósito ESG e conexão direta com moradores engajados.</p>
+      </div>
+      <div class="apo-benefits">
+        <article class="apo-benefit">
+          <div class="apo-benefit__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          </div>
+          <h3>Marca em destaque</h3>
+          <p>Presença no carrossel da home, página de prêmios e materiais de comunicação da plataforma.</p>
+        </article>
+        <article class="apo-benefit">
+          <div class="apo-benefit__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 17V11"/><path d="M12 17V7"/><path d="M16 17v-4"/></svg>
+          </div>
+          <h3>Impacto mensurável</h3>
+          <p>Relatórios de reciclagem, alcance e resgates vinculados à sua empresa.</p>
+        </article>
+        <article class="apo-benefit">
+          <div class="apo-benefit__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 11c1.7 0 3-1.3 3-3S17.7 5 16 5s-3 1.3-3 3 1.3 3 3 3z"/><path d="M8 13c1.7 0 3-1.3 3-3S9.7 7 8 7 5 8.3 5 10s1.3 3 3 3z"/><path d="M8 15c-2.7 0-5 1.3-5 4v1h6"/><path d="M16 13c2.7 0 5 1.3 5 4v3h-6"/></svg>
+          </div>
+          <h3>Comunidade engajada</h3>
+          <p>Acesso a moradores ativos no ranking, ecopontos e programa de EcoPoints.</p>
+        </article>
+        <article class="apo-benefit">
+          <div class="apo-benefit__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Propósito ESG</h3>
+          <p>Associe sua marca à economia circular e à educação ambiental no Cariri.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="apo-section apo-section--light apo-cta-band">
+    <div class="apo-container apo-cta-band__inner">
+      <div>
+        <h2>Pronto para apoiar a reciclagem?</h2>
+        <p>Abra o formulário, informe seu e-mail de contato e os dados do EcoPonto, se aplicável.</p>
+      </div>
+      <button type="button" class="apo-btn apo-btn--primary" data-apo-open-modal>Preencher formulário</button>
+    </div>
+  </section>
+
+  <div class="apo-modal-overlay hidden" id="apo-modal-root" role="dialog" aria-modal="true" aria-labelledby="apo-modal-title" aria-hidden="true">
+    <div class="apo-modal__backdrop" data-apo-close-modal aria-hidden="true"></div>
+    <div class="apo-modal" role="document" id="apo-modal">
+      <header class="apo-modal__head">
+        <div>
+          <span class="apo-modal__badge">Formulário de interesse</span>
+          <h2 id="apo-modal-title">Quero ser um apoiador</h2>
+          <p>Responda com atenção. O e-mail informado será usado para retorno oficial da equipe EcoColeta.</p>
+        </div>
+        <button type="button" class="apo-modal__close" data-apo-close-modal aria-label="Fechar formulário">&times;</button>
+      </header>
+
+      <div class="apo-modal__body">
+        <div class="apo-form-layout">
+          <aside class="apo-form-aside">
+            <h3>Antes de enviar</h3>
+            <ul>
+              <li>Use um <strong>e-mail válido</strong> — é o canal principal de contato.</li>
+              <li>Se você opera um ponto de coleta, preencha também a seção <strong>EcoPonto</strong>.</li>
+              <li>Os campos do EcoPonto seguem o mesmo padrão do cadastro administrativo da plataforma.</li>
+            </ul>
+            <div class="apo-form-aside__box">
+              <strong>Contato da plataforma</strong>
+              <p>ecocoleta@gmail.com</p>
+              <p>(88) 90000-0000</p>
+            </div>
+          </aside>
+
+          <div class="apo-form-card apo-form-card--wide">
+            <form id="apo-formulario" novalidate>
+            <fieldset class="apo-form-section">
+              <legend class="apo-form-section__title">
+                <span class="apo-form-section__num">1</span>
+                Dados da empresa e contato
+              </legend>
+
+              <div class="apo-field">
+                <label for="apo-tipo">Tipo de solicitação</label>
+                <select id="apo-tipo" name="tipo_solicitacao" required>
+                  <option value="apoiador">Quero ser apoiador (marca parceira)</option>
+                  <option value="ecoponto">Quero cadastrar um EcoPonto</option>
+                  <option value="ambos" selected>Apoiador + cadastro de EcoPonto</option>
+                </select>
+              </div>
+
+              <div class="apo-form-row">
+                <div class="apo-field">
+                  <label for="apo-empresa">Razão social / nome fantasia <span class="apo-req">*</span></label>
+                  <input id="apo-empresa" name="empresa" type="text" required maxlength="120" placeholder="Ex.: Farmácia SaúdePrime" autocomplete="organization">
+                </div>
+                <div class="apo-field">
+                  <label for="apo-cnpj">CNPJ</label>
+                  <input id="apo-cnpj" name="cnpj" type="text" inputmode="numeric" maxlength="18" placeholder="00.000.000/0000-00">
+                </div>
+              </div>
+
+              <div class="apo-form-row">
+                <div class="apo-field">
+                  <label for="apo-contato">Nome do responsável <span class="apo-req">*</span></label>
+                  <input id="apo-contato" name="contato" type="text" required maxlength="120" placeholder="Quem responde pela solicitação" autocomplete="name">
+                </div>
+                <div class="apo-field">
+                  <label for="apo-cargo">Cargo / função</label>
+                  <input id="apo-cargo" name="cargo" type="text" maxlength="80" placeholder="Ex.: Gerente comercial">
+                </div>
+              </div>
+
+              <div class="apo-form-row">
+                <div class="apo-field apo-field--highlight">
+                  <label for="apo-email">E-mail para contato <span class="apo-req">*</span></label>
+                  <input id="apo-email" name="email" type="email" required maxlength="160" placeholder="contato@empresa.com" autocomplete="email">
+                  <small class="apo-field__hint">Enviaremos a confirmação e a proposta para este endereço.</small>
+                </div>
+                <div class="apo-field">
+                  <label for="apo-phone">Telefone / WhatsApp <span class="apo-req">*</span></label>
+                  <input id="apo-phone" name="telefone" type="tel" required maxlength="20" placeholder="(88) 90000-0000" autocomplete="tel">
+                </div>
+              </div>
+
+              <div class="apo-form-row">
+                <div class="apo-field">
+                  <label for="apo-cidade-empresa">Cidade da empresa</label>
+                  <input id="apo-cidade-empresa" name="cidade_empresa" type="text" maxlength="120" placeholder="Ex.: Juazeiro do Norte">
+                </div>
+                <div class="apo-field">
+                  <label for="apo-segmento">Segmento de atuação</label>
+                  <input id="apo-segmento" name="segmento" type="text" maxlength="100" placeholder="Ex.: Farmácias, varejo, clínica">
+                </div>
+              </div>
+
+              <div class="apo-field">
+                <label for="apo-tier">Plano de apoio de interesse</label>
+                <select id="apo-tier" name="plano">
+                  <option value="bronze">Bronze — visibilidade básica</option>
+                  <option value="prata" selected>Prata — destaque na home</option>
+                  <option value="ouro">Ouro — patrocínio completo</option>
+                  <option value="ainda_nao_sei">Ainda não sei / quero orientação</option>
+                </select>
+              </div>
+            </fieldset>
+
+            <fieldset class="apo-form-section" id="apo-ecoponto-section">
+              <legend class="apo-form-section__title">
+                <span class="apo-form-section__num">2</span>
+                Dados para cadastro do EcoPonto
+              </legend>
+              <p class="apo-form-section__lead">
+                Perguntas necessárias para incluir seu ponto na rede, no mapa e no painel administrativo.
+              </p>
+
+              <div class="apo-form-row">
+                <div class="apo-field">
+                  <label for="apo-pev-nome">Nome do EcoPonto <span class="apo-req apo-req--pev">*</span></label>
+                  <input id="apo-pev-nome" name="nome_ecoponto" type="text" maxlength="100" placeholder="Ex.: EcoPonto Centro">
+                </div>
+                <div class="apo-field">
+                  <label for="apo-pev-responsavel">Responsável no local <span class="apo-req apo-req--pev">*</span></label>
+                  <input id="apo-pev-responsavel" name="responsavel_ecoponto" type="text" maxlength="120" placeholder="Nome de quem opera o ponto">
+                </div>
+              </div>
+
+              <div class="apo-field">
+                <label for="apo-pev-endereco">Endereço completo <span class="apo-req apo-req--pev">*</span></label>
+                <input id="apo-pev-endereco" name="endereco_ecoponto" type="text" maxlength="255" placeholder="Rua, número, referência">
+              </div>
+
+              <div class="apo-form-row">
+                <div class="apo-field">
+                  <label for="apo-pev-bairro">Bairro <span class="apo-req apo-req--pev">*</span></label>
+                  <input id="apo-pev-bairro" name="bairro_ecoponto" type="text" maxlength="100" placeholder="Ex.: Triângulo">
+                </div>
+                <div class="apo-field">
+                  <label for="apo-pev-cidade">Cidade <span class="apo-req apo-req--pev">*</span></label>
+                  <input id="apo-pev-cidade" name="cidade_ecoponto" type="text" maxlength="120" placeholder="Ex.: Juazeiro do Norte">
+                </div>
+              </div>
+
+              <div class="apo-form-row">
+                <div class="apo-field">
+                  <label for="apo-pev-horario">Horário de funcionamento <span class="apo-req apo-req--pev">*</span></label>
+                  <input id="apo-pev-horario" name="horario_ecoponto" type="text" maxlength="120" placeholder="Ex.: Seg–Sex, 08h às 17h">
+                </div>
+                <div class="apo-field">
+                  <label for="apo-pev-capacidade">Capacidade estimada de recebimento (%)</label>
+                  <input id="apo-pev-capacidade" name="capacidade_ecoponto" type="number" min="0" max="100" value="70" placeholder="70">
+                </div>
+              </div>
+
+              <div class="apo-field">
+                <span class="apo-field__label">Materiais aceitos no ponto <span class="apo-req apo-req--pev">*</span></span>
+                <div class="apo-materiais-toolbar">
+                  <p class="apo-materiais-hint">Marque os materiais aceitos — igual à seleção da balança.</p>
+                  <span class="apo-materiais-count" id="apoMateriaisCount" aria-live="polite">0 selecionados</span>
+                </div>
+                <div class="balanca-materials-grid apo-materiais-grid" id="apo-materiais-grid" role="group" aria-label="Materiais aceitos no EcoPonto"></div>
+                <div id="apo-materiais-inputs" hidden aria-hidden="true"></div>
+              </div>
+
+              <div class="apo-form-row">
+                <div class="apo-field">
+                  <label for="apo-pev-balanca">Possui balança para pesagem?</label>
+                  <select id="apo-pev-balanca" name="possui_balanca">
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                    <option value="planeja">Pretendo instalar</option>
+                  </select>
+                </div>
+                <div class="apo-field">
+                  <label for="apo-pev-coleta">Já realiza coleta seletiva?</label>
+                  <select id="apo-pev-coleta" name="ja_coleta">
+                    <option value="sim">Sim, já opero</option>
+                    <option value="parcial">Parcialmente</option>
+                    <option value="nao">Ainda não, quero começar</option>
+                  </select>
+                </div>
+              </div>
+
+            </fieldset>
+
+            <fieldset class="apo-form-section">
+              <legend class="apo-form-section__title">
+                <span class="apo-form-section__num">3</span>
+                Proposta de parceria
+              </legend>
+
+              <div class="apo-field">
+                <label for="apo-beneficio">Que benefício você pretende oferecer aos moradores?</label>
+                <select id="apo-beneficio" name="beneficio">
+                  <option value="cupom">Cupom de desconto</option>
+                  <option value="brinde">Brinde ou amostra grátis</option>
+                  <option value="patrocinio">Patrocínio de prêmios / ranking</option>
+                  <option value="ponto_coleta">Apenas operação de EcoPonto</option>
+                  <option value="outro">Outro formato</option>
+                </select>
+              </div>
+
+              <div class="apo-field">
+                <label for="apo-msg">Observações adicionais</label>
+                <textarea id="apo-msg" name="mensagem" rows="4" placeholder="Conte mais sobre sua operação, público atendido ou dúvidas sobre o cadastro."></textarea>
+              </div>
+
+              <label class="apo-consent">
+                <input type="checkbox" id="apo-consent" name="consentimento" required>
+                <span>Autorizo o uso dos dados informados para análise da solicitação e contato por e-mail ou telefone.</span>
+              </label>
+            </fieldset>
+
+            <button type="submit" class="apo-btn apo-btn--primary apo-btn--submit">Enviar solicitação</button>
+            <p class="apo-form-msg" id="apo-form-msg" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="apo-section">
+    <div class="apo-container">
+      <div class="apo-section__head">
+        <h2>Perguntas frequentes</h2>
+      </div>
+      <div class="apo-faq">
+        <details>
+          <summary>Quem pode ser apoiador?</summary>
+          <p>Empresas locais, redes de varejo, clínicas, farmácias, academias e qualquer negócio que queira se associar à reciclagem e ao engajamento comunitário.</p>
+        </details>
+        <details>
+          <summary>Como minha marca aparece na home?</summary>
+          <p>Apoiadores Prata e Ouro entram no carrossel da página inicial — o mesmo bloco exibido antes do botão &quot;Quero ser um Apoiador&quot;.</p>
+        </details>
+        <details>
+          <summary>Posso oferecer cupons aos moradores?</summary>
+          <p>Sim. Integrações com prêmios e benefícios podem ser configuradas pela equipe EcoColeta conforme o plano escolhido.</p>
+        </details>
+        <details>
+          <summary>Quais dados são necessários para cadastrar um EcoPonto?</summary>
+          <p>Nome do ponto, endereço completo, bairro, cidade, responsável no local, horário de funcionamento, materiais aceitos e capacidade estimada — os mesmos campos usados no painel administrativo da plataforma.</p>
+        </details>
+        <details>
+          <summary>Como recebo retorno da solicitação?</summary>
+          <p>A confirmação e os próximos passos são enviados para o <strong>e-mail de contato</strong> informado no formulário, em até 2 dias úteis.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer id="ecocoleta-site-footer"></footer>
+
+  <script src="assets/js/ecocoleta-paths.js?v=8"></script>
+  <script src="assets/js/header-nav.js?v=17"></script>
+  <script src="assets/js/notif-popup.js?v=10"></script>
+  <script src="assets/js/footer.js?v=10"></script>
+  <script src="assets/js/apoiadores-data.js?v=1"></script>
+  <script src="assets/js/apoiadores-carousel.js?v=3"></script>
+  <script src="assets/js/apoiador-modal.js?v=4"></script>
+  <script src="assets/js/apoiador.js?v=6"></script>
+</body>
+</html>

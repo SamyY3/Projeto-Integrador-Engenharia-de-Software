@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="login-adm-view">
+<head>
+  <base href="../" data-app-base>
+  <script>(function(){var p=location.pathname.replace(/\\/g,"/"),b=document.querySelector("base[data-app-base]"),m=p.match(/^(.*\/)(?:auth|admin|pages|mapa)\/[^/]+$/);if(b)b.href=m?m[1]:p.replace(/\/[^/]*$/,"/")||"/";})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="admin/adm-ecoponto-theme-boot.js?v=1"></script>
+  <title>Login ADM EcoPontos | EcoColeta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin/Login-ADM.css?v=20">
+  <link rel="stylesheet" href="admin/Login-ADM-Ecoponto.css?v=8">
+  <link rel="stylesheet" href="assets/css/logo.css?v=11">
+  <link rel="stylesheet" href="ecocheck-dist/ecocheck.css?v=6">
+  <link rel="stylesheet" href="assets/css/ecocheck-widget.css?v=12">
+  <script src="assets/js/ecocoleta-paths.js?v=3"></script>
+  <script src="assets/js/ecocheck-bridge.js?v=13"></script>
+  <script defer src="ecocheck-dist/ecocheck.iife.js?v=5"></script>
+</head>
+<body class="page-login-ecoponto">
+  <div class="eco-deco eco-deco--ecoponto" aria-hidden="true">
+    <span class="eco-map-ring eco-map-ring--1"></span>
+    <span class="eco-map-ring eco-map-ring--2"></span>
+    <span class="eco-pin eco-pin--1"></span>
+    <span class="eco-pin eco-pin--2"></span>
+    <span class="eco-pin eco-pin--3"></span>
+    <span class="eco-pin eco-pin--4"></span>
+    <svg class="eco-leaf eco-leaf--1" viewBox="0 0 64 64" fill="none">
+      <path d="M32 4C18 18 8 34 12 52c8-4 14-12 20-20 6 8 12 16 20 20 4-18-6-34-20-48z" fill="currentColor"/>
+    </svg>
+    <svg class="eco-leaf eco-leaf--2" viewBox="0 0 64 64" fill="none">
+      <path d="M32 6C14 22 6 40 10 58c10-6 16-16 22-26 6 10 12 20 22 26 4-18-4-36-22-52z" fill="currentColor"/>
+    </svg>
+    <span class="eco-spark eco-spark--1"></span>
+    <span class="eco-spark eco-spark--2"></span>
+  </div>
+
+  <main class="eco-premium-page">
+    <header class="eco-premium-top eco-premium-top--ecoponto">
+      <a href="pages/tela-inicia.html" class="eco-premium-brand">
+        <img class="eco-brand-img" src="assets/images/logo.2.png?v=5" alt="EcoColeta" width="192" height="84" decoding="async">
+      </a>
+    </header>
+
+    <section class="eco-login-card" aria-label="Login administrador do ecoponto parceiro">
+      <div class="eco-login-head">
+        <h2>Portal <em>ADM EcoPonto</em></h2>
+        <p>Entre com sua credencial de administrador para acessar o painel do ponto parceiro.</p>
+      </div>
+
+      <form id="ecopontoLoginForm" novalidate>
+        <label class="eco-field" for="ecopontoEmail">
+          <span>E-mail do administrador</span>
+          <input id="ecopontoEmail" name="email" type="email" placeholder="seu.email@ecoponto.com.br" autocomplete="username" required>
+          <small id="ecopontoEmailError"></small>
+        </label>
+
+        <label class="eco-field" for="ecopontoPassword">
+          <span>Senha</span>
+          <div class="eco-password">
+            <input id="ecopontoPassword" name="senha" type="password" placeholder="Digite sua senha" autocomplete="current-password" required>
+            <button type="button" id="toggleEcopontoPassword" aria-label="Mostrar senha">👁</button>
+          </div>
+          <small id="ecopontoPasswordError"></small>
+        </label>
+
+        <div class="ecocheck-widget">
+          <button type="button" class="ecocheck-trigger is-idle" data-ecocheck-open aria-label="Abrir verificação EcoCheck">
+            <span class="ecocheck-trigger__main">
+              <span class="ecocheck-trigger__icon" data-ecocheck-icon aria-hidden="true">
+                <svg class="ecocheck-icon ecocheck-icon--loading" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8.5" stroke="#c5d9cc" stroke-width="2.5"/>
+                  <path d="M12 3.5a8.5 8.5 0 0 1 8.5 8.5" stroke="#12895d" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <svg class="ecocheck-icon ecocheck-icon--verified" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path class="ecocheck-check-path" d="M7.2 12.3l2.8 2.7 6.8-7" stroke="#0f6b38" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="ecocheck-trigger__label">Não sou um robô</span>
+            </span>
+            <span class="ecocheck-trigger__brand" aria-hidden="true">
+              <span class="ecocheck-trigger__brand-name">EcoCheck</span>
+              <span class="ecocheck-trigger__brand-tag">ANTI-BOT</span>
+            </span>
+          </button>
+        </div>
+
+        <p id="ecopontoFormError" class="eco-form-error" role="alert" hidden data-ecocheck-form-error></p>
+
+        <button type="submit" class="eco-submit">Entrar no painel</button>
+      </form>
+
+      <aside class="eco-demo" aria-label="Credenciais de teste no ambiente local">
+        <strong>Ambiente local</strong>
+        <p class="eco-demo-row"><span class="eco-demo-label">E-mail</span> <span class="eco-demo-value">admin.ecoponto@ecocoleta.local</span></p>
+        <p class="eco-demo-row"><span class="eco-demo-label">Senha</span> <span class="eco-demo-value">EcoPonto@123</span></p>
+        <button type="button" class="eco-demo-fill" id="fillDemoEcoponto">Preencher credencial de teste</button>
+      </aside>
+    </section>
+
+    <nav class="eco-footer-links" aria-label="Outros acessos">
+      <a href="auth/login.html">Login de usuário</a>
+      <a href="admin/Login-ADM.html">ADM da plataforma</a>
+      <a href="pages/tela-inicia.html">Site EcoColeta</a>
+    </nav>
+  </main>
+
+  <script>
+    const form = document.getElementById('ecopontoLoginForm');
+    const emailInput = document.getElementById('ecopontoEmail');
+    const passwordInput = document.getElementById('ecopontoPassword');
+    const emailError = document.getElementById('ecopontoEmailError');
+    const passwordError = document.getElementById('ecopontoPasswordError');
+    const formError = document.getElementById('ecopontoFormError');
+    const submitBtn = form.querySelector('.eco-submit');
+    const submitLabel = submitBtn.textContent;
+
+    function clearErrors() {
+      [emailInput, passwordInput].forEach((input) => input.classList.remove('input-error'));
+      emailError.textContent = '';
+      passwordError.textContent = '';
+      if (formError) {
+        formError.textContent = '';
+        formError.hidden = true;
+      }
+    }
+
+    function showFormError(message) {
+      if (!formError) return;
+      formError.textContent = message;
+      formError.hidden = !message;
+    }
+
+    function parseJsonServidor(text) {
+      const raw = String(text || '').replace(/^\uFEFF/, '').trim();
+      if (!raw) return {};
+      try {
+        return JSON.parse(raw);
+      } catch (e) {
+        const idx = raw.indexOf('{"');
+        if (idx >= 0) return JSON.parse(raw.slice(idx));
+        throw e;
+      }
+    }
+
+    async function postEcopontoLogin(email, senha, ecocheckToken) {
+      if (typeof window.ecocoletaPhpUrl !== 'function') {
+        throw new Error('Recurso de caminhos não carregou (ecocoleta-paths.js). Recarregue a página.');
+      }
+      const endpoint = window.ecocoletaPhpUrl('Login-ADM-Ecoponto.php');
+      if (!endpoint) {
+        throw new Error('Abra pelo servidor: http://localhost/Ecocoleta/admin/Login-ADM-Ecoponto.html (não use file://).');
+      }
+
+      let response;
+      try {
+        response = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+          body: new URLSearchParams({ email, senha, ecocheck_token: ecocheckToken || '' }).toString(),
+          credentials: 'same-origin',
+          cache: 'no-store',
+        });
+      } catch (e) {
+        throw new Error('Não foi possível falar com o servidor. Verifique Apache e MySQL no XAMPP.');
+      }
+
+      const text = await response.text();
+      let data;
+      try {
+        data = parseJsonServidor(text);
+      } catch (e) {
+        if (!response.ok) {
+          throw new Error('O servidor respondeu com erro ' + response.status + '. Verifique os logs do PHP.');
+        }
+        throw new Error('Resposta inesperada do servidor (não-JSON). Verifique os logs do PHP.');
+      }
+
+      if (!response.ok && !(data && data.erro)) {
+        throw new Error('O servidor respondeu com erro ' + response.status + '.');
+      }
+      return data;
+    }
+
+    document.getElementById('toggleEcopontoPassword').addEventListener('click', () => {
+      const visible = passwordInput.type === 'text';
+      passwordInput.type = visible ? 'password' : 'text';
+      document.getElementById('toggleEcopontoPassword').setAttribute(
+        'aria-label',
+        visible ? 'Mostrar senha' : 'Ocultar senha'
+      );
+    });
+
+    document.getElementById('fillDemoEcoponto').addEventListener('click', () => {
+      emailInput.value = 'admin.ecoponto@ecocoleta.local';
+      passwordInput.value = 'EcoPonto@123';
+      clearErrors();
+      emailInput.focus();
+    });
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      clearErrors();
+
+      const email = emailInput.value.trim();
+      const senha = passwordInput.value;
+      let valid = true;
+
+      if (!email) {
+        emailInput.classList.add('input-error');
+        emailError.textContent = 'Digite o e-mail administrativo.';
+        valid = false;
+      }
+      if (!senha) {
+        passwordInput.classList.add('input-error');
+        passwordError.textContent = 'Digite a senha.';
+        valid = false;
+      }
+      if (!valid) return;
+
+      let ecocheckToken = '';
+      if (window.EcoCheck && typeof window.EcoCheck.ensureVerified === 'function') {
+        const verified = await window.EcoCheck.ensureVerified();
+        if (!verified.ok) {
+          showFormError(verified.erro || 'Conclua a verificação EcoCheck.');
+          if (window.EcoCheckBridge) window.EcoCheckBridge.updateStatus();
+          return;
+        }
+        ecocheckToken = verified.token || window.EcoCheck.getToken() || '';
+      } else {
+        showFormError('EcoCheck não carregou. Execute ecocheck/build.bat.');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Validando acesso…';
+
+      try {
+        const data = await postEcopontoLogin(email, senha, ecocheckToken);
+        if (data && data.sucesso === true && data.admin) {
+          localStorage.setItem('ecopontoAdminLoggedIn', 'true');
+          localStorage.setItem('ecopontoAdminName', data.admin.nome || '');
+          localStorage.setItem('ecopontoAdminEmail', data.admin.email || '');
+          localStorage.setItem('ecopontoAdminPoint', data.admin.ecoponto || '');
+          window.location.replace('admin/Home-ADM-Ecoponto.html');
+          return;
+        }
+        showFormError((data && data.erro) ? data.erro : 'Não foi possível acessar o painel.');
+      } catch (error) {
+        showFormError((error && error.message) ? error.message : 'Verifique Apache e MySQL no XAMPP.');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = submitLabel;
+      }
+    });
+
+    if (window.EcoCheckBridge && typeof window.EcoCheckBridge.reset === 'function') {
+      window.EcoCheckBridge.reset();
+    } else if (window.EcoCheck && typeof window.EcoCheck.clearToken === 'function') {
+      window.EcoCheck.clearToken();
+      document.dispatchEvent(new CustomEvent('ecocheck:reset'));
+    }
+
+    (async function redirecionarSeJaLogado() {
+      if (typeof window.ecocoletaPhpUrl !== 'function') return;
+      try {
+        const response = await fetch(window.ecocoletaPhpUrl('admin-ecoponto-session.php'), {
+          method: 'GET',
+          credentials: 'same-origin',
+          cache: 'no-store',
+        });
+        const data = parseJsonServidor(await response.text());
+        if (data && data.sucesso === true && data.admin) {
+          window.location.replace('admin/Home-ADM-Ecoponto.html');
+        }
+      } catch (e) {
+
+      }
+    })();
+  </script>
+</body>
+</html>
